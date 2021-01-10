@@ -48,8 +48,8 @@ namespace WalletLesster.Views
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.loader = new System.Windows.Forms.PictureBox();
             this.btnUpdateTransaction = new System.Windows.Forms.Button();
+            this.loader = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).BeginInit();
@@ -85,7 +85,7 @@ namespace WalletLesster.Views
             // 
             // txtAmount
             // 
-            this.txtAmount.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.txtAmount.BackColor = System.Drawing.Color.White;
             this.txtAmount.DecimalPlaces = 2;
             this.txtAmount.Location = new System.Drawing.Point(667, 59);
             this.txtAmount.Maximum = new decimal(new int[] {
@@ -168,7 +168,7 @@ namespace WalletLesster.Views
             // 
             // cmbCategory
             // 
-            this.cmbCategory.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cmbCategory.BackColor = System.Drawing.Color.White;
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(453, 58);
             this.cmbCategory.Name = "cmbCategory";
@@ -188,7 +188,7 @@ namespace WalletLesster.Views
             // 
             // cmbMerchant
             // 
-            this.cmbMerchant.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.cmbMerchant.BackColor = System.Drawing.Color.White;
             this.cmbMerchant.FormattingEnabled = true;
             this.cmbMerchant.ItemHeight = 16;
             this.cmbMerchant.Location = new System.Drawing.Point(239, 58);
@@ -287,17 +287,6 @@ namespace WalletLesster.Views
             this.panel3.Size = new System.Drawing.Size(1208, 90);
             this.panel3.TabIndex = 13;
             // 
-            // loader
-            // 
-            this.loader.BackColor = System.Drawing.Color.Transparent;
-            this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
-            this.loader.Location = new System.Drawing.Point(1052, -6);
-            this.loader.Name = "loader";
-            this.loader.Size = new System.Drawing.Size(191, 95);
-            this.loader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loader.TabIndex = 2;
-            this.loader.TabStop = false;
-            // 
             // btnUpdateTransaction
             // 
             this.btnUpdateTransaction.BackColor = System.Drawing.Color.Transparent;
@@ -317,6 +306,17 @@ namespace WalletLesster.Views
             this.btnUpdateTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateTransaction.UseVisualStyleBackColor = false;
             this.btnUpdateTransaction.Click += new System.EventHandler(this.UpdateTransactionData);
+            // 
+            // loader
+            // 
+            this.loader.BackColor = System.Drawing.Color.Transparent;
+            this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
+            this.loader.Location = new System.Drawing.Point(1052, -6);
+            this.loader.Name = "loader";
+            this.loader.Size = new System.Drawing.Size(191, 95);
+            this.loader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.loader.TabIndex = 2;
+            this.loader.TabStop = false;
             // 
             // panel1
             // 

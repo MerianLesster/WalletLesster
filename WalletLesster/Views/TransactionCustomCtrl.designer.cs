@@ -38,11 +38,11 @@ namespace WalletLesster.Views
             this.label3 = new System.Windows.Forms.Label();
             this.cmbMerchant = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dpTransDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.rbIncome = new System.Windows.Forms.RadioButton();
             this.rbExpense = new System.Windows.Forms.RadioButton();
             this.txtAmount = new System.Windows.Forms.NumericUpDown();
+            this.dpTransDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,16 +125,6 @@ namespace WalletLesster.Views
             this.label4.TabIndex = 33;
             this.label4.Text = "Category";
             // 
-            // dpTransDate
-            // 
-            this.dpTransDate.CustomFormat = "";
-            this.dpTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpTransDate.Location = new System.Drawing.Point(788, 54);
-            this.dpTransDate.Name = "dpTransDate";
-            this.dpTransDate.Size = new System.Drawing.Size(122, 22);
-            this.dpTransDate.TabIndex = 37;
-            this.dpTransDate.Value = new System.DateTime(2021, 1, 6, 14, 39, 46, 0);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -189,12 +179,29 @@ namespace WalletLesster.Views
             0,
             0});
             // 
+            // dpTransDate
+            // 
+            this.dpTransDate.CalendarFont = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpTransDate.CalendarForeColor = System.Drawing.Color.Plum;
+            this.dpTransDate.CalendarMonthBackground = System.Drawing.Color.Plum;
+            this.dpTransDate.CalendarTitleBackColor = System.Drawing.Color.Plum;
+            this.dpTransDate.CalendarTitleForeColor = System.Drawing.Color.Plum;
+            this.dpTransDate.CalendarTrailingForeColor = System.Drawing.Color.Plum;
+            this.dpTransDate.CustomFormat = "";
+            this.dpTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpTransDate.Location = new System.Drawing.Point(789, 54);
+            this.dpTransDate.Name = "dpTransDate";
+            this.dpTransDate.Size = new System.Drawing.Size(122, 22);
+            this.dpTransDate.TabIndex = 52;
+            this.dpTransDate.Value = new System.DateTime(2021, 1, 6, 14, 39, 46, 0);
+            // 
             // TransactionCustomCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.dpTransDate);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.rbExpense);
             this.Controls.Add(this.rbIncome);
@@ -206,7 +213,6 @@ namespace WalletLesster.Views
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbMerchant);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dpTransDate);
             this.Controls.Add(this.label6);
             this.Name = "TransactionCustomCtrl";
             this.Size = new System.Drawing.Size(1127, 105);
@@ -226,10 +232,10 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbMerchant;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dpTransDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton rbIncome;
         private System.Windows.Forms.RadioButton rbExpense;
         private System.Windows.Forms.NumericUpDown txtAmount;
+        private System.Windows.Forms.DateTimePicker dpTransDate;
     }
 }

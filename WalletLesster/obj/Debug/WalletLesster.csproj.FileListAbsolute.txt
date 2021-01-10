@@ -16,5 +16,8 @@ E:\WalletLesster\WalletLesster\WalletLesster\bin\Debug\EntityFramework.xml
 E:\WalletLesster\WalletLesster\WalletLesster\bin\Debug\EntityFramework.SqlServer.xml
 E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csproj.CopyComplete
 E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.UpdateTransaction.resources
+E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SignUpForm.resources
+E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SignInForm.resources
+E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SignInScreen.resources
 E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csprojAssemblyReference.cache
-E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.Form1.resources
+E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.Profile.resources

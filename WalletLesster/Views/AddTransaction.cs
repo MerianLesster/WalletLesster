@@ -18,6 +18,7 @@ namespace WalletLesster.Views
         WalletLessterTempData tempData = new WalletLessterTempData();
         List<TransactionCustomCtrl> transactionArr = new List<TransactionCustomCtrl>();
         WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1();
+
         bool showErrorMsg = false;
         public AddTransaction()
         {
@@ -35,7 +36,7 @@ namespace WalletLesster.Views
             }*/
         }
 
-        private async void btnSaveTransaction_Click(object sender, EventArgs e)
+        private void btnSaveTransaction_Click(object sender, EventArgs e)
         {
             try
             {
@@ -51,39 +52,39 @@ namespace WalletLesster.Views
                 }
                 else
                 {
-                    await Task.Run(() =>
+                    tempData.Transaction.Clear();
+                    for (int i = 0; i < transactionArr.Count; i++)
                     {
-                        tempData.Transaction.Clear();
-                        for (int i = 0; i < transactionArr.Count; i++)
+                        tempData.Transaction.AddTransactionRow(transactionArr[i].GetTransactionType(),
+                            transactionArr[i].GetMerchantValue(),
+                            transactionArr[i].GetCategoryValue(),
+                            transactionArr[i].GetAmountValue(),
+                            transactionArr[i].GetDateValue(),
+                            transactionArr[i].GetRecurrenceValue());
+                    }
+                    // Store first
+                    tempData.WriteXml(@"D:\WalletLessterTempData.xml");
+                    tempData.ReadXml(@"D:\WL_LoggedInUserTempData.xml");
+                    int id = tempData.User[0].Id;
+                    // Forward to Database
+                    for (int i = 0; i < transactionArr.Count; i++)
+                    {
+                        if (File.Exists(@"D:\WalletLessterTempData.xml") == true)
                         {
-                            tempData.Transaction.AddTransactionRow(transactionArr[i].GetTransactionType(),
-                                transactionArr[i].GetMerchantValue(),
-                                transactionArr[i].GetCategoryValue(),
-                                transactionArr[i].GetAmountValue(),
-                                transactionArr[i].GetDateValue(),
-                                transactionArr[i].GetRecurrenceValue());
+                            tempData.ReadXml(@"D:\WalletLessterTempData.xml");
+                            WalletLessterTempData.TransactionRow data = tempData.Transaction[i];
+                            Transaction transactionData = new Transaction();
+                            transactionData.Type = data.Type;
+                            transactionData.Merchant = data.Merchant;
+                            transactionData.Category = data.Category;
+                            transactionData.Amount = data.Amount;
+                            transactionData.Date = data.Date;
+                            transactionData.Recurrence = data.Recurrence;
+                            transactionData.UserId = id;
+                            db.Transactions.Add(transactionData);
                         }
-                        // Store first
-                        tempData.WriteXml(@"D:\WalletLessterTempData.xml");
-                        // Forward to Database
-                        for (int i = 0; i < transactionArr.Count; i++)
-                        {
-                            if (File.Exists(@"D:\WalletLessterTempData.xml") == true)
-                            {
-                                tempData.ReadXml(@"D:\WalletLessterTempData.xml");
-                                WalletLessterTempData.TransactionRow data = tempData.Transaction[i];
-                                Transaction transactionData = new Transaction();
-                                transactionData.Type = data.Type;
-                                transactionData.Merchant = data.Merchant;
-                                transactionData.Category = data.Category;
-                                transactionData.Amount = data.Amount;
-                                transactionData.Date = data.Date;
-                                transactionData.Recurrence = data.Recurrence;
-                                db.Transactions.Add(transactionData);
-                            }
-                        }
-                        db.SaveChanges();
-                    });
+                    }
+                    db.SaveChanges();
                     Dashboard dashboard = new Dashboard();
                     dashboard.RefreshDataGridView();
                     lblTip.Text = "Tip...";

@@ -32,9 +32,11 @@ namespace WalletLesster.Views
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.btnAddTransaction = new System.Windows.Forms.Button();
             this.dgvTransaction = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,43 +48,87 @@ namespace WalletLesster.Views
             this.Recurrence = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.walletLessterDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.walletLessterDatabaseDataSet = new WalletLesster.WalletLessterDatabaseDataSet();
+            this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transactionsTableAdapter = new WalletLesster.WalletLessterDatabaseDataSetTableAdapters.TransactionsTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblDate = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelTip = new System.Windows.Forms.Panel();
+            this.lblTip = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnProfile = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.walletLessterDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panelTip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(357, 985);
+            this.panel2.Size = new System.Drawing.Size(357, 981);
             this.panel2.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(3, 325);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(225, 60);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Trasactions";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 262);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(225, 60);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Trasactions";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // pictureBox3
             // 
@@ -108,18 +154,18 @@ namespace WalletLesster.Views
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
+            // lblWelcome
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(394, 70);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Welcome Merian!";
+            this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(3, 16);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(295, 53);
+            this.lblWelcome.TabIndex = 4;
+            this.lblWelcome.Text = "Welcome Merian!";
             // 
             // btnAddTransaction
             // 
@@ -129,13 +175,13 @@ namespace WalletLesster.Views
             this.btnAddTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddTransaction.Font = new System.Drawing.Font("Poppins SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
-            this.btnAddTransaction.Location = new System.Drawing.Point(32, 104);
+            this.btnAddTransaction.Location = new System.Drawing.Point(490, 81);
             this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddTransaction.Name = "btnAddTransaction";
-            this.btnAddTransaction.Size = new System.Drawing.Size(457, 264);
+            this.btnAddTransaction.Size = new System.Drawing.Size(284, 144);
             this.btnAddTransaction.TabIndex = 6;
             this.btnAddTransaction.Text = "Add Transaction +";
-            this.btnAddTransaction.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnAddTransaction.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnAddTransaction.UseVisualStyleBackColor = false;
             this.btnAddTransaction.Click += new System.EventHandler(this.ShowAddTransaction);
             // 
@@ -143,8 +189,12 @@ namespace WalletLesster.Views
             // 
             this.dgvTransaction.AllowUserToAddRows = false;
             this.dgvTransaction.AllowUserToOrderColumns = true;
+            this.dgvTransaction.AllowUserToResizeColumns = false;
+            this.dgvTransaction.AllowUserToResizeRows = false;
             this.dgvTransaction.AutoGenerateColumns = false;
-            this.dgvTransaction.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTransaction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.dgvTransaction.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -156,15 +206,17 @@ namespace WalletLesster.Views
             this.Recurrence,
             this.Update,
             this.Delete});
-            this.dgvTransaction.DataSource = this.transactionsBindingSource;
-            this.dgvTransaction.Location = new System.Drawing.Point(45, 403);
+            this.dgvTransaction.DataSource = this.walletLessterDatabaseDataSetBindingSource;
+            this.dgvTransaction.GridColor = System.Drawing.Color.Aqua;
+            this.dgvTransaction.Location = new System.Drawing.Point(38, 414);
             this.dgvTransaction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTransaction.Name = "dgvTransaction";
             this.dgvTransaction.ReadOnly = true;
             this.dgvTransaction.RowHeadersWidth = 51;
             this.dgvTransaction.RowTemplate.Height = 24;
-            this.dgvTransaction.Size = new System.Drawing.Size(1017, 153);
+            this.dgvTransaction.Size = new System.Drawing.Size(1017, 311);
             this.dgvTransaction.TabIndex = 7;
+            this.dgvTransaction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaction_CellClick);
             this.dgvTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaction_CellContentClick);
             // 
             // Id
@@ -202,7 +254,7 @@ namespace WalletLesster.Views
             this.Category.MinimumWidth = 6;
             this.Category.Name = "Category";
             this.Category.ReadOnly = true;
-            this.Category.Width = 125;
+            this.Category.Width = 150;
             // 
             // Amount
             // 
@@ -211,7 +263,7 @@ namespace WalletLesster.Views
             this.Amount.MinimumWidth = 6;
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
-            this.Amount.Width = 80;
+            this.Amount.Width = 125;
             // 
             // Date
             // 
@@ -220,7 +272,7 @@ namespace WalletLesster.Views
             this.Date.MinimumWidth = 6;
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
-            this.Date.Width = 80;
+            this.Date.Width = 125;
             // 
             // Recurrence
             // 
@@ -229,7 +281,7 @@ namespace WalletLesster.Views
             this.Recurrence.MinimumWidth = 6;
             this.Recurrence.Name = "Recurrence";
             this.Recurrence.ReadOnly = true;
-            this.Recurrence.Width = 80;
+            this.Recurrence.Width = 125;
             // 
             // Update
             // 
@@ -251,15 +303,20 @@ namespace WalletLesster.Views
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 80;
             // 
-            // transactionsBindingSource
+            // walletLessterDatabaseDataSetBindingSource
             // 
-            this.transactionsBindingSource.DataMember = "Transactions";
-            this.transactionsBindingSource.DataSource = this.walletLessterDatabaseDataSet;
+            this.walletLessterDatabaseDataSetBindingSource.DataMember = "Transactions";
+            this.walletLessterDatabaseDataSetBindingSource.DataSource = this.walletLessterDatabaseDataSet;
             // 
             // walletLessterDatabaseDataSet
             // 
             this.walletLessterDatabaseDataSet.DataSetName = "WalletLessterDatabaseDataSet";
             this.walletLessterDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // transactionsBindingSource
+            // 
+            this.transactionsBindingSource.DataMember = "Transactions";
+            this.transactionsBindingSource.DataSource = this.walletLessterDatabaseDataSet;
             // 
             // transactionsTableAdapter
             // 
@@ -285,9 +342,19 @@ namespace WalletLesster.Views
             this.lblTime.ForeColor = System.Drawing.Color.White;
             this.lblTime.Location = new System.Drawing.Point(38, 125);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(243, 60);
+            this.lblTime.Size = new System.Drawing.Size(237, 58);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "TimeDisplay";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(80, 24);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(140, 99);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
             // 
             // lblDate
             // 
@@ -300,40 +367,85 @@ namespace WalletLesster.Views
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "DateDisplay";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(80, 24);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(140, 99);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.panelTip);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.dgvTransaction);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.btnAddTransaction);
+            this.panel3.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.transactionsBindingSource, "Id", true));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(357, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1094, 985);
+            this.panel3.Size = new System.Drawing.Size(1094, 981);
             this.panel3.TabIndex = 9;
+            // 
+            // panelTip
+            // 
+            this.panelTip.BackColor = System.Drawing.Color.White;
+            this.panelTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTip.Controls.Add(this.lblTip);
+            this.panelTip.Controls.Add(this.pictureBox5);
+            this.panelTip.Location = new System.Drawing.Point(20, 325);
+            this.panelTip.Name = "panelTip";
+            this.panelTip.Size = new System.Drawing.Size(1045, 66);
+            this.panelTip.TabIndex = 13;
+            // 
+            // lblTip
+            // 
+            this.lblTip.AutoSize = true;
+            this.lblTip.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTip.Location = new System.Drawing.Point(81, 17);
+            this.lblTip.Name = "lblTip";
+            this.lblTip.Size = new System.Drawing.Size(71, 35);
+            this.lblTip.TabIndex = 1;
+            this.lblTip.Text = "Tips....";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(3, 1);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(62, 61);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.panel4.Controls.Add(this.btnProfile);
+            this.panel4.Controls.Add(this.btnLogout);
             this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.lblWelcome);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1094, 74);
             this.panel4.TabIndex = 9;
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Location = new System.Drawing.Point(870, 16);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(75, 46);
+            this.btnProfile.TabIndex = 7;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(790, 16);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 46);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // pictureBox1
             // 
@@ -346,11 +458,6 @@ namespace WalletLesster.Views
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // walletLessterDatabaseDataSetBindingSource
-            // 
-            this.walletLessterDatabaseDataSetBindingSource.DataSource = this.walletLessterDatabaseDataSet;
-            this.walletLessterDatabaseDataSetBindingSource.Position = 0;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -359,7 +466,7 @@ namespace WalletLesster.Views
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1451, 985);
+            this.ClientSize = new System.Drawing.Size(1451, 981);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -368,22 +475,26 @@ namespace WalletLesster.Views
             this.MinimumSize = new System.Drawing.Size(1405, 1028);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Activated += new System.EventHandler(this.Dashboard_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseApplication);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panelTip.ResumeLayout(false);
+            this.panelTip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,12 +503,22 @@ namespace WalletLesster.Views
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnAddTransaction;
         private System.Windows.Forms.DataGridView dgvTransaction;
         private WalletLessterDatabaseDataSet walletLessterDatabaseDataSet;
         private System.Windows.Forms.BindingSource transactionsBindingSource;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.BindingSource walletLessterDatabaseDataSetBindingSource;
         private WalletLessterDatabaseDataSetTableAdapters.TransactionsTableAdapter transactionsTableAdapter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Merchant;
@@ -407,13 +528,10 @@ namespace WalletLesster.Views
         private System.Windows.Forms.DataGridViewCheckBoxColumn Recurrence;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.BindingSource walletLessterDatabaseDataSetBindingSource;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel panelTip;
+        private System.Windows.Forms.Label lblTip;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button btnProfile;
     }
 }

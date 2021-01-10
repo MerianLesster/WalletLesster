@@ -7,6 +7,11 @@
     <Schema Namespace="WalletLessterDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="WalletLessterDataModelStoreContainer">
     <EntitySet Name="Transactions" EntityType="WalletLessterDataModel.Store.Transactions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="WalletLessterDataModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserTransaction" Association="WalletLessterDataModel.Store.UserTransaction">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Transactions">
     <Key>
@@ -19,13 +24,42 @@
     <Property Name="Amount" Type="float" Nullable="false" />
     <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="Recurrence" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Currency" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="UserTransaction">
+    <End Role="User" Type="WalletLessterDataModel.Store.Users" Multiplicity="1" />
+    <End Role="Transaction" Type="WalletLessterDataModel.Store.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="WalletLessterDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="WalletLessterDataModelContainer1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Transactions" EntityType="WalletLessterDataModel.Transaction" />
+          <EntitySet Name="Users" EntityType="WalletLessterDataModel.User" />
+          <AssociationSet Name="UserTransaction" Association="WalletLessterDataModel.UserTransaction">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Transaction">
           <Key>
@@ -38,7 +72,33 @@
           <Property Name="Amount" Type="Double" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" />
           <Property Name="Recurrence" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="WalletLessterDataModel.UserTransaction" FromRole="Transaction" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <NavigationProperty Name="Transactions" Relationship="WalletLessterDataModel.UserTransaction" FromRole="User" ToRole="Transaction" />
+          <Property Name="Currency" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="UserTransaction">
+          <End Type="WalletLessterDataModel.User" Role="User" Multiplicity="1" />
+          <End Type="WalletLessterDataModel.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -55,6 +115,19 @@
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Recurrence" ColumnName="Recurrence" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(WalletLessterDataModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

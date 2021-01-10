@@ -72,6 +72,7 @@ namespace WalletLesster.Views
             Dashboard dashboard = new Dashboard();
             dashboard.UpdateFunction(Id, Type, Merchant, Category, Amount, Date, Recurrence);
             MessageBox.Show("Transaction Successfully Updated");
+            this.Close();
         }
 
     }

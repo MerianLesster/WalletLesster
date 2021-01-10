@@ -31,8 +31,8 @@ namespace WalletLesster.Views
             //after 3 sec stop the timer
             tmr.Stop();
             //display mainform
-            Dashboard dashboard = new Dashboard();
-            dashboard.Show();
+            SignInScreen loginPage = new SignInScreen();
+            loginPage.Show();
             //hide this form
             this.Hide();
         }

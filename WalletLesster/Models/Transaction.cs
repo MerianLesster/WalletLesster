@@ -21,5 +21,8 @@ namespace WalletLesster.Models
         public double Amount { get; set; }
         public System.DateTime Date { get; set; }
         public bool Recurrence { get; set; }
+        public int UserId { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

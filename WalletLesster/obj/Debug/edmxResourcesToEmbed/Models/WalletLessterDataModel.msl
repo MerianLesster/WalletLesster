@@ -11,6 +11,19 @@
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Recurrence" ColumnName="Recurrence" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(WalletLessterDataModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -58,6 +58,9 @@
     <Compile Include="Models\Transaction.cs">
       <DependentUpon>WalletLessterDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>WalletLessterDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\WalletLessterDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,17 +89,35 @@
     <Compile Include="Views\AddTransaction.designer.cs">
       <DependentUpon>AddTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Dashboard.designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Form1.cs">
+    <Compile Include="Views\SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\SignInForm.Designer.cs">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SignInScreen.Designer.cs">
+      <DependentUpon>SignInScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SplashScreen.cs">
       <SubType>Form</SubType>
@@ -134,11 +155,20 @@
     <EmbeddedResource Include="Views\AddTransaction.resx">
       <DependentUpon>AddTransaction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Views\SignInForm.resx">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SignInScreen.resx">
+      <DependentUpon>SignInScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>

@@ -2,6 +2,11 @@
 <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="WalletLessterDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
   <EntityContainer Name="WalletLessterDataModelContainer1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Transactions" EntityType="WalletLessterDataModel.Transaction" />
+    <EntitySet Name="Users" EntityType="WalletLessterDataModel.User" />
+    <AssociationSet Name="UserTransaction" Association="WalletLessterDataModel.UserTransaction">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Transaction">
     <Key>
@@ -14,5 +19,31 @@
     <Property Name="Amount" Type="Double" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" />
     <Property Name="Recurrence" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="WalletLessterDataModel.UserTransaction" FromRole="Transaction" ToRole="User" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
   </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" Nullable="false" />
+    <Property Name="Username" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <NavigationProperty Name="Transactions" Relationship="WalletLessterDataModel.UserTransaction" FromRole="User" ToRole="Transaction" />
+    <Property Name="Currency" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="UserTransaction">
+    <End Type="WalletLessterDataModel.User" Role="User" Multiplicity="1" />
+    <End Type="WalletLessterDataModel.Transaction" Role="Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -6,6 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c649f352a9de4190a93d2558b3eb7594" Name="Diagram1" >
         <EntityTypeShape EntityType="WalletLessterDataModel.Transaction" Width="1.5" PointX="3.875" PointY="1.75" />
+        <EntityTypeShape EntityType="WalletLessterDataModel.User" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="WalletLessterDataModel.UserTransaction" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

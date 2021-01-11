@@ -32,11 +32,11 @@ namespace WalletLesster.Views
                 {
                     using (WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1())
                     {
-                        bool validUser = db.Users.Any(user => user.Username.Equals(txtUsername.Text) && user.Password.Equals(txtPassword.Text));
+                        bool validUser = db.Users.Any(user => user.Username.Contains(txtUsername.Text) && user.Password.Contains(txtPassword.Text));
                         if (validUser)
                         {
                             tempData.User.Clear();
-                            var userData = db.Users.Where(user => user.Username == txtUsername.Text).SingleOrDefault();
+                            var userData = db.Users.Where(user => user.Username == txtUsername.Text).FirstOrDefault();
                             MessageBox.Show(String.Format("Welcome {0}! ", userData.FullName), "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             tempData.User.AddUserRow(userData.FullName, userData.Username, userData.Email, userData.Password, userData.Currency, userData.Id);
                             tempData.WriteXml(@"D:\WL_LoggedInUserTempData.xml");

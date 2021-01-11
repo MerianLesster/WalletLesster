@@ -87,7 +87,6 @@ namespace WalletLesster.Views
             tempData.User.AddUserRow(this.txtFullName.Text, txtUsername.Text, this.txtEmail.Text, this.txtPassword.Text, cmbCurrency.Text, userId);
             // Store first
             tempData.WriteXml(@"D:\WalletLessterTempData.xml");
-
             try
             {
                 // Then Forword it to a Webservice or a Database
@@ -95,20 +94,18 @@ namespace WalletLesster.Views
                 {
                     tempData.ReadXml(@"D:\WalletLessterTempData.xml");
                     WalletLessterTempData.UserRow data = tempData.User[0];
-                    User userData = new User();
-                    userData.Id = data.Id;
+                    var userData = db.Users.Where(user => user.Id == userId).FirstOrDefault();
+                    //userData.Id = data.Id;
                     userData.FullName = data.FullName;
                     userData.Username = data.Username;
                     userData.Email = data.Email;
                     userData.Password = data.Password;
                     userData.Currency = data.Currency;
-                    db.Entry(userData).State = EntityState.Added;
-                    /*                    var entry = db.Entry(userData);
-                                            if (entry.State == EntityState.Detached)
-                                            {
-                                                db.Transactions.Attach(userData);
-                                            }*/
+                    db.Entry(userData).State = EntityState.Modified;
                     db.SaveChanges();
+                    var newUserData = db.Users.Where(user => user.Id == data.Id).FirstOrDefault();
+                    tempData.User.AddUserRow(newUserData.FullName, newUserData.Username, newUserData.Email, newUserData.Password, newUserData.Currency, newUserData.Id);
+                    tempData.WriteXml(@"D:\WL_LoggedInUserTempData.xml");
                     MessageBox.Show("Account Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     hideLabels(true);
                     hideTextfields(false);

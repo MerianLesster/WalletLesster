@@ -36,7 +36,7 @@ namespace WalletLesster.Views
             }*/
         }
 
-        private void btnSaveTransaction_Click(object sender, EventArgs e)
+        private async void btnSaveTransaction_Click(object sender, EventArgs e)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace WalletLesster.Views
                             db.Transactions.Add(transactionData);
                         }
                     }
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                     Dashboard dashboard = new Dashboard();
                     dashboard.RefreshDataGridView();
                     lblTip.Text = "Tip...";

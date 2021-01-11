@@ -63,7 +63,8 @@ namespace WalletLesster.Views
         {
             // TODO: This line of code loads data into the 'walletLessterDatabaseDataSet.Transactions' table. You can move, or remove it, as needed.
             this.transactionsTableAdapter.Fill(this.walletLessterDatabaseDataSet.Transactions);
-
+            /*tempData.ReadXml(@"D:\WL_LoggedInUserTempData.xml");
+            lblWelcome.Text = String.Format("Welcome {0}!", tempData.User[0].FullName);*/
         }
 
         public void RefreshDataGridView()

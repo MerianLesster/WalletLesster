@@ -21,3 +21,26 @@ E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SignI
 E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SignInScreen.resources
 E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csprojAssemblyReference.cache
 E:\WalletLesster\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.Profile.resources
+E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\WalletLesster.exe.config
+E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\WalletLesster.exe
+E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\WalletLesster.pdb
+E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\EntityFramework.dll
+E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\EntityFramework.SqlServer.dll
+E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\EntityFramework.xml
+E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\EntityFramework.SqlServer.xml
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csprojAssemblyReference.cache
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Properties.Resources.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.AddTransaction.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.Profile.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SignUpForm.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.Dashboard.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SignInForm.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SignInScreen.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.SplashScreen.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.TransactionCustomCtrl.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.UpdateTransaction.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csproj.GenerateResource.cache
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csproj.CoreCompileInputs.cache
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csproj.CopyComplete
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.exe
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.pdb

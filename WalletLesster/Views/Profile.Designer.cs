@@ -44,9 +44,9 @@ namespace WalletLesster.Views
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEditProfile = new System.Windows.Forms.Button();
+            this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
             this.lblFullName = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -55,6 +55,9 @@ namespace WalletLesster.Views
             this.btnUpdateProfile = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnCreateProfile = new System.Windows.Forms.Button();
+            this.btnCloseForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -209,40 +212,43 @@ namespace WalletLesster.Views
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // btnEdit
+            // btnEditProfile
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnEdit.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(289, 107);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(226, 53);
-            this.btnEdit.TabIndex = 12;
-            this.btnEdit.Text = "Edit Profile";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.EditProfille);
+            this.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnEditProfile.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProfile.Location = new System.Drawing.Point(289, 107);
+            this.btnEditProfile.Name = "btnEditProfile";
+            this.btnEditProfile.Size = new System.Drawing.Size(226, 53);
+            this.btnEditProfile.TabIndex = 12;
+            this.btnEditProfile.Text = "Edit Profile";
+            this.btnEditProfile.UseVisualStyleBackColor = false;
+            this.btnEditProfile.Click += new System.EventHandler(this.EditProfille);
             // 
-            // button2
+            // btnDeleteAccount
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(760, 107);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 53);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Delete Profile";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDeleteAccount.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteAccount.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAccount.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteAccount.Location = new System.Drawing.Point(760, 107);
+            this.btnDeleteAccount.Name = "btnDeleteAccount";
+            this.btnDeleteAccount.Size = new System.Drawing.Size(226, 53);
+            this.btnDeleteAccount.TabIndex = 16;
+            this.btnDeleteAccount.Text = "Delete Account";
+            this.btnDeleteAccount.UseVisualStyleBackColor = false;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.DeleteAccount);
             // 
-            // button3
+            // btnCreateAccount
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button3.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(525, 107);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 53);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Create New Account";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCreateAccount.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.Location = new System.Drawing.Point(760, 562);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(226, 53);
+            this.btnCreateAccount.TabIndex = 17;
+            this.btnCreateAccount.Text = "Create New Account";
+            this.btnCreateAccount.UseVisualStyleBackColor = false;
+            this.btnCreateAccount.Visible = false;
+            this.btnCreateAccount.Click += new System.EventHandler(this.CreateProfile);
             // 
             // lblFullName
             // 
@@ -315,6 +321,7 @@ namespace WalletLesster.Views
             this.btnUpdateProfile.TabIndex = 24;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = false;
+            this.btnUpdateProfile.Visible = false;
             this.btnUpdateProfile.Click += new System.EventHandler(this.UpdateProfile);
             // 
             // pictureBox3
@@ -341,6 +348,40 @@ namespace WalletLesster.Views
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(369, 179);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(233, 67);
+            this.lblTitle.TabIndex = 27;
+            this.lblTitle.Text = "Edit Profile";
+            // 
+            // btnCreateProfile
+            // 
+            this.btnCreateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCreateProfile.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateProfile.Location = new System.Drawing.Point(521, 107);
+            this.btnCreateProfile.Name = "btnCreateProfile";
+            this.btnCreateProfile.Size = new System.Drawing.Size(226, 53);
+            this.btnCreateProfile.TabIndex = 28;
+            this.btnCreateProfile.Text = "Create New Account";
+            this.btnCreateProfile.UseVisualStyleBackColor = false;
+            this.btnCreateProfile.Click += new System.EventHandler(this.btnCreateProfile_Click);
+            // 
+            // btnCloseForm
+            // 
+            this.btnCloseForm.Location = new System.Drawing.Point(824, 179);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(136, 51);
+            this.btnCloseForm.TabIndex = 29;
+            this.btnCloseForm.Text = "Cancel";
+            this.btnCloseForm.UseVisualStyleBackColor = true;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,21 +390,22 @@ namespace WalletLesster.Views
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1030, 638);
+            this.Controls.Add(this.btnCloseForm);
+            this.Controls.Add(this.btnCreateProfile);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.lblCurrency);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblFullName);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDeleteAccount);
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnEditProfile);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cmbCurrency);
@@ -374,6 +416,8 @@ namespace WalletLesster.Views
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblConfirmPassword);
+            this.Controls.Add(this.btnUpdateProfile);
+            this.Controls.Add(this.btnCreateAccount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -402,9 +446,9 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNameHeader;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEditProfile;
+        private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblEmail;
@@ -413,5 +457,8 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Button btnUpdateProfile;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnCreateProfile;
+        private System.Windows.Forms.Button btnCloseForm;
     }
 }

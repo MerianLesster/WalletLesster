@@ -43,14 +43,14 @@ namespace WalletLesster.Views
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnSignUp);
             this.panel2.Controls.Add(this.btnSignIn);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(424, 628);
@@ -123,7 +123,7 @@ namespace WalletLesster.Views
             this.pnlChildForm.Size = new System.Drawing.Size(604, 628);
             this.pnlChildForm.TabIndex = 2;
             // 
-            // LoginScreen
+            // SignInScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,7 +133,7 @@ namespace WalletLesster.Views
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1044, 675);
             this.MinimumSize = new System.Drawing.Size(1044, 675);
-            this.Name = "LoginScreen";
+            this.Name = "SignInScreen";
             this.Text = "WalletLesster";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

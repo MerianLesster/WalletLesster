@@ -24,13 +24,24 @@ namespace WalletLesster.Views
             hideTextfields(false);
             prefillData();
             lblConfirmPassword.Visible = false;
+            lblTitle.Visible = false;
+            btnCloseForm.Visible = false;
         }
 
         private void EditProfille(object sender, EventArgs e)
         {
+            lblTitle.Text = "Edit Profile";
             hideLabels(false);
             lblConfirmPassword.Visible = true;
+            prefillData();
             hideTextfields(true);
+            lblTitle.Visible = true;
+            btnUpdateProfile.Visible = true;
+            btnCreateAccount.Visible = false;
+            btnCloseForm.Visible = true;
+            btnEditProfile.Visible = false;
+            btnCreateProfile.Visible = false;
+            btnDeleteAccount.Visible = false;
         }
 
         private void hideLabels(bool visibility)
@@ -107,18 +118,101 @@ namespace WalletLesster.Views
                     tempData.User.AddUserRow(newUserData.FullName, newUserData.Username, newUserData.Email, newUserData.Password, newUserData.Currency, newUserData.Id);
                     tempData.WriteXml(@"D:\WL_LoggedInUserTempData.xml");
                     MessageBox.Show("Account Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    hideLabels(true);
-                    hideTextfields(false);
+                    btnCloseForm_Click(sender, e);
                     prefillData();
-                    lblConfirmPassword.Visible = false;
+                    btnCloseForm.Visible = false;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Convert.ToString(ex), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void btnCreateProfile_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Create New Account";
+            hideLabels(false);
+            lblConfirmPassword.Visible = true;
+            txtFullName.Text = "";
+            txtUsername.Text = "";
+            txtEmail.Text = "";
+            txtPassword.Text = "";
+            txtConfirmPassword.Text = "";
+            cmbCurrency.Text = "";
+            hideTextfields(true);
+            lblTitle.Visible = true;
+            btnCreateAccount.Visible = true;
+            btnUpdateProfile.Visible = false;
+            btnCloseForm.Visible = true;
+            btnEditProfile.Visible = false;
+            btnCreateProfile.Visible = false;
+            btnDeleteAccount.Visible = false;
+        }
+        private async void CreateProfile(object sender, EventArgs e)
+        {
+            if (this.txtPassword.Text.Equals(txtConfirmPassword.Text))
+            {
+                try
+                {
+                    // Then Forword it to a Webservice or a Database
 
+                    User userData = new User();
+                    userData.FullName = txtFullName.Text;
+                    userData.Username = txtUsername.Text;
+                    userData.Email = txtEmail.Text;
+                    userData.Password = txtPassword.Text;
+                    userData.Currency = cmbCurrency.Text;
+                    db.Users.Add(userData);
+                    await db.SaveChangesAsync();
+                    MessageBox.Show("Account Created Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnCloseForm_Click(sender, e);
+                    btnCloseForm.Visible = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(Convert.ToString(ex), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Password didn't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            hideLabels(true);
+            hideTextfields(false);
+            btnUpdateProfile.Visible = false;
+            btnCreateAccount.Visible = false;
+            lblConfirmPassword.Visible = false;
+            lblTitle.Visible = false;
+            btnCloseForm.Visible = false;
+            btnEditProfile.Visible = true;
+            btnCreateProfile.Visible = true;
+            btnDeleteAccount.Visible = true;
+        }
+
+        private async void DeleteAccount(object sender, EventArgs e)
+        {
+            User userModel = new User();
+            userModel = db.Users.Where(user => user.Id == userId).FirstOrDefault();
+            if (MessageBox.Show("Are you sure you want to delete your account? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                var entry = db.Entry(userModel);
+                if (entry.State == EntityState.Detached)
+                {
+                    db.Users.Attach(userModel);
+                }
+                db.Users.Remove(userModel);
+                await db.SaveChangesAsync();
+                SignInScreen signInScreen = new SignInScreen();
+                this.Close();
+                signInScreen.Show();
+            }
         }
     }
 }

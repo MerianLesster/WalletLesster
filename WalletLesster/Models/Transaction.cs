@@ -22,7 +22,11 @@ namespace WalletLesster.Models
         public System.DateTime Date { get; set; }
         public bool Recurrence { get; set; }
         public int UserId { get; set; }
+        public int CategoryId { get; set; }
+        public int MerchantId { get; set; }
     
         public virtual User User { get; set; }
+        public virtual Category Category1 { get; set; }
+        public virtual Merchant Merchant1 { get; set; }
     }
 }

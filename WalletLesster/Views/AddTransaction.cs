@@ -57,7 +57,7 @@ namespace WalletLesster.Views
                     {
                         tempData.Transaction.AddTransactionRow(transactionArr[i].GetTransactionType(),
                             transactionArr[i].GetMerchantValue(),
-                            transactionArr[i].GetCategoryValue(),
+                            transactionArr[i].GetCategoryText(),
                             transactionArr[i].GetAmountValue(),
                             transactionArr[i].GetDateValue(),
                             transactionArr[i].GetRecurrenceValue());
@@ -81,17 +81,22 @@ namespace WalletLesster.Views
                             transactionData.Date = data.Date;
                             transactionData.Recurrence = data.Recurrence;
                             transactionData.UserId = id;
+                            if (transactionArr[i].GetCategoryValue() == null)
+                            {
+                                return;
+                            }
+                            transactionData.CategoryId = Convert.ToInt32(transactionArr[i].GetCategoryValue());
                             db.Transactions.Add(transactionData);
                         }
                     }
                     await db.SaveChangesAsync();
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.RefreshDataGridView();
+                    ManageTransactions manageTransactions = new ManageTransactions();
+                    manageTransactions.RefreshDataGridView();
                     lblTip.Text = "Tip...";
                     lblTip.ForeColor = Color.Black;
                     panelTip.BackColor = Color.White;
                     MessageBox.Show("Transactions added successfully", "Success");
-                    this.Close();
+                    this.Hide();
                 }
                 //MessageBox.Show("Do you want to add more transactions?", "Information", MessageBoxButtons.YesNo);
             }

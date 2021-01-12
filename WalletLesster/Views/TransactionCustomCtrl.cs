@@ -3,23 +3,36 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WalletLesster.Models;
 
 namespace WalletLesster.Views
 {
     public partial class TransactionCustomCtrl : UserControl
     {
         public int index = 0;
-
+        WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1();
+        WalletLessterTempData tempData = new WalletLessterTempData();
         public delegate void RemoveSiteEventHandler(Object sender, ContentArgs e);
         public event RemoveSiteEventHandler onRemoveSite;
+        static int userId = 1;
 
         public TransactionCustomCtrl()
         {
             InitializeComponent();
+            if (File.Exists(@"D:\WL_LoggedInUserTempData.xml") == true)
+            {
+                tempData.ReadXml(@"D:\WL_LoggedInUserTempData.xml");
+                userId = tempData.User[0].Id;
+            }
+            var blogs = from b in db.Categories where b.UserId.Equals(userId) select b;
+            cmbCategory.DataSource = blogs.ToList();
+            cmbCategory.DisplayMember = "Name";
+            cmbCategory.ValueMember = "Id";
         }
         public String GetTransactionType()
         {
@@ -35,9 +48,13 @@ namespace WalletLesster.Views
         {
             return this.cmbMerchant.Text;
         }
-        public String GetCategoryValue()
+        public String GetCategoryText()
         {
             return this.cmbCategory.Text;
+        }
+        public String GetCategoryValue()
+        {
+            return this.cmbCategory.SelectedValue.ToString();
         }
         public Double GetAmountValue()
         {
@@ -54,7 +71,7 @@ namespace WalletLesster.Views
 
         public Boolean TriggerValidationMessage()
         {
-            if (this.GetCategoryValue().Equals("") || this.GetMerchantValue().Equals(""))
+            if (this.GetCategoryText().Equals("") || this.GetMerchantValue().Equals(""))
             {
                 return true;
             }

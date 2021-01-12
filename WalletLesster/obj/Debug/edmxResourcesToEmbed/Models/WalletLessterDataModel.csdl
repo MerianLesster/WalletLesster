@@ -7,6 +7,24 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Transaction" EntitySet="Transactions" />
     </AssociationSet>
+    <EntitySet Name="Categories" EntityType="WalletLessterDataModel.Category" />
+    <AssociationSet Name="CategoryTransaction" Association="WalletLessterDataModel.CategoryTransaction">
+      <End EntitySet="Categories" Role="Category" />
+      <End EntitySet="Transactions" Role="Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="UserCategory" Association="WalletLessterDataModel.UserCategory">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <EntitySet Name="Merchants" EntityType="WalletLessterDataModel.Merchant" />
+    <AssociationSet Name="MerchantTransaction" Association="WalletLessterDataModel.MerchantTransaction">
+      <End Role="Merchant" EntitySet="Merchants" />
+      <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="UserMerchant" Association="WalletLessterDataModel.UserMerchant">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Merchant" EntitySet="Merchants" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Transaction">
     <Key>
@@ -21,6 +39,10 @@
     <Property Name="Recurrence" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="User" Relationship="WalletLessterDataModel.UserTransaction" FromRole="Transaction" ToRole="User" />
     <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category1" Relationship="WalletLessterDataModel.CategoryTransaction" FromRole="Transaction" ToRole="Category" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Merchant1" Relationship="WalletLessterDataModel.MerchantTransaction" FromRole="Transaction" ToRole="Merchant" />
+    <Property Name="MerchantId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -33,6 +55,8 @@
     <Property Name="Password" Type="String" Nullable="false" />
     <NavigationProperty Name="Transactions" Relationship="WalletLessterDataModel.UserTransaction" FromRole="User" ToRole="Transaction" />
     <Property Name="Currency" Type="String" Nullable="false" />
+    <NavigationProperty Name="Categories" Relationship="WalletLessterDataModel.UserCategory" FromRole="User" ToRole="Category" />
+    <NavigationProperty Name="Merchants" Relationship="WalletLessterDataModel.UserMerchant" FromRole="User" ToRole="Merchant" />
   </EntityType>
   <Association Name="UserTransaction">
     <End Type="WalletLessterDataModel.User" Role="User" Multiplicity="1" />
@@ -42,6 +66,76 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Transaction">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="Transactions" Relationship="WalletLessterDataModel.CategoryTransaction" FromRole="Category" ToRole="Transaction" />
+    <NavigationProperty Name="User" Relationship="WalletLessterDataModel.UserCategory" FromRole="Category" ToRole="User" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="CategoryTransaction">
+    <End Type="WalletLessterDataModel.Category" Multiplicity="1" Role="Category" />
+    <End Type="WalletLessterDataModel.Transaction" Multiplicity="*" Role="Transaction" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserCategory">
+    <End Type="WalletLessterDataModel.User" Role="User" Multiplicity="1" />
+    <End Type="WalletLessterDataModel.Category" Role="Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Merchant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Number" Type="String" Nullable="false" />
+    <NavigationProperty Name="Transactions" Relationship="WalletLessterDataModel.MerchantTransaction" FromRole="Merchant" ToRole="Transaction" />
+    <NavigationProperty Name="User" Relationship="WalletLessterDataModel.UserMerchant" FromRole="Merchant" ToRole="User" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="MerchantTransaction">
+    <End Type="WalletLessterDataModel.Merchant" Role="Merchant" Multiplicity="1" />
+    <End Type="WalletLessterDataModel.Transaction" Role="Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Merchant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="MerchantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserMerchant">
+    <End Type="WalletLessterDataModel.User" Role="User" Multiplicity="1" />
+    <End Type="WalletLessterDataModel.Merchant" Role="Merchant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Merchant">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>

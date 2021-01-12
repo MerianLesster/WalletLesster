@@ -14,10 +14,15 @@ namespace WalletLesster.Views
 {
     public partial class UpdateTransaction : Form
     {
+        WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1();
+        WalletLessterTempData tempData = new WalletLessterTempData();
+
+        int userId = 0;
         public int Id { get; set; }
         public string Type { get; set; }
         public string Merchant { get; set; }
         public string Category { get; set; }
+        public int CategoryId { get; set; }
         public double Amount { get; set; }
         public DateTime Date { get; set; }
         public bool Recurrence { get; set; }
@@ -25,6 +30,8 @@ namespace WalletLesster.Views
         {
             InitializeComponent();
             loader.Visible = false;
+            tempData.ReadXml(@"D:\WL_LoggedInUserTempData.xml");
+            userId = tempData.User[0].Id;
         }
 
         public void prefilData()
@@ -52,28 +59,72 @@ namespace WalletLesster.Views
             }
         }
 
-        private void UpdateTransactionData(object sender, EventArgs e)
+        private async void UpdateTransactionData(object sender, EventArgs e)
         {
             loader.Visible = true;
             btnUpdateTransaction.Location = new Point(847, 11);
-            Id = Id;
+            try
+            {
+                var trasactionData = db.Transactions.Where(trasaction => trasaction.Id == Id).FirstOrDefault();
+                string value;
+                bool isChecked = rbIncome.Checked;
+                if (isChecked)
+                    value = rbIncome.Text;
+                else
+                    value = rbExpense.Text;
+                trasactionData.Type = value;
+                trasactionData.Merchant = cmbMerchant.Text;
+                trasactionData.Category = cmbCategory.Text;
+                trasactionData.Amount = Convert.ToDouble(txtAmount.Text);
+                trasactionData.Date = dpTransDate.Value;
+                trasactionData.Recurrence = cbxRecurrence.Checked;
+                trasactionData.UserId = userId;
+                if (cmbCategory.SelectedValue == null)
+                {
+                    return;
+                }
+                trasactionData.CategoryId = Convert.ToInt32(cmbCategory.SelectedValue.ToString());
+                db.Entry(trasactionData).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                MessageBox.Show("Transaction Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex), "Error while Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdateTransaction_Activated(object sender, EventArgs e)
+        {
+            /*var blogs = from b in db.Categories where b.UserId.Equals(userId) select b;
+            cmbCategory.DataSource = blogs.ToList();
+            cmbCategory.DisplayMember = "Name";
+            cmbCategory.ValueMember = "Id";*/
+            prefilData();
+            changeCategoryList();
+        }
+
+        private void rbIncome_CheckedChanged(object sender, EventArgs e)
+        {
+
+            changeCategoryList();
+        }
+
+        private void changeCategoryList()
+        {
             string value;
             bool isChecked = rbIncome.Checked;
             if (isChecked)
                 value = rbIncome.Text;
             else
                 value = rbExpense.Text;
-            Type = value;
-            Merchant = cmbMerchant.Text;
-            Category = cmbCategory.Text;
-            Amount = Convert.ToDouble(txtAmount.Text);
-            Date = dpTransDate.Value;
-            Recurrence = cbxRecurrence.Checked;
-            Dashboard dashboard = new Dashboard();
-            dashboard.UpdateFunction(Id, Type, Merchant, Category, Amount, Date, Recurrence);
-            MessageBox.Show("Transaction Successfully Updated");
-            this.Close();
-        }
 
+            var blogs = from b in db.Categories where b.UserId.Equals(userId) && b.Type.Equals(value) select b;
+            cmbCategory.DataSource = blogs.ToList();
+            cmbCategory.DisplayMember = "Name";
+            cmbCategory.ValueMember = "Id";
+        }
     }
 }

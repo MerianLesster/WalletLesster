@@ -130,6 +130,7 @@ namespace WalletLesster.Views
             this.rbIncome.TabStop = true;
             this.rbIncome.Text = "Income";
             this.rbIncome.UseVisualStyleBackColor = false;
+            this.rbIncome.CheckedChanged += new System.EventHandler(this.rbIncome_CheckedChanged);
             // 
             // cbxRecurrence
             // 
@@ -345,6 +346,7 @@ namespace WalletLesster.Views
             this.Name = "UpdateTransaction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Transaction";
+            this.Activated += new System.EventHandler(this.UpdateTransaction_Activated);
             this.panelTransactions.ResumeLayout(false);
             this.panelTransactions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).EndInit();

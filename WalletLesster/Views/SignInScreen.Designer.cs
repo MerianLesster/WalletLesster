@@ -73,7 +73,7 @@ namespace WalletLesster.Views
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Cyan;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(91, 365);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 49);
@@ -134,6 +134,7 @@ namespace WalletLesster.Views
             this.MaximumSize = new System.Drawing.Size(1044, 675);
             this.MinimumSize = new System.Drawing.Size(1044, 675);
             this.Name = "SignInScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WalletLesster";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

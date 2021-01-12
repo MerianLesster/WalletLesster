@@ -32,7 +32,7 @@ namespace WalletLesster.Views
                 {
                     using (WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1())
                     {
-                        bool validUser = db.Users.Any(user => user.Username.Contains(txtUsername.Text) && user.Password.Contains(txtPassword.Text));
+                        bool validUser = db.Users.Any(user => user.Username.Equals(txtUsername.Text) && user.Password.Equals(txtPassword.Text));
                         if (validUser)
                         {
                             tempData.User.Clear();

@@ -5,9 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c649f352a9de4190a93d2558b3eb7594" Name="Diagram1" >
-        <EntityTypeShape EntityType="WalletLessterDataModel.Transaction" Width="1.5" PointX="3.75" PointY="0.875" />
-        <EntityTypeShape EntityType="WalletLessterDataModel.User" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WalletLessterDataModel.Transaction" Width="1.5" PointX="6.875" PointY="1.75" />
+        <EntityTypeShape EntityType="WalletLessterDataModel.User" Width="1.5" PointX="3.875" PointY="2.875" />
         <AssociationConnector Association="WalletLessterDataModel.UserTransaction" />
+        <EntityTypeShape EntityType="WalletLessterDataModel.Category" Width="1.5" PointX="6.5" PointY="5.75" />
+        <AssociationConnector Association="WalletLessterDataModel.CategoryTransaction" />
+        <AssociationConnector Association="WalletLessterDataModel.UserCategory" />
+        <EntityTypeShape EntityType="WalletLessterDataModel.Merchant" Width="1.5" PointX="0.875" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="WalletLessterDataModel.MerchantTransaction" />
+        <AssociationConnector Association="WalletLessterDataModel.UserMerchant" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -39,6 +39,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -55,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>WalletLessterDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Merchant.cs">
+      <DependentUpon>WalletLessterDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Transaction.cs">
       <DependentUpon>WalletLessterDataModel.tt</DependentUpon>
     </Compile>
@@ -83,11 +107,42 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\AddTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\AddTransaction.designer.cs">
       <DependentUpon>AddTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddUpdateCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddUpdateCategory.Designer.cs">
+      <DependentUpon>AddUpdateCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ManageCategory.Designer.cs">
+      <DependentUpon>ManageCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddUpdateMerchant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddUpdateMerchant.Designer.cs">
+      <DependentUpon>AddUpdateMerchant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageMerchant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ManageMerchant.Designer.cs">
+      <DependentUpon>ManageMerchant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ManageTransactions.Designer.cs">
+      <DependentUpon>ManageTransactions.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Profile.cs">
       <SubType>Form</SubType>
@@ -131,6 +186,12 @@
     <Compile Include="Views\TransactionCustomCtrl.designer.cs">
       <DependentUpon>TransactionCustomCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TransactionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TransactionReport.Designer.cs">
+      <DependentUpon>TransactionReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UpdateTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +202,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WalletLessterDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WalletLessterDBCategoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WalletLessterDBCategoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WalletLessterDBMerchantDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WalletLessterDBMerchantDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,6 +225,21 @@
     </Compile>
     <EmbeddedResource Include="Views\AddTransaction.resx">
       <DependentUpon>AddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddUpdateCategory.resx">
+      <DependentUpon>AddUpdateCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManageCategory.resx">
+      <DependentUpon>ManageCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddUpdateMerchant.resx">
+      <DependentUpon>AddUpdateMerchant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManageMerchant.resx">
+      <DependentUpon>ManageMerchant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManageTransactions.resx">
+      <DependentUpon>ManageTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
@@ -175,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TransactionCustomCtrl.resx">
       <DependentUpon>TransactionCustomCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TransactionReport.resx">
+      <DependentUpon>TransactionReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UpdateTransaction.resx">
       <DependentUpon>UpdateTransaction.cs</DependentUpon>
@@ -219,6 +308,28 @@
     <None Include="WalletLessterDatabaseDataSet.xss">
       <DependentUpon>WalletLessterDatabaseDataSet.xsd</DependentUpon>
     </None>
+    <None Include="WalletLessterDBCategoryDataSet.xsc">
+      <DependentUpon>WalletLessterDBCategoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WalletLessterDBCategoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WalletLessterDBCategoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WalletLessterDBCategoryDataSet.xss">
+      <DependentUpon>WalletLessterDBCategoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WalletLessterDBMerchantDataSet.xsc">
+      <DependentUpon>WalletLessterDBMerchantDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WalletLessterDBMerchantDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WalletLessterDBMerchantDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WalletLessterDBMerchantDataSet.xss">
+      <DependentUpon>WalletLessterDBMerchantDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -252,6 +363,19 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>WalletLessterDataModel.cs</LastGenOutput>
       <DependentUpon>WalletLessterDataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

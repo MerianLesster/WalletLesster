@@ -18,6 +18,8 @@ namespace WalletLesster.Models
         public User()
         {
             this.Transactions = new HashSet<Transaction>();
+            this.Categories = new HashSet<Category>();
+            this.Merchants = new HashSet<Merchant>();
         }
     
         public int Id { get; set; }
@@ -29,5 +31,9 @@ namespace WalletLesster.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transactions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Category> Categories { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Merchant> Merchants { get; set; }
     }
 }

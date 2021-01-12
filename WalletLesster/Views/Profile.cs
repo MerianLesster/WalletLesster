@@ -214,5 +214,6 @@ namespace WalletLesster.Views
                 signInScreen.Show();
             }
         }
+
     }
 }

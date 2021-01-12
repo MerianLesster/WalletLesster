@@ -29,73 +29,59 @@ namespace WalletLesster.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnManageCategory = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnGenerateReport = new System.Windows.Forms.Button();
+            this.btnManageTrans = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnAddTransaction = new System.Windows.Forms.Button();
-            this.dgvTransaction = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Merchant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Recurrence = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.walletLessterDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.walletLessterDatabaseDataSet = new WalletLesster.WalletLessterDatabaseDataSet();
-            this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transactionsTableAdapter = new WalletLesster.WalletLessterDatabaseDataSetTableAdapters.TransactionsTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblDate = new System.Windows.Forms.Label();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblExpense = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panelTip = new System.Windows.Forms.Panel();
-            this.lblTip = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblIncome = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnProfile = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnlContent.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panelTip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.btnManageCategory);
+            this.panel2.Controls.Add(this.btnDashboard);
             this.panel2.Controls.Add(this.btnProfile);
             this.panel2.Controls.Add(this.btnLogout);
-            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnGenerateReport);
+            this.panel2.Controls.Add(this.btnManageTrans);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -105,22 +91,158 @@ namespace WalletLesster.Views
             this.panel2.Size = new System.Drawing.Size(357, 981);
             this.panel2.TabIndex = 1;
             // 
-            // button1
+            // btnManageCategory
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(301, 60);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Manage Trasactions";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnManageCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnManageCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManageCategory.FlatAppearance.BorderSize = 0;
+            this.btnManageCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageCategory.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageCategory.ForeColor = System.Drawing.Color.White;
+            this.btnManageCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageCategory.Location = new System.Drawing.Point(26, 351);
+            this.btnManageCategory.Name = "btnManageCategory";
+            this.btnManageCategory.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnManageCategory.Size = new System.Drawing.Size(301, 60);
+            this.btnManageCategory.TabIndex = 9;
+            this.btnManageCategory.Text = "Manage Category";
+            this.btnManageCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageCategory.UseVisualStyleBackColor = false;
+            this.btnManageCategory.Click += new System.EventHandler(this.ShowManageCategory);
+            this.btnManageCategory.MouseHover += new System.EventHandler(this.btnManageCategory_MouseHover);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDashboard.BackgroundImage")));
+            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(26, 219);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(301, 60);
+            this.btnDashboard.TabIndex = 8;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.showDashboard);
+            this.btnDashboard.MouseHover += new System.EventHandler(this.btnDashboard_MouseHover);
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.FlatAppearance.BorderSize = 0;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnProfile.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.Location = new System.Drawing.Point(26, 822);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnProfile.Size = new System.Drawing.Size(301, 60);
+            this.btnProfile.TabIndex = 7;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.Click += new System.EventHandler(this.showProfile);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(26, 888);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(301, 60);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(26, 417);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(301, 60);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Manage Merchant";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.ShowManageMerchant);
+            this.button5.MouseHover += new System.EventHandler(this.button5_MouseHover);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(26, 549);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(301, 60);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Predict Status";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // btnGenerateReport
+            // 
+            this.btnGenerateReport.BackColor = System.Drawing.Color.Transparent;
+            this.btnGenerateReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGenerateReport.FlatAppearance.BorderSize = 0;
+            this.btnGenerateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateReport.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateReport.ForeColor = System.Drawing.Color.White;
+            this.btnGenerateReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerateReport.Location = new System.Drawing.Point(26, 483);
+            this.btnGenerateReport.Name = "btnGenerateReport";
+            this.btnGenerateReport.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnGenerateReport.Size = new System.Drawing.Size(301, 60);
+            this.btnGenerateReport.TabIndex = 3;
+            this.btnGenerateReport.Text = "Generate Report";
+            this.btnGenerateReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerateReport.UseVisualStyleBackColor = false;
+            this.btnGenerateReport.Click += new System.EventHandler(this.ShowGenerateReport);
+            // 
+            // btnManageTrans
+            // 
+            this.btnManageTrans.BackColor = System.Drawing.Color.Transparent;
+            this.btnManageTrans.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnManageTrans.BackgroundImage")));
+            this.btnManageTrans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnManageTrans.FlatAppearance.BorderSize = 0;
+            this.btnManageTrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageTrans.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageTrans.ForeColor = System.Drawing.Color.White;
+            this.btnManageTrans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageTrans.Location = new System.Drawing.Point(26, 285);
+            this.btnManageTrans.Name = "btnManageTrans";
+            this.btnManageTrans.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnManageTrans.Size = new System.Drawing.Size(301, 60);
+            this.btnManageTrans.TabIndex = 2;
+            this.btnManageTrans.Text = "Manage Trasactions";
+            this.btnManageTrans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageTrans.UseVisualStyleBackColor = false;
+            this.btnManageTrans.Click += new System.EventHandler(this.ShowManageTransactions);
+            this.btnManageTrans.MouseHover += new System.EventHandler(this.btnManageTrans_MouseHover);
             // 
             // pictureBox3
             // 
@@ -148,171 +270,16 @@ namespace WalletLesster.Views
             // 
             // lblWelcome
             // 
-            this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(3, 16);
+            this.lblWelcome.Font = new System.Drawing.Font("Poppins", 15F);
+            this.lblWelcome.ForeColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Location = new System.Drawing.Point(106, 7);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(295, 53);
+            this.lblWelcome.Size = new System.Drawing.Size(113, 44);
             this.lblWelcome.TabIndex = 4;
-            this.lblWelcome.Text = "Welcome Merian!";
-            // 
-            // btnAddTransaction
-            // 
-            this.btnAddTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddTransaction.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnAddTransaction.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddTransaction.BackgroundImage")));
-            this.btnAddTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddTransaction.Font = new System.Drawing.Font("Poppins SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
-            this.btnAddTransaction.Location = new System.Drawing.Point(490, 81);
-            this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAddTransaction.Name = "btnAddTransaction";
-            this.btnAddTransaction.Size = new System.Drawing.Size(284, 144);
-            this.btnAddTransaction.TabIndex = 6;
-            this.btnAddTransaction.Text = "Add Transaction +";
-            this.btnAddTransaction.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnAddTransaction.UseVisualStyleBackColor = false;
-            this.btnAddTransaction.Click += new System.EventHandler(this.ShowAddTransaction);
-            // 
-            // dgvTransaction
-            // 
-            this.dgvTransaction.AllowUserToAddRows = false;
-            this.dgvTransaction.AllowUserToOrderColumns = true;
-            this.dgvTransaction.AllowUserToResizeColumns = false;
-            this.dgvTransaction.AllowUserToResizeRows = false;
-            this.dgvTransaction.AutoGenerateColumns = false;
-            this.dgvTransaction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
-            this.dgvTransaction.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dgvTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTransaction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Type,
-            this.Merchant,
-            this.Category,
-            this.Amount,
-            this.Date,
-            this.Recurrence,
-            this.Update,
-            this.Delete});
-            this.dgvTransaction.DataSource = this.walletLessterDatabaseDataSetBindingSource;
-            this.dgvTransaction.GridColor = System.Drawing.Color.Aqua;
-            this.dgvTransaction.Location = new System.Drawing.Point(38, 414);
-            this.dgvTransaction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvTransaction.Name = "dgvTransaction";
-            this.dgvTransaction.ReadOnly = true;
-            this.dgvTransaction.RowHeadersWidth = 51;
-            this.dgvTransaction.RowTemplate.Height = 24;
-            this.dgvTransaction.Size = new System.Drawing.Size(1017, 311);
-            this.dgvTransaction.TabIndex = 7;
-            this.dgvTransaction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaction_CellClick);
-            this.dgvTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTransaction_CellContentClick);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "Type";
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 6;
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Width = 80;
-            // 
-            // Merchant
-            // 
-            this.Merchant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Merchant.DataPropertyName = "Merchant";
-            this.Merchant.HeaderText = "Merchant";
-            this.Merchant.MinimumWidth = 6;
-            this.Merchant.Name = "Merchant";
-            this.Merchant.ReadOnly = true;
-            // 
-            // Category
-            // 
-            this.Category.DataPropertyName = "Category";
-            this.Category.HeaderText = "Category";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            this.Category.Width = 150;
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "Amount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.MinimumWidth = 6;
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Width = 125;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 6;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 125;
-            // 
-            // Recurrence
-            // 
-            this.Recurrence.DataPropertyName = "Recurrence";
-            this.Recurrence.HeaderText = "Recurrence";
-            this.Recurrence.MinimumWidth = 6;
-            this.Recurrence.Name = "Recurrence";
-            this.Recurrence.ReadOnly = true;
-            this.Recurrence.Width = 125;
-            // 
-            // Update
-            // 
-            this.Update.HeaderText = "Update";
-            this.Update.MinimumWidth = 6;
-            this.Update.Name = "Update";
-            this.Update.ReadOnly = true;
-            this.Update.Text = "Update";
-            this.Update.UseColumnTextForButtonValue = true;
-            this.Update.Width = 80;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 80;
-            // 
-            // walletLessterDatabaseDataSetBindingSource
-            // 
-            this.walletLessterDatabaseDataSetBindingSource.DataMember = "Transactions";
-            this.walletLessterDatabaseDataSetBindingSource.DataSource = this.walletLessterDatabaseDataSet;
-            // 
-            // walletLessterDatabaseDataSet
-            // 
-            this.walletLessterDatabaseDataSet.DataSetName = "WalletLessterDatabaseDataSet";
-            this.walletLessterDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // transactionsBindingSource
-            // 
-            this.transactionsBindingSource.DataMember = "Transactions";
-            this.transactionsBindingSource.DataSource = this.walletLessterDatabaseDataSet;
-            // 
-            // transactionsTableAdapter
-            // 
-            this.transactionsTableAdapter.ClearBeforeFill = true;
+            this.lblWelcome.Text = "Merian!";
             // 
             // panel1
             // 
@@ -322,7 +289,7 @@ namespace WalletLesster.Views
             this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.lblDate);
-            this.panel1.Location = new System.Drawing.Point(790, 68);
+            this.panel1.Location = new System.Drawing.Point(790, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(304, 242);
             this.panel1.TabIndex = 8;
@@ -330,11 +297,11 @@ namespace WalletLesster.Views
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Font = new System.Drawing.Font("Poppins", 15F);
             this.lblTime.ForeColor = System.Drawing.Color.White;
             this.lblTime.Location = new System.Drawing.Point(38, 125);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(237, 58);
+            this.lblTime.Size = new System.Drawing.Size(173, 44);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "TimeDisplay";
             // 
@@ -351,229 +318,163 @@ namespace WalletLesster.Views
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Font = new System.Drawing.Font("Poppins", 15F);
             this.lblDate.ForeColor = System.Drawing.Color.Cyan;
             this.lblDate.Location = new System.Drawing.Point(12, 184);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(191, 49);
+            this.lblDate.Size = new System.Drawing.Size(171, 44);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "DateDisplay";
             // 
+            // pnlContent
+            // 
+            this.pnlContent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlContent.BackgroundImage")));
+            this.pnlContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlContent.Controls.Add(this.panel5);
+            this.pnlContent.Controls.Add(this.panel3);
+            this.pnlContent.Controls.Add(this.panel1);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(357, 76);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1094, 905);
+            this.pnlContent.TabIndex = 9;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.lblExpense);
+            this.panel5.Location = new System.Drawing.Point(584, 275);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(426, 191);
+            this.panel5.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Poppins", 15F);
+            this.label2.ForeColor = System.Drawing.Color.Cyan;
+            this.label2.Location = new System.Drawing.Point(257, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 44);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "20,000";
+            // 
+            // lblExpense
+            // 
+            this.lblExpense.AutoSize = true;
+            this.lblExpense.BackColor = System.Drawing.Color.Transparent;
+            this.lblExpense.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpense.ForeColor = System.Drawing.Color.White;
+            this.lblExpense.Location = new System.Drawing.Point(3, 0);
+            this.lblExpense.Name = "lblExpense";
+            this.lblExpense.Size = new System.Drawing.Size(300, 106);
+            this.lblExpense.TabIndex = 0;
+            this.lblExpense.Text = "Expense";
+            // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.panelTip);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.dgvTransaction);
-            this.panel3.Controls.Add(this.panel1);
-            this.panel3.Controls.Add(this.btnAddTransaction);
-            this.panel3.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.transactionsBindingSource, "Id", true));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(357, 0);
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblIncome);
+            this.panel3.Location = new System.Drawing.Point(81, 275);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1094, 981);
+            this.panel3.Size = new System.Drawing.Size(426, 191);
             this.panel3.TabIndex = 9;
             // 
-            // panelTip
+            // label1
             // 
-            this.panelTip.BackColor = System.Drawing.Color.White;
-            this.panelTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTip.Controls.Add(this.lblTip);
-            this.panelTip.Controls.Add(this.pictureBox5);
-            this.panelTip.Location = new System.Drawing.Point(20, 325);
-            this.panelTip.Name = "panelTip";
-            this.panelTip.Size = new System.Drawing.Size(1045, 66);
-            this.panelTip.TabIndex = 13;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poppins", 15F);
+            this.label1.ForeColor = System.Drawing.Color.Cyan;
+            this.label1.Location = new System.Drawing.Point(244, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 44);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "150,000";
             // 
-            // lblTip
+            // lblIncome
             // 
-            this.lblTip.AutoSize = true;
-            this.lblTip.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTip.Location = new System.Drawing.Point(81, 17);
-            this.lblTip.Name = "lblTip";
-            this.lblTip.Size = new System.Drawing.Size(71, 35);
-            this.lblTip.TabIndex = 1;
-            this.lblTip.Text = "Tips....";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 1);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(62, 61);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.lblIncome.AutoSize = true;
+            this.lblIncome.BackColor = System.Drawing.Color.Transparent;
+            this.lblIncome.Font = new System.Drawing.Font("Poppins", 15F);
+            this.lblIncome.ForeColor = System.Drawing.Color.White;
+            this.lblIncome.Location = new System.Drawing.Point(3, 0);
+            this.lblIncome.Name = "lblIncome";
+            this.lblIncome.Size = new System.Drawing.Size(115, 44);
+            this.lblIncome.TabIndex = 0;
+            this.lblIncome.Text = "Income";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.lblWelcome);
+            this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Location = new System.Drawing.Point(357, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1094, 74);
+            this.panel4.Size = new System.Drawing.Size(1094, 76);
             this.panel4.TabIndex = 9;
             // 
-            // btnProfile
+            // panel6
             // 
-            this.btnProfile.BackColor = System.Drawing.Color.Black;
-            this.btnProfile.FlatAppearance.BorderSize = 0;
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.Location = new System.Drawing.Point(3, 827);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(301, 60);
-            this.btnProfile.TabIndex = 7;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = false;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Black;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(3, 893);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(301, 60);
-            this.btnLogout.TabIndex = 6;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.lblWelcome);
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Location = new System.Drawing.Point(796, 11);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(298, 59);
+            this.panel6.TabIndex = 6;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1016, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(232, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(66, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 330);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(301, 60);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Generate Report";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 396);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(301, 60);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Predict Status";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 462);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(301, 60);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Manage Category";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Black;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 528);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(301, 60);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Manage Merchant";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Black;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Transparent;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 594);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(301, 60);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Manage Currency";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1451, 981);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlContent);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(1405, 1028);
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
-            this.Activated += new System.EventHandler(this.Dashboard_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseApplication);
-            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.pnlContent.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panelTip.ResumeLayout(false);
-            this.panelTip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -584,38 +485,28 @@ namespace WalletLesster.Views
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Button btnAddTransaction;
-        private System.Windows.Forms.DataGridView dgvTransaction;
-        private WalletLessterDatabaseDataSet walletLessterDatabaseDataSet;
-        private System.Windows.Forms.BindingSource transactionsBindingSource;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.BindingSource walletLessterDatabaseDataSetBindingSource;
-        private WalletLessterDatabaseDataSetTableAdapters.TransactionsTableAdapter transactionsTableAdapter;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Merchant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Recurrence;
-        private System.Windows.Forms.DataGridViewButtonColumn Update;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Button btnManageTrans;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Panel panelTip;
-        private System.Windows.Forms.Label lblTip;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnShowManageCategory;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGenerateReport;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblExpense;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIncome;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnManageCategory;
     }
 }

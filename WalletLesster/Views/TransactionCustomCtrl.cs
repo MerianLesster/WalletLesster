@@ -29,10 +29,15 @@ namespace WalletLesster.Views
                 tempData.ReadXml(@"D:\WL_LoggedInUserTempData.xml");
                 userId = tempData.User[0].Id;
             }
-            var blogs = from b in db.Categories where b.UserId.Equals(userId) select b;
-            cmbCategory.DataSource = blogs.ToList();
-            cmbCategory.DisplayMember = "Name";
-            cmbCategory.ValueMember = "Id";
+
+            //Fetch from database and Add Categories into Category combobox DataSource
+            changeCategoryList();
+
+            //Fetch from database and Add Merchants into Merchant combobox DataSource
+            var merchantObj = from merchant in db.Merchants where merchant.UserId.Equals(userId) select merchant;
+            cmbMerchant.DataSource = merchantObj.ToList();
+            cmbMerchant.DisplayMember = "Name";
+            cmbMerchant.ValueMember = "Id";
         }
         public String GetTransactionType()
         {
@@ -44,9 +49,13 @@ namespace WalletLesster.Views
                 value = rbExpense.Text;
             return value;
         }
-        public String GetMerchantValue()
+        public String GetMerchantText()
         {
             return this.cmbMerchant.Text;
+        }
+        public String GetMerchantValue()
+        {
+            return this.cmbMerchant.SelectedValue.ToString();
         }
         public String GetCategoryText()
         {
@@ -62,7 +71,7 @@ namespace WalletLesster.Views
         }
         public DateTime GetDateValue()
         {
-            return this.dpTransDate.Value;
+            return this.dpTransDate.Value.Date;
         }
         public Boolean GetRecurrenceValue()
         {
@@ -71,7 +80,7 @@ namespace WalletLesster.Views
 
         public Boolean TriggerValidationMessage()
         {
-            if (this.GetCategoryText().Equals("") || this.GetMerchantValue().Equals(""))
+            if (this.GetCategoryText().Equals("") || this.GetMerchantText().Equals(""))
             {
                 return true;
             }
@@ -85,7 +94,24 @@ namespace WalletLesster.Views
             onRemoveSite(this, new ContentArgs(index));
         }
 
+        private void rbIncome_CheckedChanged(object sender, EventArgs e)
+        {
+            changeCategoryList();
+        }
+        private void changeCategoryList()
+        {
+            string value;
+            bool isChecked = rbIncome.Checked;
+            if (isChecked)
+                value = rbIncome.Text;
+            else
+                value = rbExpense.Text;
 
+            var blogs = from b in db.Categories where b.UserId.Equals(userId) && b.Type.Equals(value) select b;
+            cmbCategory.DataSource = blogs.ToList();
+            cmbCategory.DisplayMember = "Name";
+            cmbCategory.ValueMember = "Id";
+        }
     }
 
     public class ContentArgs : EventArgs

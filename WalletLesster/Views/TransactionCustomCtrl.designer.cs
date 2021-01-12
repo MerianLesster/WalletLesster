@@ -145,6 +145,7 @@ namespace WalletLesster.Views
             this.rbIncome.TabStop = true;
             this.rbIncome.Text = "Income";
             this.rbIncome.UseVisualStyleBackColor = true;
+            this.rbIncome.CheckedChanged += new System.EventHandler(this.rbIncome_CheckedChanged);
             // 
             // rbExpense
             // 
@@ -187,13 +188,13 @@ namespace WalletLesster.Views
             this.dpTransDate.CalendarTitleBackColor = System.Drawing.Color.Plum;
             this.dpTransDate.CalendarTitleForeColor = System.Drawing.Color.Plum;
             this.dpTransDate.CalendarTrailingForeColor = System.Drawing.Color.Plum;
+            this.dpTransDate.Checked = false;
             this.dpTransDate.CustomFormat = "";
-            this.dpTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dpTransDate.Location = new System.Drawing.Point(789, 54);
             this.dpTransDate.Name = "dpTransDate";
             this.dpTransDate.Size = new System.Drawing.Size(122, 22);
             this.dpTransDate.TabIndex = 52;
-            this.dpTransDate.Value = new System.DateTime(2021, 1, 6, 14, 39, 46, 0);
             // 
             // TransactionCustomCtrl
             // 

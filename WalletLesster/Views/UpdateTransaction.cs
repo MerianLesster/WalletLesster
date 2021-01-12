@@ -84,6 +84,7 @@ namespace WalletLesster.Views
                     return;
                 }
                 trasactionData.CategoryId = Convert.ToInt32(cmbCategory.SelectedValue.ToString());
+                trasactionData.MerchantId = Convert.ToInt32(cmbMerchant.SelectedValue.ToString());
                 db.Entry(trasactionData).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 MessageBox.Show("Transaction Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -98,10 +99,10 @@ namespace WalletLesster.Views
 
         private void UpdateTransaction_Activated(object sender, EventArgs e)
         {
-            /*var blogs = from b in db.Categories where b.UserId.Equals(userId) select b;
-            cmbCategory.DataSource = blogs.ToList();
-            cmbCategory.DisplayMember = "Name";
-            cmbCategory.ValueMember = "Id";*/
+            var blogs = from b in db.Merchants where b.UserId.Equals(userId) select b;
+            cmbMerchant.DataSource = blogs.ToList();
+            cmbMerchant.DisplayMember = "Name";
+            cmbMerchant.ValueMember = "Id";
             prefilData();
             changeCategoryList();
         }

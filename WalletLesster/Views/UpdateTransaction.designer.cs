@@ -216,13 +216,13 @@ namespace WalletLesster.Views
             this.dpTransDate.CalendarTitleBackColor = System.Drawing.Color.Plum;
             this.dpTransDate.CalendarTitleForeColor = System.Drawing.Color.Plum;
             this.dpTransDate.CalendarTrailingForeColor = System.Drawing.Color.Plum;
+            this.dpTransDate.Checked = false;
             this.dpTransDate.CustomFormat = "";
             this.dpTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpTransDate.Location = new System.Drawing.Point(824, 58);
             this.dpTransDate.Name = "dpTransDate";
             this.dpTransDate.Size = new System.Drawing.Size(122, 22);
             this.dpTransDate.TabIndex = 51;
-            this.dpTransDate.Value = new System.DateTime(2021, 1, 6, 14, 39, 46, 0);
             // 
             // label6
             // 

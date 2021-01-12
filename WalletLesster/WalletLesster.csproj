@@ -213,6 +213,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WalletLessterDBMerchantDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="OrderReport.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -223,6 +224,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Views\AddTransaction.resx">
       <DependentUpon>AddTransaction.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +290,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WalletLesster.Models.Transaction.datasource" />
+    <None Include="Properties\DataSources\WalletLessterDatabaseDataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

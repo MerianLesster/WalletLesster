@@ -56,7 +56,7 @@ namespace WalletLesster.Views
                     for (int i = 0; i < transactionArr.Count; i++)
                     {
                         tempData.Transaction.AddTransactionRow(transactionArr[i].GetTransactionType(),
-                            transactionArr[i].GetMerchantValue(),
+                            transactionArr[i].GetMerchantText(),
                             transactionArr[i].GetCategoryText(),
                             transactionArr[i].GetAmountValue(),
                             transactionArr[i].GetDateValue(),
@@ -86,6 +86,7 @@ namespace WalletLesster.Views
                                 return;
                             }
                             transactionData.CategoryId = Convert.ToInt32(transactionArr[i].GetCategoryValue());
+                            transactionData.MerchantId = Convert.ToInt32(transactionArr[i].GetMerchantValue());
                             db.Transactions.Add(transactionData);
                         }
                     }

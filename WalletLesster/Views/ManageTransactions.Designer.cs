@@ -114,6 +114,7 @@ namespace WalletLesster.Views
             this.dgvTransaction.AllowUserToOrderColumns = true;
             this.dgvTransaction.AllowUserToResizeColumns = false;
             this.dgvTransaction.AllowUserToResizeRows = false;
+            this.dgvTransaction.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvTransaction.AutoGenerateColumns = false;
             this.dgvTransaction.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.dgvTransaction.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;

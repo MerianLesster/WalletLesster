@@ -38,22 +38,22 @@ namespace WalletLesster.Views
             this.panelTip = new System.Windows.Forms.Panel();
             this.btnAddMerchant = new System.Windows.Forms.Button();
             this.dgvMerchant = new System.Windows.Forms.DataGridView();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.walletLessterDBMerchantDataSet = new WalletLesster.WalletLessterDBMerchantDataSet();
-            this.merchantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.merchantsTableAdapter = new WalletLesster.WalletLessterDBMerchantDataSetTableAdapters.MerchantsTableAdapter();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.merchantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.walletLessterDBMerchantDataSet = new WalletLesster.WalletLessterDBMerchantDataSet();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.merchantsTableAdapter = new WalletLesster.WalletLessterDBMerchantDataSetTableAdapters.MerchantsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelTip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMerchant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDBMerchantDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.merchantsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDBMerchantDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -130,6 +130,7 @@ namespace WalletLesster.Views
             this.dgvMerchant.AllowUserToOrderColumns = true;
             this.dgvMerchant.AllowUserToResizeColumns = false;
             this.dgvMerchant.AllowUserToResizeRows = false;
+            this.dgvMerchant.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvMerchant.AutoGenerateColumns = false;
             this.dgvMerchant.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.dgvMerchant.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -153,32 +154,6 @@ namespace WalletLesster.Views
             this.dgvMerchant.Size = new System.Drawing.Size(1017, 436);
             this.dgvMerchant.TabIndex = 35;
             this.dgvMerchant.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMerchant_CellContentClick);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Cyan;
-            this.lblTitle.Location = new System.Drawing.Point(10, 25);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(389, 67);
-            this.lblTitle.TabIndex = 34;
-            this.lblTitle.Text = "Manage Merchant";
-            // 
-            // walletLessterDBMerchantDataSet
-            // 
-            this.walletLessterDBMerchantDataSet.DataSetName = "WalletLessterDBMerchantDataSet";
-            this.walletLessterDBMerchantDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // merchantsBindingSource
-            // 
-            this.merchantsBindingSource.DataMember = "Merchants";
-            this.merchantsBindingSource.DataSource = this.walletLessterDBMerchantDataSet;
-            // 
-            // merchantsTableAdapter
-            // 
-            this.merchantsTableAdapter.ClearBeforeFill = true;
             // 
             // Id
             // 
@@ -238,6 +213,32 @@ namespace WalletLesster.Views
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 125;
             // 
+            // merchantsBindingSource
+            // 
+            this.merchantsBindingSource.DataMember = "Merchants";
+            this.merchantsBindingSource.DataSource = this.walletLessterDBMerchantDataSet;
+            // 
+            // walletLessterDBMerchantDataSet
+            // 
+            this.walletLessterDBMerchantDataSet.DataSetName = "WalletLessterDBMerchantDataSet";
+            this.walletLessterDBMerchantDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Cyan;
+            this.lblTitle.Location = new System.Drawing.Point(10, 25);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(389, 67);
+            this.lblTitle.TabIndex = 34;
+            this.lblTitle.Text = "Manage Merchant";
+            // 
+            // merchantsTableAdapter
+            // 
+            this.merchantsTableAdapter.ClearBeforeFill = true;
+            // 
             // ManageMerchant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -259,8 +260,8 @@ namespace WalletLesster.Views
             this.panelTip.ResumeLayout(false);
             this.panelTip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMerchant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDBMerchantDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.merchantsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walletLessterDBMerchantDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -107,4 +107,6 @@ E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\ru\Microsoft.ReportViewer.WinFo
 E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 E:\EAD cw2\WalletLesster\WalletLesster\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.TransactionReport.resources
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\RdlCompile.cache
+E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\RdlCompile.compiled
 E:\EAD cw2\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csprojAssemblyReference.cache

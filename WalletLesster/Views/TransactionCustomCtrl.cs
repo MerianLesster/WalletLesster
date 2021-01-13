@@ -35,6 +35,11 @@ namespace WalletLesster.Views
 
             //Fetch from database and Add Merchants into Merchant combobox DataSource
             var merchantObj = from merchant in db.Merchants where merchant.UserId.Equals(userId) select merchant;
+            /*if (merchantObj.ToList().Count == 0)
+            {
+                AddTransaction addTransaction = new AddTransaction();
+                addTransaction.showTip("Please add minimum one Merchant to add a transaction", "Error");
+            }*/
             cmbMerchant.DataSource = merchantObj.ToList();
             cmbMerchant.DisplayMember = "Name";
             cmbMerchant.ValueMember = "Id";
@@ -111,8 +116,13 @@ namespace WalletLesster.Views
             else
                 value = rbExpense.Text;
 
-            var blogs = from b in db.Categories where b.UserId.Equals(userId) && b.Type.Equals(value) select b;
-            cmbCategory.DataSource = blogs.ToList();
+            var categoryObj = from b in db.Categories where b.UserId.Equals(userId) && b.Type.Equals(value) select b;
+            /*            if (categoryObj.ToList().Count == 0)
+                        {
+                            AddTransaction addTransaction = new AddTransaction();
+                            addTransaction.showTip("Please add minimum one Category to add a transaction", "Error");
+                        }*/
+            cmbCategory.DataSource = categoryObj.ToList();
             cmbCategory.DisplayMember = "Name";
             cmbCategory.ValueMember = "Id";
         }

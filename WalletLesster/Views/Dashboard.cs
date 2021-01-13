@@ -93,9 +93,6 @@ namespace WalletLesster.Views
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-                //Current Child Form Icon
-                /*iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                iconCurrentChildForm.IconColor = color;*/
             }
         }
 
@@ -181,7 +178,8 @@ namespace WalletLesster.Views
         {
             using (WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1())
             {
-                transactionArr = db.Transactions.ToList();
+                var blogs = from b in db.Transactions where b.UserId.Equals(userId) select b;
+                transactionArr = blogs.ToList();
                 for (int i = 0; i < transactionArr.Count; i++)
                 {
                     if (transactionArr[i].Type.Equals("Income"))

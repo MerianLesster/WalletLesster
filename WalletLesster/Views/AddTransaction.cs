@@ -156,5 +156,22 @@ namespace WalletLesster.Views
                 this.btnSaveTransaction.Enabled = true;
             }
         }
+
+        public void showTip(string tip, string type)
+        {
+            lblTip.Text = tip;
+            if (type.Equals("Error"))
+            {
+                lblTip.ForeColor = Color.White;
+                panelTip.BackColor = Color.Red;
+                btnSaveTransaction.Enabled = false;
+            }
+            else
+            {
+                lblTip.ForeColor = Color.Black;
+                panelTip.BackColor = Color.White;
+                btnSaveTransaction.Enabled = true;
+            }
+        }
     }
 }

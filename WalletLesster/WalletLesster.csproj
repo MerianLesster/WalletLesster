@@ -394,6 +394,9 @@
       <LastGenOutput>WalletLessterDataModel.cs</LastGenOutput>
       <DependentUpon>WalletLessterDataModel.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\Success.bmp" />
+    <None Include="Resources\imageedit_3_2691649889.png" />
+    <None Include="Resources\imageedit_5_5401862127.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

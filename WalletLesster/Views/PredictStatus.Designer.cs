@@ -34,17 +34,17 @@ namespace WalletLesster.Views
             this.lblTip = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlPredictionResult = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxStatus = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPredictStatus = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dpPredictDate = new System.Windows.Forms.DateTimePicker();
             this.panelTip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlPredictionResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,16 +91,16 @@ namespace WalletLesster.Views
             this.lblTitle.TabIndex = 31;
             this.lblTitle.Text = "Predict Status";
             // 
-            // panel5
+            // pnlPredictionResult
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Controls.Add(this.lblStatus);
-            this.panel5.Location = new System.Drawing.Point(190, 393);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(737, 191);
-            this.panel5.TabIndex = 32;
+            this.pnlPredictionResult.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlPredictionResult.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlPredictionResult.BackgroundImage")));
+            this.pnlPredictionResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlPredictionResult.Controls.Add(this.lblStatus);
+            this.pnlPredictionResult.Location = new System.Drawing.Point(179, 309);
+            this.pnlPredictionResult.Name = "pnlPredictionResult";
+            this.pnlPredictionResult.Size = new System.Drawing.Size(737, 191);
+            this.pnlPredictionResult.TabIndex = 32;
             // 
             // lblStatus
             // 
@@ -114,23 +114,23 @@ namespace WalletLesster.Views
             this.lblStatus.TabIndex = 0;
             this.lblStatus.Text = "Expense";
             // 
-            // pictureBox1
+            // pictureBoxStatus
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(317, 590);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(429, 207);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxStatus.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxStatus.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStatus.Image")));
+            this.pictureBoxStatus.Location = new System.Drawing.Point(273, 535);
+            this.pictureBoxStatus.Name = "pictureBoxStatus";
+            this.pictureBoxStatus.Size = new System.Drawing.Size(584, 311);
+            this.pictureBoxStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxStatus.TabIndex = 33;
+            this.pictureBoxStatus.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnPredictStatus);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dpPredictDate);
-            this.panel1.Location = new System.Drawing.Point(65, 199);
+            this.panel1.Location = new System.Drawing.Point(65, 179);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 100);
             this.panel1.TabIndex = 34;
@@ -190,8 +190,8 @@ namespace WalletLesster.Views
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1076, 858);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.pictureBoxStatus);
+            this.Controls.Add(this.pnlPredictionResult);
             this.Controls.Add(this.panelTip);
             this.Controls.Add(this.lblTitle);
             this.Name = "PredictStatus";
@@ -199,9 +199,9 @@ namespace WalletLesster.Views
             this.panelTip.ResumeLayout(false);
             this.panelTip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlPredictionResult.ResumeLayout(false);
+            this.pnlPredictionResult.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStatus)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -215,9 +215,9 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Label lblTip;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlPredictionResult;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxStatus;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPredictStatus;
         private System.Windows.Forms.Label label1;

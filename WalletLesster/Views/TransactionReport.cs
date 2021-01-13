@@ -18,9 +18,16 @@ namespace WalletLesster.Views
     {
         string ConnectionString = "";
         string transactionType = "Income";
+        WalletLessterTempData tempData = new WalletLessterTempData();
+        static int userId = 1;
         public TransactionReport()
         {
             InitializeComponent();
+            if (File.Exists(@"D:\WL_LoggedInUserTempData.xml") == true)
+            {
+                tempData.ReadXml(@"D:\WL_LoggedInUserTempData.xml");
+                userId = tempData.User[0].Id;
+            }
             ConnectionString = "Data Source=LAPTOP-OEO6CLPO;Initial Catalog=WalletLessterDatabase;Integrated Security=True";
             reportViewer1.SetDisplayMode(DisplayMode.Normal);
             reportViewer1.ZoomMode = ZoomMode.PageWidth;
@@ -35,7 +42,7 @@ namespace WalletLesster.Views
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("select distinct * from [WalletLessterDatabase].[dbo].[Transactions] where Date between '" + this.dtFromDate.Value.Date.ToShortDateString() + "' and'" + this.dtToDate.Value.Date.ToShortDateString() + "'", conn);
+                SqlCommand cmd = new SqlCommand("select distinct * from [WalletLessterDatabase].[dbo].[Transactions] where UserId = '" + userId + "' and Date between '" + this.dtFromDate.Value.Date.ToShortDateString() + "' and'" + this.dtToDate.Value.Date.ToShortDateString() + "'", conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -74,7 +81,7 @@ namespace WalletLesster.Views
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [WalletLessterDatabase].[dbo].[Transactions]", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [WalletLessterDatabase].[dbo].[Transactions] where UserId = '" + userId + "'", conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -94,7 +101,7 @@ namespace WalletLesster.Views
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("select distinct * from [WalletLessterDatabase].[dbo].[Transactions] where Type = '" + this.transactionType + "'", conn);
+                SqlCommand cmd = new SqlCommand("select distinct * from [WalletLessterDatabase].[dbo].[Transactions] where UserId = '" + userId + "' and Type = '" + this.transactionType + "'", conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
                 DataTable dt = new DataTable();

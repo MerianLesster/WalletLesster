@@ -38,6 +38,7 @@
     <Property Name="Date" Type="DateTime" Nullable="false" />
     <Property Name="Recurrence" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="User" Relationship="WalletLessterDataModel.UserTransaction" FromRole="Transaction" ToRole="User" />
+    <Property Name="Description" Type="String" Nullable="false" />
     <Property Name="UserId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Category1" Relationship="WalletLessterDataModel.CategoryTransaction" FromRole="Transaction" ToRole="Category" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />

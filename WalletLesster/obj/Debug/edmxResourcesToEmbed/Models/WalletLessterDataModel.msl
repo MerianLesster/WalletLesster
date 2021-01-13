@@ -11,6 +11,7 @@
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Recurrence" ColumnName="Recurrence" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="MerchantId" ColumnName="MerchantId" />

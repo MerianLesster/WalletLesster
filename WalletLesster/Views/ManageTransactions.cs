@@ -77,6 +77,7 @@ namespace WalletLesster.Views
                     updateTransactionMdl.Amount = transactionModel.Amount;
                     updateTransactionMdl.Date = transactionModel.Date;
                     updateTransactionMdl.Recurrence = transactionModel.Recurrence;
+                    updateTransactionMdl.Description = transactionModel.Description;
                     updateTransactionMdl.ShowDialog();
                 }
             }
@@ -110,9 +111,8 @@ namespace WalletLesster.Views
 
         private void ManageTransactions_Load(object sender, EventArgs e)
         {
-            //IsMdiContainer = true;
-            // TODO: This line of code loads data into the 'walletLessterDatabaseDataSet.Transactions' table. You can move, or remove it, as needed.
-            //this.transactionsTableAdapter.Fill(this.walletLessterDatabaseDataSet.Transactions);
+            // TODO: This line of code loads data into the 'walletLessterDBTransactionDataSet.Transactions' table. You can move, or remove it, as needed.
+            //this.transactionsTableAdapter.Fill(this.walletLessterDBTransactionDataSet.Transactions);
             RefreshDataGridView();
         }
 

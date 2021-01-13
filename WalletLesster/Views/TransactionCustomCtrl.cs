@@ -77,6 +77,10 @@ namespace WalletLesster.Views
         {
             return this.cbxRecurrence.Checked;
         }
+        public String GetDescriptionText()
+        {
+            return this.txtDescription.Text;
+        }
 
         public Boolean TriggerValidationMessage()
         {

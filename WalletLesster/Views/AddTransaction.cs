@@ -60,7 +60,8 @@ namespace WalletLesster.Views
                             transactionArr[i].GetCategoryText(),
                             transactionArr[i].GetAmountValue(),
                             transactionArr[i].GetDateValue(),
-                            transactionArr[i].GetRecurrenceValue());
+                            transactionArr[i].GetRecurrenceValue(),
+                            transactionArr[i].GetDescriptionText());
                     }
                     // Store first
                     tempData.WriteXml(@"D:\WalletLessterTempData.xml");
@@ -80,6 +81,7 @@ namespace WalletLesster.Views
                             transactionData.Amount = data.Amount;
                             transactionData.Date = data.Date;
                             transactionData.Recurrence = data.Recurrence;
+                            transactionData.Description = data.Description;
                             transactionData.UserId = id;
                             if (transactionArr[i].GetCategoryValue() == null)
                             {

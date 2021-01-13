@@ -26,6 +26,7 @@ namespace WalletLesster.Views
         public double Amount { get; set; }
         public DateTime Date { get; set; }
         public bool Recurrence { get; set; }
+        public string Description { get; set; }
         public UpdateTransaction()
         {
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace WalletLesster.Views
                 cmbCategory.Text = Category;
                 txtAmount.Text = Convert.ToString(Amount);
                 dpTransDate.Text = Convert.ToString(Date.Date);
+                txtDescription.Text = Description;
                 if (Recurrence)
                 {
                     cbxRecurrence.Checked = true;
@@ -78,6 +80,7 @@ namespace WalletLesster.Views
                 trasactionData.Amount = Convert.ToDouble(txtAmount.Text);
                 trasactionData.Date = dpTransDate.Value;
                 trasactionData.Recurrence = cbxRecurrence.Checked;
+                trasactionData.Description = txtDescription.Text;
                 trasactionData.UserId = userId;
                 if (cmbCategory.SelectedValue == null)
                 {

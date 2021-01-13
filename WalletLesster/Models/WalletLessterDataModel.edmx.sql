@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/12/2021 18:32:24
--- Generated from EDMX file: E:\EAD cw2\WalletLesster\WalletLesster\Models\WalletLessterDataModel.edmx
+-- Date Created: 01/13/2021 12:00:29
+-- Generated from EDMX file: E:\WalletLesster\WalletLesster\Models\WalletLessterDataModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -26,6 +26,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UserCategory]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Categories] DROP CONSTRAINT [FK_UserCategory];
 GO
+IF OBJECT_ID(N'[dbo].[FK_MerchantTransaction]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_MerchantTransaction];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserMerchant]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Merchants] DROP CONSTRAINT [FK_UserMerchant];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -39,6 +45,9 @@ IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Categories]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Categories];
+GO
+IF OBJECT_ID(N'[dbo].[Merchants]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Merchants];
 GO
 
 -- --------------------------------------------------
@@ -54,6 +63,7 @@ CREATE TABLE [dbo].[Transactions] (
     [Amount] float  NOT NULL,
     [Date] datetime  NOT NULL,
     [Recurrence] bit  NOT NULL,
+    [Description] nvarchar(max)  NOT NULL,
     [UserId] int  NOT NULL,
     [CategoryId] int  NOT NULL,
     [MerchantId] int  NOT NULL

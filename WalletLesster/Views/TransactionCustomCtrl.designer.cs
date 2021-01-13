@@ -207,13 +207,14 @@ namespace WalletLesster.Views
             this.dpTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dpTransDate.Location = new System.Drawing.Point(789, 54);
             this.dpTransDate.Name = "dpTransDate";
-            this.dpTransDate.Size = new System.Drawing.Size(122, 27);
+            this.dpTransDate.Size = new System.Drawing.Size(131, 27);
             this.dpTransDate.TabIndex = 52;
             // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(12, 116);
+            this.txtDescription.MaxLength = 335;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(998, 45);

@@ -17,11 +17,12 @@ namespace WalletLesster.Views
     public partial class TransactionReport : Form
     {
         string ConnectionString = "";
+        string transactionType = "Income";
         public TransactionReport()
         {
             InitializeComponent();
             ConnectionString = "Data Source=LAPTOP-OEO6CLPO;Initial Catalog=WalletLessterDatabase;Integrated Security=True";
-            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
+            reportViewer1.SetDisplayMode(DisplayMode.Normal);
             reportViewer1.ZoomMode = ZoomMode.PageWidth;
         }
 
@@ -40,13 +41,14 @@ namespace WalletLesster.Views
                 DataTable dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
 
-                ReportDataSource reportDataSource = new ReportDataSource("DataSet1", dt);
+                ReportDataSource reportDataSource = new ReportDataSource("WL_TransactionDataSet", dt);
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(reportDataSource);
                 reportViewer1.LocalReport.Refresh();
                 reportViewer1.RefreshReport();
                 conn.Close();
             }
+            updateDateRange();
         }
 
         private void Normal()
@@ -58,7 +60,7 @@ namespace WalletLesster.Views
             DataTable dt = new DataTable();
             dt.Load(cmd.ExecuteReader());
 
-            ReportDataSource reportDataSource = new ReportDataSource("DataSet1", dt);
+            ReportDataSource reportDataSource = new ReportDataSource("WL_TransactionDataSet", dt);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(reportDataSource);
             reportViewer1.LocalReport.Refresh();
@@ -78,13 +80,57 @@ namespace WalletLesster.Views
                 DataTable dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
 
-                ReportDataSource reportDataSource = new ReportDataSource("DataSet1", dt);
+                ReportDataSource reportDataSource = new ReportDataSource("WL_TransactionDataSet", dt);
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(reportDataSource);
                 reportViewer1.LocalReport.Refresh();
                 reportViewer1.RefreshReport();
                 conn.Close();
             }
+            updateDateRange();
+        }
+
+        private void btnTypeFilter_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("select distinct * from [WalletLessterDatabase].[dbo].[Transactions] where Type = '" + this.transactionType + "'", conn);
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+
+                ReportDataSource reportDataSource = new ReportDataSource("WL_TransactionDataSet", dt);
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+                reportViewer1.LocalReport.Refresh();
+                reportViewer1.RefreshReport();
+                conn.Close();
+            }
+            updateDateRange();
+        }
+
+        private void rbIncome_CheckedChanged(object sender, EventArgs e)
+        {
+            string value;
+            bool isChecked = rbIncome.Checked;
+            if (isChecked)
+                value = rbIncome.Text;
+            else
+                value = rbExpense.Text;
+            transactionType = value;
+        }
+
+        private void updateDateRange()
+        {
+            ReportParameter[] reportParameters = new ReportParameter[]
+            {
+                new ReportParameter("fromDate", dtFromDate.Value.Date.ToShortDateString()),
+                new ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString()),
+                new ReportParameter("transactionType", transactionType),
+            };
+            reportViewer1.LocalReport.SetParameters(reportParameters);
+            reportViewer1.RefreshReport();
         }
     }
 }

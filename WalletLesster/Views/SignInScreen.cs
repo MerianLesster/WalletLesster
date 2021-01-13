@@ -33,7 +33,7 @@ namespace WalletLesster.Views
         }
 
 
-        private void ShowSignInForm(object sender, EventArgs e)
+        public void ShowSignInForm(object sender, EventArgs e)
         {
             openChildFormInPanel(new SignInForm());
 

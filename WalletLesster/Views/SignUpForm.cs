@@ -29,6 +29,11 @@ namespace WalletLesster.Views
 
         private void RegisterUser(object sender, EventArgs e)
         {
+            if (txtFullName.Text.Equals("") || txtEmail.Text.Equals("") || txtUsername.Text.Equals("") || txtPassword.Text.Equals("") || txtConfirmPassword.Text.Equals(""))
+            {
+                MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             if (this.txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
                 tempData.User.Clear(); // this will instantaly clear the existing data and overwrite the file with the latest
@@ -51,7 +56,9 @@ namespace WalletLesster.Views
                         userData.Currency = data.Currency;
                         db.Users.Add(userData);
                         db.SaveChanges();
-                        MessageBox.Show("Account Created Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Account Created Successfully! Please signin with your username and password", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        /*SignInScreen signInScreen = new SignInScreen();
+                        signInScreen.ShowSignInForm(sender, e);*/
                     }
                 }
                 catch (Exception ex)

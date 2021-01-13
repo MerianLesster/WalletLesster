@@ -198,3 +198,5 @@ E:\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csproj.CoreCompileInputs.
 E:\WalletLesster\WalletLesster\obj\Debug\WalletLesster.csproj.CopyComplete
 E:\WalletLesster\WalletLesster\obj\Debug\WalletLesster.exe
 E:\WalletLesster\WalletLesster\obj\Debug\WalletLesster.pdb
+E:\WalletLesster\WalletLesster\obj\Debug\WalletLesster.Views.PredictStatus.resources
+E:\WalletLesster\WalletLesster\bin\Debug\FontAwesome.Sharp.dll

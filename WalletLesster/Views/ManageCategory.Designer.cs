@@ -97,7 +97,9 @@ namespace WalletLesster.Views
             this.dgvCategory.RowTemplate.Height = 24;
             this.dgvCategory.Size = new System.Drawing.Size(1017, 436);
             this.dgvCategory.TabIndex = 29;
+            this.dgvCategory.DataSourceChanged += new System.EventHandler(this.dgvCategory_DataSourceChanged);
             this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
+            this.dgvCategory.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentDoubleClick);
             // 
             // Id
             // 

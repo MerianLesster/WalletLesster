@@ -41,7 +41,7 @@ namespace WalletLesster.Views
             btnCloseForm.Visible = true;
             btnEditProfile.Visible = false;
             btnCreateProfile.Visible = false;
-            btnDeleteAccount.Visible = false;
+            //btnDeleteAccount.Visible = false;
         }
 
         private void hideLabels(bool visibility)
@@ -147,7 +147,7 @@ namespace WalletLesster.Views
             btnCloseForm.Visible = true;
             btnEditProfile.Visible = false;
             btnCreateProfile.Visible = false;
-            btnDeleteAccount.Visible = false;
+            //btnDeleteAccount.Visible = false;
         }
         private async void CreateProfile(object sender, EventArgs e)
         {
@@ -192,10 +192,10 @@ namespace WalletLesster.Views
             btnCloseForm.Visible = false;
             btnEditProfile.Visible = true;
             btnCreateProfile.Visible = true;
-            btnDeleteAccount.Visible = true;
+            //btnDeleteAccount.Visible = true;
         }
 
-        private async void DeleteAccount(object sender, EventArgs e)
+        /*private async void DeleteAccount(object sender, EventArgs e)
         {
             User userModel = new User();
             userModel = db.Users.Where(user => user.Id == userId).FirstOrDefault();
@@ -213,7 +213,7 @@ namespace WalletLesster.Views
                 this.Close();
                 signInScreen.Show();
             }
-        }
+        }*/
 
     }
 }

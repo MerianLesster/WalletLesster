@@ -230,6 +230,8 @@ namespace WalletLesster.Views
             this.Name = "AddUpdateCategory";
             this.Text = "AddUpdateCategory";
             this.Activated += new System.EventHandler(this.AddUpdateCategory_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddUpdateCategory_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUpdateCategory_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panelTransactions.ResumeLayout(false);
             this.panelTransactions.PerformLayout();

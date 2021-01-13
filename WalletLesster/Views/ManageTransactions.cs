@@ -17,6 +17,7 @@ namespace WalletLesster.Views
     {
         Transaction transactionModel = new Transaction();
         WalletLessterTempData tempData = new WalletLessterTempData();
+
         static int userId = 1;
         public ManageTransactions()
         {

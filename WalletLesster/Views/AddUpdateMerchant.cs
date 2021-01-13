@@ -41,6 +41,18 @@ namespace WalletLesster.Views
 
         private async void AddUpdateMerchantAction(object sender, EventArgs e)
         {
+            if (txtMerchantName.Text.Equals("") || txtMerchantNumber.Text.Equals(""))
+            {
+                lblTip.Text = "Please fill the Category name";
+                lblTip.ForeColor = Color.White;
+                panelTip.BackColor = Color.Red;
+                return;
+            }
+            lblTip.Text = "Tip...";
+            lblTip.ForeColor = Color.Black;
+            panelTip.BackColor = Color.White;
+            List<Transaction> transactionArr = new List<Transaction>();
+
             tempData.Merchant.Clear();
             tempData.Merchant.AddMerchantRow(txtMerchantName.Text, txtMerchantNumber.Text);
             // Store first
@@ -83,16 +95,16 @@ namespace WalletLesster.Views
                         merchantData.UserId = userId;
                         db.Entry(merchantData).State = EntityState.Modified;
                         await db.SaveChangesAsync();
-                        /*Transaction transactionData = new Transaction();
-                        var test123 = from b in db.Transactions where b.MerchantId.Equals(Id) select b;
-                        transactionArr = test123.ToList();
+                        Transaction transactionData = new Transaction();
+                        var transactionObj = from b in db.Transactions where b.MerchantId.Equals(Id) select b;
+                        transactionArr = transactionObj.ToList();
                         for (int i = 0; i < transactionArr.Count; i++)
                         {
                             transactionArr[i].Merchant = data.Name;
                             transactionArr[i].MerchantId = Id;
-                            db.Entry(test123).State = EntityState.Modified;
+                            db.Entry(transactionArr[i]).State = EntityState.Modified;
                         }
-                        await db.SaveChangesAsync();*/
+                        await db.SaveChangesAsync();
                         MessageBox.Show("Merchant Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -108,6 +120,12 @@ namespace WalletLesster.Views
         {
             lblTitle.Text = String.Format("{0} Merchant", FormType);
             btnAddUpdateMerchant.Text = String.Format("{0} Merchant", FormType);
+        }
+
+        private void AddUpdateMerchant_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ManageMerchant manageMerchant = new ManageMerchant();
+            manageMerchant.RefreshDataGridView();
         }
     }
 }

@@ -98,5 +98,14 @@ namespace WalletLesster.Views
         {
             RefreshDataGridView();
         }
+
+        private void dgvCategory_DataSourceChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void dgvCategory_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

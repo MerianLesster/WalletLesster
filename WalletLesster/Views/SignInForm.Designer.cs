@@ -37,6 +37,7 @@ namespace WalletLesster.Views
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@ namespace WalletLesster.Views
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.label3);
@@ -124,6 +126,17 @@ namespace WalletLesster.Views
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(276, 188);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(128, 21);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Show password";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // SignInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -152,5 +165,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

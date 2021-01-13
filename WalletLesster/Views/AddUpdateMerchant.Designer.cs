@@ -32,6 +32,7 @@ namespace WalletLesster.Views
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUpdateMerchant));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTransactions = new System.Windows.Forms.Panel();
+            this.txtMerchantNumber = new System.Windows.Forms.TextBox();
             this.txtMerchantName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@ namespace WalletLesster.Views
             this.panelTip = new System.Windows.Forms.Panel();
             this.lblTip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtMerchantNumber = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelTransactions.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,6 +74,13 @@ namespace WalletLesster.Views
             this.panelTransactions.Name = "panelTransactions";
             this.panelTransactions.Size = new System.Drawing.Size(691, 122);
             this.panelTransactions.TabIndex = 14;
+            // 
+            // txtMerchantNumber
+            // 
+            this.txtMerchantNumber.Location = new System.Drawing.Point(388, 60);
+            this.txtMerchantNumber.Name = "txtMerchantNumber";
+            this.txtMerchantNumber.Size = new System.Drawing.Size(279, 22);
+            this.txtMerchantNumber.TabIndex = 59;
             // 
             // txtMerchantName
             // 
@@ -188,13 +195,6 @@ namespace WalletLesster.Views
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // txtMerchantNumber
-            // 
-            this.txtMerchantNumber.Location = new System.Drawing.Point(388, 60);
-            this.txtMerchantNumber.Name = "txtMerchantNumber";
-            this.txtMerchantNumber.Size = new System.Drawing.Size(279, 22);
-            this.txtMerchantNumber.TabIndex = 59;
-            // 
             // AddUpdateMerchant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,6 +209,7 @@ namespace WalletLesster.Views
             this.Name = "AddUpdateMerchant";
             this.Text = "ManageMerchant";
             this.Activated += new System.EventHandler(this.AddUpdateMerchant_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUpdateMerchant_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panelTransactions.ResumeLayout(false);
             this.panelTransactions.PerformLayout();

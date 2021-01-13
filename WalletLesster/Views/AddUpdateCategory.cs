@@ -57,10 +57,21 @@ namespace WalletLesster.Views
                 value = rbExpense.Text;
             return value;
         }
-        List<Transaction> transactionArr = new List<Transaction>();
 
         private async void AddUpdateCategoryAction(object sender, EventArgs e)
         {
+
+            if (txtCategoryName.Text.Equals(""))
+            {
+                lblTip.Text = "Please fill the Category name";
+                lblTip.ForeColor = Color.White;
+                panelTip.BackColor = Color.Red;
+                return;
+            }
+            lblTip.Text = "Tip...";
+            lblTip.ForeColor = Color.Black;
+            panelTip.BackColor = Color.White;
+            List<Transaction> transactionArr = new List<Transaction>();
 
             tempData.Category.Clear();
             tempData.Category.AddCategoryRow(GetTransactionType(), txtCategoryName.Text);
@@ -104,16 +115,16 @@ namespace WalletLesster.Views
                         categoryData.UserId = userId;
                         db.Entry(categoryData).State = EntityState.Modified;
                         await db.SaveChangesAsync();
-                        /*Transaction transactionData = new Transaction();
-                        var test123 = from b in db.Transactions where b.CategoryId.Equals(Id) select b;
-                        transactionArr = test123.ToList();
+                        Transaction transactionData = new Transaction();
+                        var transactionObj = from b in db.Transactions where b.CategoryId.Equals(Id) select b;
+                        transactionArr = transactionObj.ToList();
                         for (int i = 0; i < transactionArr.Count; i++)
                         {
                             transactionArr[i].Category = data.Name;
                             transactionArr[i].CategoryId = Id;
-                            db.Entry(test123).State = EntityState.Modified;
+                            db.Entry(transactionArr[i]).State = EntityState.Modified;
                         }
-                        await db.SaveChangesAsync();*/
+                        await db.SaveChangesAsync();
                         MessageBox.Show("Category Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -129,6 +140,18 @@ namespace WalletLesster.Views
         {
             lblTitle.Text = String.Format("{0} Category", FormType);
             btnAddUpdateCategory.Text = String.Format("{0} Category", FormType);
+        }
+
+        private void AddUpdateCategory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ManageCategory manageMerchant = new ManageCategory();
+            manageMerchant.RefreshDataGridView();
+        }
+
+        private void AddUpdateCategory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ManageCategory manageMerchant = new ManageCategory();
+            manageMerchant.RefreshDataGridView();
         }
     }
 }

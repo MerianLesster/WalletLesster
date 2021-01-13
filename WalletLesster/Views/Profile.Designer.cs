@@ -45,7 +45,6 @@ namespace WalletLesster.Views
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnEditProfile = new System.Windows.Forms.Button();
-            this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.lblFullName = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -56,17 +55,18 @@ namespace WalletLesster.Views
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnCreateProfile = new System.Windows.Forms.Button();
             this.btnCloseForm = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNameHeader
             // 
-            this.lblNameHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNameHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNameHeader.AutoSize = true;
             this.lblNameHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblNameHeader.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameHeader.ForeColor = System.Drawing.Color.White;
-            this.lblNameHeader.Location = new System.Drawing.Point(490, 113);
+            this.lblNameHeader.Location = new System.Drawing.Point(274, 210);
             this.lblNameHeader.Name = "lblNameHeader";
             this.lblNameHeader.Size = new System.Drawing.Size(311, 67);
             this.lblNameHeader.TabIndex = 7;
@@ -74,19 +74,21 @@ namespace WalletLesster.Views
             // 
             // txtUsername
             // 
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(656, 257);
+            this.txtUsername.Location = new System.Drawing.Point(430, 327);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(342, 33);
             this.txtUsername.TabIndex = 14;
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Cyan;
-            this.label7.Location = new System.Drawing.Point(650, 228);
+            this.label7.Location = new System.Drawing.Point(424, 298);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 35);
             this.label7.TabIndex = 15;
@@ -94,12 +96,13 @@ namespace WalletLesster.Views
             // 
             // cmbCurrency
             // 
+            this.cmbCurrency.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbCurrency.Font = new System.Drawing.Font("Poppins", 10.2F);
             this.cmbCurrency.FormattingEnabled = true;
             this.cmbCurrency.Items.AddRange(new object[] {
             "LKR",
             "USD"});
-            this.cmbCurrency.Location = new System.Drawing.Point(656, 336);
+            this.cmbCurrency.Location = new System.Drawing.Point(430, 406);
             this.cmbCurrency.Name = "cmbCurrency";
             this.cmbCurrency.Size = new System.Drawing.Size(342, 38);
             this.cmbCurrency.TabIndex = 13;
@@ -107,11 +110,12 @@ namespace WalletLesster.Views
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Cyan;
-            this.label6.Location = new System.Drawing.Point(650, 305);
+            this.label6.Location = new System.Drawing.Point(424, 375);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 35);
             this.label6.TabIndex = 12;
@@ -119,19 +123,21 @@ namespace WalletLesster.Views
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(656, 422);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(430, 492);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(342, 33);
             this.txtConfirmPassword.TabIndex = 9;
             // 
             // lblConfirmPassword
             // 
+            this.lblConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.ForeColor = System.Drawing.Color.Cyan;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(650, 391);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(424, 461);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(203, 35);
             this.lblConfirmPassword.TabIndex = 10;
@@ -139,19 +145,21 @@ namespace WalletLesster.Views
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(287, 330);
+            this.txtEmail.Location = new System.Drawing.Point(61, 400);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(342, 33);
             this.txtEmail.TabIndex = 7;
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Cyan;
-            this.label4.Location = new System.Drawing.Point(281, 303);
+            this.label4.Location = new System.Drawing.Point(55, 373);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 35);
             this.label4.TabIndex = 8;
@@ -159,27 +167,30 @@ namespace WalletLesster.Views
             // 
             // txtFullName
             // 
+            this.txtFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFullName.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(287, 255);
+            this.txtFullName.Location = new System.Drawing.Point(61, 325);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(342, 33);
             this.txtFullName.TabIndex = 0;
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(287, 421);
+            this.txtPassword.Location = new System.Drawing.Point(61, 491);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(342, 33);
             this.txtPassword.TabIndex = 3;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Cyan;
-            this.label3.Location = new System.Drawing.Point(281, 395);
+            this.label3.Location = new System.Drawing.Point(55, 465);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 35);
             this.label3.TabIndex = 4;
@@ -187,11 +198,12 @@ namespace WalletLesster.Views
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Cyan;
-            this.label2.Location = new System.Drawing.Point(281, 228);
+            this.label2.Location = new System.Drawing.Point(55, 298);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 35);
             this.label2.TabIndex = 2;
@@ -199,10 +211,10 @@ namespace WalletLesster.Views
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(804, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(43, 82);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(225, 195);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,9 +223,10 @@ namespace WalletLesster.Views
             // 
             // btnEditProfile
             // 
-            this.btnEditProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnEditProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEditProfile.BackColor = System.Drawing.Color.Khaki;
             this.btnEditProfile.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProfile.Location = new System.Drawing.Point(29, 242);
+            this.btnEditProfile.Location = new System.Drawing.Point(816, 340);
             this.btnEditProfile.Name = "btnEditProfile";
             this.btnEditProfile.Size = new System.Drawing.Size(226, 53);
             this.btnEditProfile.TabIndex = 12;
@@ -221,24 +234,12 @@ namespace WalletLesster.Views
             this.btnEditProfile.UseVisualStyleBackColor = false;
             this.btnEditProfile.Click += new System.EventHandler(this.EditProfille);
             // 
-            // btnDeleteAccount
-            // 
-            this.btnDeleteAccount.BackColor = System.Drawing.Color.Red;
-            this.btnDeleteAccount.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAccount.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAccount.Location = new System.Drawing.Point(29, 360);
-            this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(226, 53);
-            this.btnDeleteAccount.TabIndex = 16;
-            this.btnDeleteAccount.Text = "Delete Account";
-            this.btnDeleteAccount.UseVisualStyleBackColor = false;
-            this.btnDeleteAccount.Click += new System.EventHandler(this.DeleteAccount);
-            // 
             // btnCreateAccount
             // 
+            this.btnCreateAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnCreateAccount.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAccount.Location = new System.Drawing.Point(778, 528);
+            this.btnCreateAccount.Location = new System.Drawing.Point(546, 558);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(226, 53);
             this.btnCreateAccount.TabIndex = 17;
@@ -249,11 +250,12 @@ namespace WalletLesster.Views
             // 
             // lblFullName
             // 
+            this.lblFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFullName.AutoSize = true;
             this.lblFullName.BackColor = System.Drawing.Color.Transparent;
             this.lblFullName.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullName.ForeColor = System.Drawing.Color.White;
-            this.lblFullName.Location = new System.Drawing.Point(281, 255);
+            this.lblFullName.Location = new System.Drawing.Point(55, 325);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(162, 35);
             this.lblFullName.TabIndex = 18;
@@ -261,11 +263,12 @@ namespace WalletLesster.Views
             // 
             // lblUsername
             // 
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(651, 257);
+            this.lblUsername.Location = new System.Drawing.Point(425, 327);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(53, 35);
             this.lblUsername.TabIndex = 19;
@@ -273,11 +276,12 @@ namespace WalletLesster.Views
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(282, 330);
+            this.lblEmail.Location = new System.Drawing.Point(56, 400);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(222, 35);
             this.lblEmail.TabIndex = 20;
@@ -285,11 +289,12 @@ namespace WalletLesster.Views
             // 
             // lblPassword
             // 
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(281, 421);
+            this.lblPassword.Location = new System.Drawing.Point(55, 491);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(180, 35);
             this.lblPassword.TabIndex = 21;
@@ -297,11 +302,12 @@ namespace WalletLesster.Views
             // 
             // lblCurrency
             // 
+            this.lblCurrency.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCurrency.AutoSize = true;
             this.lblCurrency.BackColor = System.Drawing.Color.Transparent;
             this.lblCurrency.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrency.ForeColor = System.Drawing.Color.White;
-            this.lblCurrency.Location = new System.Drawing.Point(652, 335);
+            this.lblCurrency.Location = new System.Drawing.Point(426, 405);
             this.lblCurrency.Name = "lblCurrency";
             this.lblCurrency.Size = new System.Drawing.Size(50, 35);
             this.lblCurrency.TabIndex = 23;
@@ -309,10 +315,11 @@ namespace WalletLesster.Views
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.btnUpdateProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdateProfile.BackColor = System.Drawing.Color.Khaki;
             this.btnUpdateProfile.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnUpdateProfile.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateProfile.Location = new System.Drawing.Point(778, 528);
+            this.btnUpdateProfile.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateProfile.Location = new System.Drawing.Point(546, 558);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
             this.btnUpdateProfile.Size = new System.Drawing.Size(226, 53);
             this.btnUpdateProfile.TabIndex = 24;
@@ -327,7 +334,7 @@ namespace WalletLesster.Views
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Cyan;
-            this.lblTitle.Location = new System.Drawing.Point(36, 43);
+            this.lblTitle.Location = new System.Drawing.Point(16, 12);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(219, 67);
             this.lblTitle.TabIndex = 27;
@@ -335,9 +342,10 @@ namespace WalletLesster.Views
             // 
             // btnCreateProfile
             // 
+            this.btnCreateProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCreateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnCreateProfile.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateProfile.Location = new System.Drawing.Point(29, 301);
+            this.btnCreateProfile.Location = new System.Drawing.Point(816, 399);
             this.btnCreateProfile.Name = "btnCreateProfile";
             this.btnCreateProfile.Size = new System.Drawing.Size(226, 53);
             this.btnCreateProfile.TabIndex = 28;
@@ -347,13 +355,29 @@ namespace WalletLesster.Views
             // 
             // btnCloseForm
             // 
-            this.btnCloseForm.Location = new System.Drawing.Point(29, 419);
+            this.btnCloseForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCloseForm.BackColor = System.Drawing.Color.Red;
+            this.btnCloseForm.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCloseForm.ForeColor = System.Drawing.Color.White;
+            this.btnCloseForm.Location = new System.Drawing.Point(648, 257);
             this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(226, 51);
+            this.btnCloseForm.Size = new System.Drawing.Size(124, 51);
             this.btnCloseForm.TabIndex = 29;
             this.btnCloseForm.Text = "Cancel";
-            this.btnCloseForm.UseVisualStyleBackColor = true;
+            this.btnCloseForm.UseVisualStyleBackColor = false;
             this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Cyan;
+            this.label1.Location = new System.Drawing.Point(16, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 67);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "My Profile";
             // 
             // Profile
             // 
@@ -373,7 +397,6 @@ namespace WalletLesster.Views
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblFullName);
-            this.Controls.Add(this.btnDeleteAccount);
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
@@ -389,6 +412,7 @@ namespace WalletLesster.Views
             this.Controls.Add(this.lblConfirmPassword);
             this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.btnCreateAccount);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -416,7 +440,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Label lblNameHeader;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnEditProfile;
-        private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.Label lblUsername;
@@ -427,5 +450,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnCreateProfile;
         private System.Windows.Forms.Button btnCloseForm;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -184,11 +184,11 @@ namespace WalletLesster.Views
             // 
             this.txtDescription.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(50, 102);
+            this.txtDescription.MaxLength = 335;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(998, 45);
             this.txtDescription.TabIndex = 60;
-            this.txtDescription.Text = resources.GetString("txtDescription.Text");
             // 
             // label7
             // 
@@ -343,7 +343,7 @@ namespace WalletLesster.Views
             this.dpTransDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpTransDate.Location = new System.Drawing.Point(824, 44);
             this.dpTransDate.Name = "dpTransDate";
-            this.dpTransDate.Size = new System.Drawing.Size(122, 27);
+            this.dpTransDate.Size = new System.Drawing.Size(132, 27);
             this.dpTransDate.TabIndex = 51;
             // 
             // label6

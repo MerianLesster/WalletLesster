@@ -118,22 +118,26 @@ namespace WalletLesster.Views
             // btnUpdateTransaction
             // 
             this.btnUpdateTransaction.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateTransaction.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdateTransaction.BackgroundImage")));
-            this.btnUpdateTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUpdateTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdateTransaction.BackgroundImage = global::WalletLesster.Properties.Resources.green_btn;
+            this.btnUpdateTransaction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdateTransaction.FlatAppearance.BorderSize = 0;
+            this.btnUpdateTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateTransaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateTransaction.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateTransaction.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateTransaction.ForeColor = System.Drawing.Color.White;
             this.btnUpdateTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateTransaction.Image")));
-            this.btnUpdateTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateTransaction.Location = new System.Drawing.Point(910, 11);
+            this.btnUpdateTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdateTransaction.Location = new System.Drawing.Point(861, 11);
             this.btnUpdateTransaction.Name = "btnUpdateTransaction";
-            this.btnUpdateTransaction.Padding = new System.Windows.Forms.Padding(5);
-            this.btnUpdateTransaction.Size = new System.Drawing.Size(261, 61);
+            this.btnUpdateTransaction.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
+            this.btnUpdateTransaction.Size = new System.Drawing.Size(310, 61);
             this.btnUpdateTransaction.TabIndex = 1;
             this.btnUpdateTransaction.Text = "Update transaction";
-            this.btnUpdateTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateTransaction.UseVisualStyleBackColor = false;
             this.btnUpdateTransaction.Click += new System.EventHandler(this.UpdateTransactionData);
+            this.btnUpdateTransaction.MouseLeave += new System.EventHandler(this.btnUpdateTransaction_MouseLeave);
+            this.btnUpdateTransaction.MouseHover += new System.EventHandler(this.btnUpdateTransaction_MouseHover);
             // 
             // loader
             // 
@@ -250,6 +254,7 @@ namespace WalletLesster.Views
             this.rbIncome.TabStop = true;
             this.rbIncome.Text = "Income";
             this.rbIncome.UseVisualStyleBackColor = false;
+            this.rbIncome.CheckedChanged += new System.EventHandler(this.rbIncome_CheckedChanged);
             // 
             // cbxRecurrence
             // 
@@ -289,6 +294,7 @@ namespace WalletLesster.Views
             // cmbCategory
             // 
             this.cmbCategory.BackColor = System.Drawing.Color.White;
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(453, 44);
@@ -310,6 +316,7 @@ namespace WalletLesster.Views
             // cmbMerchant
             // 
             this.cmbMerchant.BackColor = System.Drawing.Color.White;
+            this.cmbMerchant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMerchant.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMerchant.FormattingEnabled = true;
             this.cmbMerchant.ItemHeight = 23;
@@ -369,6 +376,7 @@ namespace WalletLesster.Views
             this.Controls.Add(this.panelTip);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1219, 475);
             this.MinimumSize = new System.Drawing.Size(1219, 475);

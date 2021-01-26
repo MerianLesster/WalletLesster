@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WalletLesster.Models;
@@ -19,6 +20,7 @@ namespace WalletLesster.Views
         public SignUpForm()
         {
             InitializeComponent();
+            cmbCurrency.Text = "LKR";
         }
 
 
@@ -26,12 +28,22 @@ namespace WalletLesster.Views
         {
 
         }
+        public bool IsCorrectEmail(String email)
+        {
+            Regex emailPattern = new Regex(@"^[\w-\.]+@([\w -]+\.)+[\w-]{2,4}$");
+            return !emailPattern.IsMatch(email);
+        }
 
         private void RegisterUser(object sender, EventArgs e)
         {
-            if (txtFullName.Text.Equals("") || txtEmail.Text.Equals("") || txtUsername.Text.Equals("") || txtPassword.Text.Equals("") || txtConfirmPassword.Text.Equals(""))
+            if (txtFullName.Text.Equals("") || txtUsername.Text.Equals("") || txtPassword.Text.Equals("") || txtConfirmPassword.Text.Equals(""))
             {
-                MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please enter all the fields inorder to create an account.", "Invalid User Details", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (IsCorrectEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             if (this.txtPassword.Text.Equals(txtConfirmPassword.Text))
@@ -56,9 +68,11 @@ namespace WalletLesster.Views
                         userData.Currency = data.Currency;
                         db.Users.Add(userData);
                         db.SaveChanges();
+
                         MessageBox.Show("Account Created Successfully! Please signin with your username and password", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        /*SignInScreen signInScreen = new SignInScreen();
-                        signInScreen.ShowSignInForm(sender, e);*/
+                        this.ParentForm.Hide();
+                        SignInScreen signInScreen = new SignInScreen();
+                        signInScreen.Show();
                     }
                 }
                 catch (Exception ex)
@@ -68,9 +82,19 @@ namespace WalletLesster.Views
             }
             else
             {
-                MessageBox.Show("Password didn't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Password didn't match. Please try again.", "Incorrect password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
+        }
+
+        private void btnSignUp_MouseHover(object sender, EventArgs e)
+        {
+            btnSignUp.BackgroundImage = Properties.Resources.blue_btn;
+        }
+
+        private void btnSignUp_MouseLeave(object sender, EventArgs e)
+        {
+            btnSignUp.BackgroundImage = Properties.Resources.green_btn;
         }
     }
 }

@@ -173,5 +173,25 @@ namespace WalletLesster.Views
                 btnSaveTransaction.Enabled = true;
             }
         }
+
+        private void btnSaveTransaction_MouseHover(object sender, EventArgs e)
+        {
+            btnSaveTransaction.BackgroundImage = Properties.Resources.blue_btn;
+        }
+
+        private void btnSaveTransaction_MouseLeave(object sender, EventArgs e)
+        {
+            btnSaveTransaction.BackgroundImage = Properties.Resources.green_btn;
+        }
+
+        private void btnAddAnother_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddAnother.BackgroundImage = Properties.Resources.yellow_btn;
+        }
+
+        private void btnAddAnother_MouseHover(object sender, EventArgs e)
+        {
+            btnAddAnother.BackgroundImage = Properties.Resources.orange_btn;
+        }
     }
 }

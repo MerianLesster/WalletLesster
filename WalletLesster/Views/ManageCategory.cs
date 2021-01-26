@@ -62,7 +62,8 @@ namespace WalletLesster.Views
 
                 if (dgvCategory.Columns[e.ColumnIndex].Name == "Delete")
                 {
-                    if (MessageBox.Show("Are you sure? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    string messageText = String.Format("Are you sure that you want to delete the category {0}?", categoryModel.Name);
+                    if (MessageBox.Show(messageText, "Delete Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         try
                         {
@@ -106,6 +107,16 @@ namespace WalletLesster.Views
         private void dgvCategory_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAddCategoty_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddCategoty.BackgroundImage = Properties.Resources.yellow_btn;
+        }
+
+        private void btnAddCategoty_MouseHover(object sender, EventArgs e)
+        {
+            btnAddCategoty.BackgroundImage = Properties.Resources.orange_btn;
         }
     }
 }

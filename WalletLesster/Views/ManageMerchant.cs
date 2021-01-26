@@ -21,6 +21,7 @@ namespace WalletLesster.Views
         Merchant merchantModel = new Merchant();
         static int userId = 1;
 
+
         public ManageMerchant()
         {
             InitializeComponent();
@@ -64,7 +65,8 @@ namespace WalletLesster.Views
 
                 if (dgvMerchant.Columns[e.ColumnIndex].Name == "Delete")
                 {
-                    if (MessageBox.Show("Are you sure? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    string messageText = String.Format("Are you sure that you want to delete the merchant {0}?", merchantModel.Name);
+                    if (MessageBox.Show(messageText, "Delete Merchant", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         try
                         {
@@ -99,6 +101,16 @@ namespace WalletLesster.Views
         private void refresh_Click(object sender, EventArgs e)
         {
             RefreshDataGridView();
+        }
+
+        private void btnAddMerchant_MouseHover(object sender, EventArgs e)
+        {
+            btnAddMerchant.BackgroundImage = Properties.Resources.orange_btn;
+        }
+
+        private void btnAddMerchant_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddMerchant.BackgroundImage = Properties.Resources.yellow_btn;
         }
     }
 }

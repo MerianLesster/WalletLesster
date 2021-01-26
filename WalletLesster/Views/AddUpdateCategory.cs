@@ -153,5 +153,15 @@ namespace WalletLesster.Views
             ManageCategory manageMerchant = new ManageCategory();
             manageMerchant.RefreshDataGridView();
         }
+
+        private void btnAddUpdateCategory_MouseHover(object sender, EventArgs e)
+        {
+            btnAddUpdateCategory.BackgroundImage = Properties.Resources.blue_btn;
+        }
+
+        private void btnAddUpdateCategory_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddUpdateCategory.BackgroundImage = Properties.Resources.green_btn;
+        }
     }
 }

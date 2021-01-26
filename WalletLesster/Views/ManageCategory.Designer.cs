@@ -175,7 +175,7 @@ namespace WalletLesster.Views
             this.panelTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTip.Controls.Add(this.lblTip);
             this.panelTip.Controls.Add(this.pictureBox5);
-            this.panelTip.Location = new System.Drawing.Point(24, 66);
+            this.panelTip.Location = new System.Drawing.Point(20, 73);
             this.panelTip.Name = "panelTip";
             this.panelTip.Size = new System.Drawing.Size(1045, 66);
             this.panelTip.TabIndex = 30;
@@ -224,18 +224,28 @@ namespace WalletLesster.Views
             // btnAddCategoty
             // 
             this.btnAddCategoty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddCategoty.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnAddCategoty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddCategoty.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategoty.BackgroundImage = global::WalletLesster.Properties.Resources.yellow_btn;
+            this.btnAddCategoty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddCategoty.FlatAppearance.BorderSize = 0;
+            this.btnAddCategoty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategoty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategoty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCategoty.Font = new System.Drawing.Font("Poppins SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCategoty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.btnAddCategoty.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCategoty.Image")));
+            this.btnAddCategoty.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddCategoty.Location = new System.Drawing.Point(54, 248);
             this.btnAddCategoty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddCategoty.Name = "btnAddCategoty";
-            this.btnAddCategoty.Size = new System.Drawing.Size(284, 83);
+            this.btnAddCategoty.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
+            this.btnAddCategoty.Size = new System.Drawing.Size(284, 59);
             this.btnAddCategoty.TabIndex = 32;
-            this.btnAddCategoty.Text = "Add Category +";
+            this.btnAddCategoty.Text = "Add Category";
             this.btnAddCategoty.UseVisualStyleBackColor = false;
             this.btnAddCategoty.Click += new System.EventHandler(this.ShowAddCategoryForm);
+            this.btnAddCategoty.MouseLeave += new System.EventHandler(this.btnAddCategoty_MouseLeave);
+            this.btnAddCategoty.MouseHover += new System.EventHandler(this.btnAddCategoty_MouseHover);
             // 
             // categoriesTableAdapter
             // 
@@ -254,6 +264,8 @@ namespace WalletLesster.Views
             this.Controls.Add(this.panelTip);
             this.Controls.Add(this.dgvCategory);
             this.Controls.Add(this.lblTitle);
+            this.DoubleBuffered = true;
+            this.Location = new System.Drawing.Point(12, 9);
             //this.Name = "ManageCategory";
             this.Text = "ManageCategory";
             this.Load += new System.EventHandler(this.ManageCategory_Load);

@@ -63,6 +63,26 @@ namespace WalletLesster.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blue_btn {
+            get {
+                object obj = ResourceManager.GetObject("blue_btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap green_btn {
+            get {
+                object obj = ResourceManager.GetObject("green_btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Happy {
             get {
                 object obj = ResourceManager.GetObject("Happy", resourceCulture);
@@ -113,6 +133,26 @@ namespace WalletLesster.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap orange_btn {
+            get {
+                object obj = ResourceManager.GetObject("orange_btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pink_btn {
+            get {
+                object obj = ResourceManager.GetObject("pink_btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ProfilePicture {
             get {
                 object obj = ResourceManager.GetObject("ProfilePicture", resourceCulture);
@@ -123,9 +163,29 @@ namespace WalletLesster.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap purple_btn {
+            get {
+                object obj = ResourceManager.GetObject("purple_btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sad {
             get {
                 object obj = ResourceManager.GetObject("Sad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yellow_btn {
+            get {
+                object obj = ResourceManager.GetObject("yellow_btn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

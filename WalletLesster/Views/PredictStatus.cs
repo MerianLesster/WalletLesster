@@ -59,6 +59,13 @@ namespace WalletLesster.Views
                     }
                 }
                 var orderedExpenseArr = expenseTransactionArr.OrderBy(x => x.Date).ToList();
+                if (orderedExpenseArr.Count < 2)
+                {
+                    lblTip.Text = "Please add minimum of two records to predict your financial status based on your expense";
+                    lblTip.ForeColor = Color.White;
+                    panelTip.BackColor = Color.Red;
+                    return;
+                }
                 totalDays = Convert.ToInt32((Convert.ToDateTime(orderedExpenseArr[0].Date) - Convert.ToDateTime(orderedExpenseArr[orderedExpenseArr.Count - 1].Date)).TotalDays);
                 oneDayExpense = totalExpense / totalDays;
                 inR = (orderedExpenseArr[orderedExpenseArr.Count - 2].Amount - orderedExpenseArr[orderedExpenseArr.Count - 1].Amount) / totalExpense * 100;
@@ -77,6 +84,16 @@ namespace WalletLesster.Views
                     pictureBoxStatus.Image = Properties.Resources.Sad;
                 }
             }
+        }
+
+        private void btnPredictStatus_MouseLeave(object sender, EventArgs e)
+        {
+            btnPredictStatus.BackgroundImage = Properties.Resources.green_btn;
+        }
+
+        private void btnPredictStatus_MouseHover(object sender, EventArgs e)
+        {
+            btnPredictStatus.BackgroundImage = Properties.Resources.blue_btn;
         }
     }
 }

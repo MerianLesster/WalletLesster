@@ -397,6 +397,14 @@
     <None Include="Resources\Success.bmp" />
     <None Include="Resources\imageedit_3_2691649889.png" />
     <None Include="Resources\imageedit_5_5401862127.png" />
+    <None Include="Resources\Dark yellow.jpg" />
+    <None Include="Resources\Orange.jpg" />
+    <None Include="Resources\blue_btn.png" />
+    <None Include="Resources\green_btn.png" />
+    <None Include="Resources\orange_btn.png" />
+    <None Include="Resources\pink_btn.png" />
+    <None Include="Resources\purple_btn.png" />
+    <None Include="Resources\yellow_btn.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

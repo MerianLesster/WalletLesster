@@ -55,7 +55,7 @@ namespace WalletLesster.Views
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.panel1.Controls.Add(this.panelTransactions);
-            this.panel1.Location = new System.Drawing.Point(37, 160);
+            this.panel1.Location = new System.Drawing.Point(20, 153);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(722, 144);
             this.panel1.TabIndex = 23;
@@ -77,16 +77,18 @@ namespace WalletLesster.Views
             // 
             // txtMerchantNumber
             // 
+            this.txtMerchantNumber.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMerchantNumber.Location = new System.Drawing.Point(388, 60);
             this.txtMerchantNumber.Name = "txtMerchantNumber";
-            this.txtMerchantNumber.Size = new System.Drawing.Size(279, 22);
+            this.txtMerchantNumber.Size = new System.Drawing.Size(279, 30);
             this.txtMerchantNumber.TabIndex = 59;
             // 
             // txtMerchantName
             // 
+            this.txtMerchantName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMerchantName.Location = new System.Drawing.Point(52, 60);
             this.txtMerchantName.Name = "txtMerchantName";
-            this.txtMerchantName.Size = new System.Drawing.Size(279, 22);
+            this.txtMerchantName.Size = new System.Drawing.Size(279, 30);
             this.txtMerchantName.TabIndex = 58;
             // 
             // label5
@@ -117,7 +119,7 @@ namespace WalletLesster.Views
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Cyan;
-            this.lblTitle.Location = new System.Drawing.Point(25, 14);
+            this.lblTitle.Location = new System.Drawing.Point(12, 11);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(489, 70);
             this.lblTitle.TabIndex = 20;
@@ -128,7 +130,7 @@ namespace WalletLesster.Views
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.panel3.Controls.Add(this.btnAddUpdateMerchant);
             this.panel3.Controls.Add(this.loader);
-            this.panel3.Location = new System.Drawing.Point(10, 347);
+            this.panel3.Location = new System.Drawing.Point(-5, 347);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(781, 90);
             this.panel3.TabIndex = 22;
@@ -136,30 +138,35 @@ namespace WalletLesster.Views
             // btnAddUpdateMerchant
             // 
             this.btnAddUpdateMerchant.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddUpdateMerchant.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddUpdateMerchant.BackgroundImage")));
-            this.btnAddUpdateMerchant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddUpdateMerchant.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddUpdateMerchant.BackgroundImage = global::WalletLesster.Properties.Resources.green_btn;
+            this.btnAddUpdateMerchant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddUpdateMerchant.FlatAppearance.BorderSize = 0;
+            this.btnAddUpdateMerchant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddUpdateMerchant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAddUpdateMerchant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUpdateMerchant.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddUpdateMerchant.ForeColor = System.Drawing.Color.Black;
+            this.btnAddUpdateMerchant.ForeColor = System.Drawing.Color.White;
             this.btnAddUpdateMerchant.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUpdateMerchant.Image")));
-            this.btnAddUpdateMerchant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddUpdateMerchant.Location = new System.Drawing.Point(414, 19);
+            this.btnAddUpdateMerchant.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddUpdateMerchant.Location = new System.Drawing.Point(410, 8);
             this.btnAddUpdateMerchant.Name = "btnAddUpdateMerchant";
-            this.btnAddUpdateMerchant.Padding = new System.Windows.Forms.Padding(5);
+            this.btnAddUpdateMerchant.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
             this.btnAddUpdateMerchant.Size = new System.Drawing.Size(261, 61);
             this.btnAddUpdateMerchant.TabIndex = 1;
             this.btnAddUpdateMerchant.Text = "Update Merchant";
-            this.btnAddUpdateMerchant.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddUpdateMerchant.UseVisualStyleBackColor = false;
             this.btnAddUpdateMerchant.Click += new System.EventHandler(this.AddUpdateMerchantAction);
+            this.btnAddUpdateMerchant.MouseLeave += new System.EventHandler(this.btnAddUpdateMerchant_MouseLeave);
+            this.btnAddUpdateMerchant.MouseHover += new System.EventHandler(this.btnAddUpdateMerchant_MouseHover);
             // 
             // loader
             // 
             this.loader.BackColor = System.Drawing.Color.Transparent;
-            this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
-            this.loader.Location = new System.Drawing.Point(556, 2);
+            this.loader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loader.BackgroundImage")));
+            this.loader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.loader.Location = new System.Drawing.Point(663, 8);
             this.loader.Name = "loader";
-            this.loader.Size = new System.Drawing.Size(191, 95);
+            this.loader.Size = new System.Drawing.Size(118, 61);
             this.loader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.loader.TabIndex = 2;
             this.loader.TabStop = false;
@@ -170,7 +177,7 @@ namespace WalletLesster.Views
             this.panelTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTip.Controls.Add(this.lblTip);
             this.panelTip.Controls.Add(this.pictureBox1);
-            this.panelTip.Location = new System.Drawing.Point(37, 82);
+            this.panelTip.Location = new System.Drawing.Point(24, 70);
             this.panelTip.Name = "panelTip";
             this.panelTip.Size = new System.Drawing.Size(722, 66);
             this.panelTip.TabIndex = 21;
@@ -202,11 +209,16 @@ namespace WalletLesster.Views
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(775, 428);
+            this.Controls.Add(this.panelTip);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panelTip);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(793, 475);
+            this.MinimumSize = new System.Drawing.Size(793, 475);
             this.Name = "AddUpdateMerchant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageMerchant";
             this.Activated += new System.EventHandler(this.AddUpdateMerchant_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUpdateMerchant_FormClosed);

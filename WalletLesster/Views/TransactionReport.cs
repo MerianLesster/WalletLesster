@@ -38,7 +38,7 @@ namespace WalletLesster.Views
             btnReset_Click(sender, e);
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnDateFilter_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -138,6 +138,39 @@ namespace WalletLesster.Views
             };
             reportViewer1.LocalReport.SetParameters(reportParameters);
             reportViewer1.RefreshReport();
+        }
+
+        private void btnDateFilter_MouseHover(object sender, EventArgs e)
+        {
+            btnDateFilter.BackgroundImage = Properties.Resources.green_btn;
+        }
+
+        private void btnDateFilter_MouseLeave(object sender, EventArgs e)
+        {
+            btnDateFilter.BackgroundImage = Properties.Resources.blue_btn;
+        }
+
+        private void btnTypeFilter_MouseHover(object sender, EventArgs e)
+        {
+            btnTypeFilter.BackgroundImage = Properties.Resources.purple_btn;
+        }
+
+        private void btnTypeFilter_MouseLeave(object sender, EventArgs e)
+        {
+            btnTypeFilter.BackgroundImage = Properties.Resources.pink_btn;
+
+        }
+
+        private void btnReset_MouseLeave(object sender, EventArgs e)
+        {
+            btnReset.BackgroundImage = Properties.Resources.orange_btn;
+
+        }
+
+        private void btnReset_MouseHover(object sender, EventArgs e)
+        {
+            btnReset.BackgroundImage = Properties.Resources.yellow_btn;
+
         }
     }
 }

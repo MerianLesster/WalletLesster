@@ -266,7 +266,6 @@ E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\bin\Debug\pt\Microsoft.ReportV
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.csprojAssemblyReference.cache
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.Properties.Resources.resources
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.Views.AddTransaction.resources
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.Views.AddUpdateCategory.resources
@@ -291,3 +290,4 @@ E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.csproj
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.csproj.CopyComplete
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.exe
 E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.pdb
+E:\Cw2_w1698435_MerianLessterDamian\WalletLesster\obj\Debug\WalletLesster.csprojAssemblyReference.cache

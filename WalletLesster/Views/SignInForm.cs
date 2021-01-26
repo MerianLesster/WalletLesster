@@ -23,7 +23,7 @@ namespace WalletLesster.Views
         {
             if (txtUsername.Text.Equals("") || txtPassword.Text.Equals(""))
             {
-                MessageBox.Show("Please enter a valid username and password", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a valid username and password", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
@@ -46,7 +46,7 @@ namespace WalletLesster.Views
                         }
                         else
                         {
-                            MessageBox.Show("Invalid username or password! ", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Invalid username or password! ", "Authentication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }
@@ -70,6 +70,18 @@ namespace WalletLesster.Views
             {
                 txtPassword.UseSystemPasswordChar = true;
             }
+        }
+
+        private void btnLogin_MouseHover(object sender, EventArgs e)
+        {
+            btnLogin.BackgroundImage = Properties.Resources.blue_btn;
+
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogin.BackgroundImage = Properties.Resources.green_btn;
+
         }
     }
 }

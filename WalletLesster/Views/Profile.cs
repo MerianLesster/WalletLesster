@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WalletLesster.Models;
@@ -35,6 +36,7 @@ namespace WalletLesster.Views
             lblConfirmPassword.Visible = true;
             prefillData();
             hideTextfields(true);
+            txtFullName.Enabled = false;
             lblTitle.Visible = true;
             btnUpdateProfile.Visible = true;
             btnCreateAccount.Visible = false;
@@ -86,12 +88,26 @@ namespace WalletLesster.Views
                 cmbCurrency.Text = data.Currency;
             }
         }
-
+        public bool IsCorrectEmail(String email)
+        {
+            Regex emailPattern = new Regex(@"^[\w-\.]+@([\w -]+\.)+[\w-]{2,4}$");
+            return !emailPattern.IsMatch(email);
+        }
         private void UpdateProfile(object sender, EventArgs e)
         {
+            if (txtFullName.Text.Equals("") || txtUsername.Text.Equals("") || txtPassword.Text.Equals("") || txtConfirmPassword.Text.Equals(""))
+            {
+                MessageBox.Show("Please enter all the fields inorder to update your account.", "Invalid User Details", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (IsCorrectEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             if (!this.txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
-                MessageBox.Show("Password didn't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Password didn't match. Please try again.", "Incorrect password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             tempData.User.Clear(); // this will instantaly clear the existing data and overwrite the file with the latest
@@ -134,6 +150,7 @@ namespace WalletLesster.Views
             lblTitle.Text = "Create New Account";
             hideLabels(false);
             lblConfirmPassword.Visible = true;
+            txtFullName.Enabled = true;
             txtFullName.Text = "";
             txtUsername.Text = "";
             txtEmail.Text = "";
@@ -151,6 +168,16 @@ namespace WalletLesster.Views
         }
         private async void CreateProfile(object sender, EventArgs e)
         {
+            if (txtFullName.Text.Equals("") || txtUsername.Text.Equals("") || txtPassword.Text.Equals("") || txtConfirmPassword.Text.Equals(""))
+            {
+                MessageBox.Show("Please enter all the fields inorder to create an account.", "Invalid User Details", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (IsCorrectEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             if (this.txtPassword.Text.Equals(txtConfirmPassword.Text))
             {
                 try
@@ -168,6 +195,7 @@ namespace WalletLesster.Views
                     MessageBox.Show("Account Created Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnCloseForm_Click(sender, e);
                     btnCloseForm.Visible = false;
+                    txtFullName.Enabled = false;
 
                 }
                 catch (Exception ex)
@@ -177,7 +205,7 @@ namespace WalletLesster.Views
             }
             else
             {
-                MessageBox.Show("Password didn't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Password didn't match. Please try again.", "Incorrect password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -193,6 +221,57 @@ namespace WalletLesster.Views
             btnEditProfile.Visible = true;
             btnCreateProfile.Visible = true;
             //btnDeleteAccount.Visible = true;
+        }
+
+        private void btnCloseForm_MouseHover(object sender, EventArgs e)
+        {
+            btnCloseForm.BackgroundImage = Properties.Resources.orange_btn;
+        }
+
+        private void btnCloseForm_MouseLeave(object sender, EventArgs e)
+        {
+            btnCloseForm.BackgroundImage = Properties.Resources.pink_btn;
+        }
+
+        private void btnEditProfile_MouseHover(object sender, EventArgs e)
+        {
+            btnEditProfile.BackgroundImage = Properties.Resources.blue_btn;
+        }
+
+        private void btnEditProfile_MouseLeave(object sender, EventArgs e)
+        {
+            btnEditProfile.BackgroundImage = Properties.Resources.purple_btn;
+        }
+
+        private void btnCreateProfile_MouseHover(object sender, EventArgs e)
+        {
+            btnCreateProfile.BackgroundImage = Properties.Resources.yellow_btn;
+        }
+
+        private void btnCreateProfile_MouseLeave(object sender, EventArgs e)
+        {
+            btnCreateProfile.BackgroundImage = Properties.Resources.orange_btn;
+        }
+
+        private void btnUpdateProfile_MouseHover(object sender, EventArgs e)
+        {
+            btnUpdateProfile.BackgroundImage = Properties.Resources.blue_btn;
+
+        }
+
+        private void btnUpdateProfile_MouseLeave(object sender, EventArgs e)
+        {
+            btnUpdateProfile.BackgroundImage = Properties.Resources.green_btn;
+        }
+
+        private void btnCreateAccount_MouseHover(object sender, EventArgs e)
+        {
+            btnCreateAccount.BackgroundImage = Properties.Resources.blue_btn;
+        }
+
+        private void btnCreateAccount_MouseLeave(object sender, EventArgs e)
+        {
+            btnCreateAccount.BackgroundImage = Properties.Resources.green_btn;
         }
 
         /*private async void DeleteAccount(object sender, EventArgs e)

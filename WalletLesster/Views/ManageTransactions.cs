@@ -53,7 +53,8 @@ namespace WalletLesster.Views
 
                 if (dgvTransaction.Columns[e.ColumnIndex].Name == "Delete")
                 {
-                    if (MessageBox.Show("Are you sure? ", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    string messageText = String.Format("Are you sure that you want to delete this {0} record?", transactionModel.Type);
+                    if (MessageBox.Show(messageText, "Delete Transaction", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
                         var entry = db.Entry(transactionModel);
@@ -127,6 +128,16 @@ namespace WalletLesster.Views
         private void button1_Click(object sender, EventArgs e)
         {
             RefreshDataGridView();
+        }
+
+        private void btnAddTransaction_MouseHover(object sender, EventArgs e)
+        {
+            btnAddTransaction.BackgroundImage = Properties.Resources.orange_btn;
+        }
+
+        private void btnAddTransaction_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddTransaction.BackgroundImage = Properties.Resources.yellow_btn;
         }
     }
 }

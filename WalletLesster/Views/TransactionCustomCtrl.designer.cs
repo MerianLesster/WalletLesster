@@ -50,14 +50,18 @@ namespace WalletLesster.Views
             // 
             // btnRemove
             // 
-            this.btnRemove.BackColor = System.Drawing.Color.White;
+            this.btnRemove.BackColor = System.Drawing.Color.Transparent;
             this.btnRemove.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemove.BackgroundImage")));
-            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(1037, 56);
+            this.btnRemove.Location = new System.Drawing.Point(1045, 72);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(51, 53);
+            this.btnRemove.Size = new System.Drawing.Size(42, 45);
             this.btnRemove.TabIndex = 42;
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.removeTransaction);
@@ -97,6 +101,7 @@ namespace WalletLesster.Views
             // 
             // cmbCategory
             // 
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(417, 54);
@@ -116,6 +121,7 @@ namespace WalletLesster.Views
             // 
             // cmbMerchant
             // 
+            this.cmbMerchant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMerchant.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMerchant.FormattingEnabled = true;
             this.cmbMerchant.ItemHeight = 23;
@@ -219,7 +225,6 @@ namespace WalletLesster.Views
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(998, 45);
             this.txtDescription.TabIndex = 56;
-            this.txtDescription.Text = resources.GetString("txtDescription.Text");
             // 
             // label1
             // 
@@ -252,6 +257,7 @@ namespace WalletLesster.Views
             this.Controls.Add(this.cmbMerchant);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
+            this.DoubleBuffered = true;
             this.Name = "TransactionCustomCtrl";
             this.Size = new System.Drawing.Size(1127, 187);
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).EndInit();

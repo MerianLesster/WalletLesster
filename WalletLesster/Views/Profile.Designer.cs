@@ -97,6 +97,7 @@ namespace WalletLesster.Views
             // cmbCurrency
             // 
             this.cmbCurrency.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCurrency.Font = new System.Drawing.Font("Poppins", 10.2F);
             this.cmbCurrency.FormattingEnabled = true;
             this.cmbCurrency.Items.AddRange(new object[] {
@@ -106,7 +107,6 @@ namespace WalletLesster.Views
             this.cmbCurrency.Name = "cmbCurrency";
             this.cmbCurrency.Size = new System.Drawing.Size(342, 38);
             this.cmbCurrency.TabIndex = 13;
-            this.cmbCurrency.Text = "Please select the currency";
             // 
             // label6
             // 
@@ -168,6 +168,7 @@ namespace WalletLesster.Views
             // txtFullName
             // 
             this.txtFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFullName.Enabled = false;
             this.txtFullName.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullName.Location = new System.Drawing.Point(61, 325);
             this.txtFullName.Name = "txtFullName";
@@ -224,29 +225,53 @@ namespace WalletLesster.Views
             // btnEditProfile
             // 
             this.btnEditProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEditProfile.BackColor = System.Drawing.Color.Khaki;
+            this.btnEditProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditProfile.BackgroundImage = global::WalletLesster.Properties.Resources.purple_btn;
+            this.btnEditProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditProfile.FlatAppearance.BorderSize = 0;
+            this.btnEditProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEditProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditProfile.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProfile.Location = new System.Drawing.Point(816, 340);
+            this.btnEditProfile.ForeColor = System.Drawing.Color.White;
+            this.btnEditProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnEditProfile.Image")));
+            this.btnEditProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditProfile.Location = new System.Drawing.Point(816, 324);
             this.btnEditProfile.Name = "btnEditProfile";
+            this.btnEditProfile.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
             this.btnEditProfile.Size = new System.Drawing.Size(226, 53);
             this.btnEditProfile.TabIndex = 12;
             this.btnEditProfile.Text = "Edit Profile";
             this.btnEditProfile.UseVisualStyleBackColor = false;
             this.btnEditProfile.Click += new System.EventHandler(this.EditProfille);
+            this.btnEditProfile.MouseLeave += new System.EventHandler(this.btnEditProfile_MouseLeave);
+            this.btnEditProfile.MouseHover += new System.EventHandler(this.btnEditProfile_MouseHover);
             // 
             // btnCreateAccount
             // 
             this.btnCreateAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCreateAccount.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateAccount.BackgroundImage = global::WalletLesster.Properties.Resources.green_btn;
+            this.btnCreateAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCreateAccount.FlatAppearance.BorderSize = 0;
+            this.btnCreateAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCreateAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateAccount.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
+            this.btnCreateAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateAccount.Image")));
+            this.btnCreateAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCreateAccount.Location = new System.Drawing.Point(546, 558);
             this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Padding = new System.Windows.Forms.Padding(1, 5, 5, 5);
             this.btnCreateAccount.Size = new System.Drawing.Size(226, 53);
             this.btnCreateAccount.TabIndex = 17;
             this.btnCreateAccount.Text = "Create New Account";
             this.btnCreateAccount.UseVisualStyleBackColor = false;
             this.btnCreateAccount.Visible = false;
             this.btnCreateAccount.Click += new System.EventHandler(this.CreateProfile);
+            this.btnCreateAccount.MouseLeave += new System.EventHandler(this.btnCreateAccount_MouseLeave);
+            this.btnCreateAccount.MouseHover += new System.EventHandler(this.btnCreateAccount_MouseHover);
             // 
             // lblFullName
             // 
@@ -316,17 +341,28 @@ namespace WalletLesster.Views
             // btnUpdateProfile
             // 
             this.btnUpdateProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUpdateProfile.BackColor = System.Drawing.Color.Khaki;
+            this.btnUpdateProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateProfile.BackgroundImage = global::WalletLesster.Properties.Resources.green_btn;
+            this.btnUpdateProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdateProfile.FlatAppearance.BorderSize = 0;
+            this.btnUpdateProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateProfile.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnUpdateProfile.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateProfile.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateProfile.Image")));
+            this.btnUpdateProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateProfile.Location = new System.Drawing.Point(546, 558);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
+            this.btnUpdateProfile.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
             this.btnUpdateProfile.Size = new System.Drawing.Size(226, 53);
             this.btnUpdateProfile.TabIndex = 24;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = false;
             this.btnUpdateProfile.Visible = false;
             this.btnUpdateProfile.Click += new System.EventHandler(this.UpdateProfile);
+            this.btnUpdateProfile.MouseLeave += new System.EventHandler(this.btnUpdateProfile_MouseLeave);
+            this.btnUpdateProfile.MouseHover += new System.EventHandler(this.btnUpdateProfile_MouseHover);
             // 
             // lblTitle
             // 
@@ -334,7 +370,7 @@ namespace WalletLesster.Views
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Cyan;
-            this.lblTitle.Location = new System.Drawing.Point(16, 12);
+            this.lblTitle.Location = new System.Drawing.Point(12, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(219, 67);
             this.lblTitle.TabIndex = 27;
@@ -343,29 +379,52 @@ namespace WalletLesster.Views
             // btnCreateProfile
             // 
             this.btnCreateProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCreateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCreateProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateProfile.BackgroundImage = global::WalletLesster.Properties.Resources.orange_btn;
+            this.btnCreateProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCreateProfile.FlatAppearance.BorderSize = 0;
+            this.btnCreateProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCreateProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCreateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateProfile.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateProfile.Location = new System.Drawing.Point(816, 399);
+            this.btnCreateProfile.ForeColor = System.Drawing.Color.White;
+            this.btnCreateProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateProfile.Image")));
+            this.btnCreateProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreateProfile.Location = new System.Drawing.Point(816, 387);
             this.btnCreateProfile.Name = "btnCreateProfile";
+            this.btnCreateProfile.Padding = new System.Windows.Forms.Padding(1, 5, 2, 5);
             this.btnCreateProfile.Size = new System.Drawing.Size(226, 53);
             this.btnCreateProfile.TabIndex = 28;
             this.btnCreateProfile.Text = "Create New Account";
             this.btnCreateProfile.UseVisualStyleBackColor = false;
             this.btnCreateProfile.Click += new System.EventHandler(this.btnCreateProfile_Click);
+            this.btnCreateProfile.MouseLeave += new System.EventHandler(this.btnCreateProfile_MouseLeave);
+            this.btnCreateProfile.MouseHover += new System.EventHandler(this.btnCreateProfile_MouseHover);
             // 
             // btnCloseForm
             // 
             this.btnCloseForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCloseForm.BackColor = System.Drawing.Color.Red;
+            this.btnCloseForm.BackColor = System.Drawing.Color.Transparent;
+            this.btnCloseForm.BackgroundImage = global::WalletLesster.Properties.Resources.pink_btn;
+            this.btnCloseForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCloseForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseForm.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold);
             this.btnCloseForm.ForeColor = System.Drawing.Color.White;
-            this.btnCloseForm.Location = new System.Drawing.Point(648, 257);
+            this.btnCloseForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseForm.Image")));
+            this.btnCloseForm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCloseForm.Location = new System.Drawing.Point(816, 324);
             this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(124, 51);
+            this.btnCloseForm.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
+            this.btnCloseForm.Size = new System.Drawing.Size(166, 51);
             this.btnCloseForm.TabIndex = 29;
             this.btnCloseForm.Text = "Cancel";
             this.btnCloseForm.UseVisualStyleBackColor = false;
             this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+            this.btnCloseForm.MouseLeave += new System.EventHandler(this.btnCloseForm_MouseLeave);
+            this.btnCloseForm.MouseHover += new System.EventHandler(this.btnCloseForm_MouseHover);
             // 
             // label1
             // 
@@ -373,7 +432,7 @@ namespace WalletLesster.Views
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Cyan;
-            this.label1.Location = new System.Drawing.Point(16, 12);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 67);
             this.label1.TabIndex = 30;
@@ -413,6 +472,7 @@ namespace WalletLesster.Views
             this.Controls.Add(this.btnUpdateProfile);
             this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;

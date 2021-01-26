@@ -32,7 +32,6 @@ namespace WalletLesster.Views
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageMerchant));
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTip = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panelTip = new System.Windows.Forms.Panel();
@@ -48,12 +47,13 @@ namespace WalletLesster.Views
             this.walletLessterDBMerchantDataSet = new WalletLesster.WalletLessterDBMerchantDataSet();
             this.lblTitle = new System.Windows.Forms.Label();
             this.merchantsTableAdapter = new WalletLesster.WalletLessterDBMerchantDataSetTableAdapters.MerchantsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelTip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMerchant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.merchantsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walletLessterDBMerchantDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -65,17 +65,6 @@ namespace WalletLesster.Views
             this.button1.Text = "refresh";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.refresh_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(633, 154);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(429, 207);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
             // 
             // lblTip
             // 
@@ -103,7 +92,7 @@ namespace WalletLesster.Views
             this.panelTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTip.Controls.Add(this.lblTip);
             this.panelTip.Controls.Add(this.pictureBox5);
-            this.panelTip.Location = new System.Drawing.Point(22, 82);
+            this.panelTip.Location = new System.Drawing.Point(20, 73);
             this.panelTip.Name = "panelTip";
             this.panelTip.Size = new System.Drawing.Size(1045, 66);
             this.panelTip.TabIndex = 36;
@@ -111,18 +100,28 @@ namespace WalletLesster.Views
             // btnAddMerchant
             // 
             this.btnAddMerchant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddMerchant.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnAddMerchant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddMerchant.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddMerchant.BackgroundImage = global::WalletLesster.Properties.Resources.yellow_btn;
+            this.btnAddMerchant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddMerchant.FlatAppearance.BorderSize = 0;
+            this.btnAddMerchant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddMerchant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAddMerchant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMerchant.Font = new System.Drawing.Font("Poppins SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMerchant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.btnAddMerchant.Image = ((System.Drawing.Image)(resources.GetObject("btnAddMerchant.Image")));
+            this.btnAddMerchant.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddMerchant.Location = new System.Drawing.Point(52, 264);
             this.btnAddMerchant.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddMerchant.Name = "btnAddMerchant";
-            this.btnAddMerchant.Size = new System.Drawing.Size(284, 83);
+            this.btnAddMerchant.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
+            this.btnAddMerchant.Size = new System.Drawing.Size(259, 61);
             this.btnAddMerchant.TabIndex = 38;
-            this.btnAddMerchant.Text = "Add Merchant +";
+            this.btnAddMerchant.Text = "Add Merchant  ";
             this.btnAddMerchant.UseVisualStyleBackColor = false;
             this.btnAddMerchant.Click += new System.EventHandler(this.ShowAddMerchantForm);
+            this.btnAddMerchant.MouseLeave += new System.EventHandler(this.btnAddMerchant_MouseLeave);
+            this.btnAddMerchant.MouseHover += new System.EventHandler(this.btnAddMerchant_MouseHover);
             // 
             // dgvMerchant
             // 
@@ -229,7 +228,7 @@ namespace WalletLesster.Views
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Cyan;
-            this.lblTitle.Location = new System.Drawing.Point(10, 25);
+            this.lblTitle.Location = new System.Drawing.Point(12, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(389, 67);
             this.lblTitle.TabIndex = 34;
@@ -239,6 +238,18 @@ namespace WalletLesster.Views
             // 
             this.merchantsTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(694, 153);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(287, 183);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
             // ManageMerchant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,22 +257,23 @@ namespace WalletLesster.Views
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1076, 858);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelTip);
             this.Controls.Add(this.btnAddMerchant);
             this.Controls.Add(this.dgvMerchant);
             this.Controls.Add(this.lblTitle);
+            this.DoubleBuffered = true;
             //this.Name = "ManageMerchant";
             this.Text = "ManageMerchant";
             this.Load += new System.EventHandler(this.ManageMerchant_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panelTip.ResumeLayout(false);
             this.panelTip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMerchant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.merchantsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.walletLessterDBMerchantDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,7 +281,6 @@ namespace WalletLesster.Views
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTip;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panelTip;
@@ -285,5 +296,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

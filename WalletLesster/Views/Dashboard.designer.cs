@@ -46,6 +46,9 @@ namespace WalletLesster.Views
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblExpence = new System.Windows.Forms.Label();
             this.labelExpense = new System.Windows.Forms.Label();
@@ -56,11 +59,8 @@ namespace WalletLesster.Views
             this.lblTime = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblDate = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -68,13 +68,13 @@ namespace WalletLesster.Views
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlContent.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -355,8 +355,6 @@ namespace WalletLesster.Views
             this.pnlContent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlContent.BackgroundImage")));
             this.pnlContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlContent.Controls.Add(this.panel7);
-            this.pnlContent.Controls.Add(this.pictureBox6);
-            this.pnlContent.Controls.Add(this.pictureBox5);
             this.pnlContent.Controls.Add(this.panel5);
             this.pnlContent.Controls.Add(this.panel3);
             this.pnlContent.Controls.Add(this.panel1);
@@ -366,29 +364,70 @@ namespace WalletLesster.Views
             this.pnlContent.Size = new System.Drawing.Size(1094, 905);
             this.pnlContent.TabIndex = 9;
             // 
+            // panel7
+            // 
+            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel7.Controls.Add(this.lblStatus);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Location = new System.Drawing.Point(32, 30);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(609, 233);
+            this.panel7.TabIndex = 11;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Cyan;
+            this.lblStatus.Location = new System.Drawing.Point(247, 113);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(208, 106);
+            this.lblStatus.TabIndex = 4;
+            this.lblStatus.Text = "Good";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(244, 106);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Status";
+            // 
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel5.Controls.Add(this.pictureBox8);
             this.panel5.Controls.Add(this.lblExpence);
             this.panel5.Controls.Add(this.labelExpense);
             this.panel5.Location = new System.Drawing.Point(643, 312);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(426, 191);
+            this.panel5.Size = new System.Drawing.Size(401, 476);
             this.panel5.TabIndex = 10;
             // 
             // lblExpence
             // 
             this.lblExpence.AutoSize = true;
-            this.lblExpence.BackColor = System.Drawing.Color.Transparent;
+            this.lblExpence.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.lblExpence.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpence.ForeColor = System.Drawing.Color.Cyan;
-            this.lblExpence.Location = new System.Drawing.Point(109, 86);
+            this.lblExpence.Image = ((System.Drawing.Image)(resources.GetObject("lblExpence.Image")));
+            this.lblExpence.Location = new System.Drawing.Point(1, 359);
+            this.lblExpence.MaximumSize = new System.Drawing.Size(400, 106);
+            this.lblExpence.MinimumSize = new System.Drawing.Size(400, 106);
             this.lblExpence.Name = "lblExpence";
-            this.lblExpence.Size = new System.Drawing.Size(280, 106);
+            this.lblExpence.Size = new System.Drawing.Size(400, 106);
             this.lblExpence.TabIndex = 4;
             this.lblExpence.Text = "150,000";
+            this.lblExpence.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelExpense
             // 
@@ -396,35 +435,40 @@ namespace WalletLesster.Views
             this.labelExpense.BackColor = System.Drawing.Color.Transparent;
             this.labelExpense.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExpense.ForeColor = System.Drawing.Color.LightCoral;
-            this.labelExpense.Location = new System.Drawing.Point(3, 0);
+            this.labelExpense.Location = new System.Drawing.Point(69, 8);
             this.labelExpense.Name = "labelExpense";
             this.labelExpense.Size = new System.Drawing.Size(300, 106);
             this.labelExpense.TabIndex = 0;
             this.labelExpense.Text = "Expense";
+            this.labelExpense.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel3.Controls.Add(this.pictureBox7);
             this.panel3.Controls.Add(this.lblIncome);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(32, 307);
+            this.panel3.Location = new System.Drawing.Point(53, 312);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(426, 191);
+            this.panel3.Size = new System.Drawing.Size(401, 476);
             this.panel3.TabIndex = 9;
             // 
             // lblIncome
             // 
             this.lblIncome.AutoSize = true;
-            this.lblIncome.BackColor = System.Drawing.Color.Transparent;
+            this.lblIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.lblIncome.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncome.ForeColor = System.Drawing.Color.Cyan;
-            this.lblIncome.Location = new System.Drawing.Point(143, 85);
+            this.lblIncome.Image = ((System.Drawing.Image)(resources.GetObject("lblIncome.Image")));
+            this.lblIncome.Location = new System.Drawing.Point(1, 359);
+            this.lblIncome.MaximumSize = new System.Drawing.Size(400, 106);
+            this.lblIncome.MinimumSize = new System.Drawing.Size(400, 106);
             this.lblIncome.Name = "lblIncome";
-            this.lblIncome.Size = new System.Drawing.Size(280, 106);
+            this.lblIncome.Size = new System.Drawing.Size(400, 106);
             this.lblIncome.TabIndex = 3;
             this.lblIncome.Text = "150,000";
+            this.lblIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -432,11 +476,12 @@ namespace WalletLesster.Views
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.PaleGreen;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(70, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(278, 106);
             this.label3.TabIndex = 2;
             this.label3.Text = "Income";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -483,64 +528,27 @@ namespace WalletLesster.Views
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "DateDisplay";
             // 
-            // pictureBox5
+            // pictureBox7
             // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(586, 679);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(601, 259);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 11;
-            this.pictureBox5.TabStop = false;
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(0, 124);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(401, 232);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 4;
+            this.pictureBox7.TabStop = false;
             // 
-            // pictureBox6
+            // pictureBox8
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(-108, -5);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(623, 306);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 12;
-            this.pictureBox6.TabStop = false;
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel7.Controls.Add(this.lblStatus);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Location = new System.Drawing.Point(343, 533);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(426, 191);
-            this.panel7.TabIndex = 11;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatus.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.Cyan;
-            this.lblStatus.Location = new System.Drawing.Point(109, 86);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(208, 106);
-            this.lblStatus.TabIndex = 4;
-            this.lblStatus.Text = "Good";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 106);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Status";
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(-3, 124);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(401, 232);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 5;
+            this.pictureBox8.TabStop = false;
             // 
             // Dashboard
             // 
@@ -553,6 +561,7 @@ namespace WalletLesster.Views
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelMenu);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -561,7 +570,6 @@ namespace WalletLesster.Views
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseApplication);
-            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -570,6 +578,8 @@ namespace WalletLesster.Views
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlContent.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -577,10 +587,8 @@ namespace WalletLesster.Views
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -616,7 +624,7 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

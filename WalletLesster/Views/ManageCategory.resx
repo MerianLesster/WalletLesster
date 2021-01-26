@@ -129,9 +129,6 @@
   <metadata name="walletLessterDBCategoryDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="walletLessterDBCategoryDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1034,6 +1031,19 @@
         AAAAgDKEIQAAAABAGcIQAAAAAKAMYQgAAAAAUIYwBAAAAAAoQxgCAAAAAJQhDAEAAAAAyhCGAAAAAABl
         CEMAAAAAgDKEIQAAAABAGcIQAAAAAKAMYQgAAAAAUIYwBAAAAAAoQxgCAAAAAJQhDAEAAAAAyhCGAAAA
         AABlCEMAAAAAgDKEIQAAAABAGcIQAAAAAKAMYQgAAAAAcOQVbf8LSqk+oIZ+IWUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnAddCategoty.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAb1JREFUSEtj
+        IATcFrkpOs33CAVhh/keClBh2gGbpd6CzgvcljsvcP8HxP+hGMh2Ww6SgyqjLgD6ktt5ofsFmIV1+xrB
+        GO4AoBxIDVQ59YDzfPdauCVAvPPOLjBGFnNZ4FEDVU494LTA/TqyJdgsBuJrUOXUA0BDf0avifuPC4Dk
+        gGq+Q5VTDwANfeq52Pd/0Y5SMD799DQYw/ggOWAiewJVTj0AtHg2EMODFVtQOy10nwVVTj0Ayq9Aw9/D
+        LJl9dh4Yw/guC9zfOc3xkocqpy5wXORmDrTkEcwyJPwQ6FszqDLaAN+ZvlzAuIyOWddwDYRBbMtVoZxQ
+        aRTQ8+pzSNerTwnIeOqrVzxQafJA/6mfC0AYysUKul9/etD96tN/ZNz+/D1lRSzY4pM/LwBxAy7c/eLT
+        BxpZ/ONF/6kfB3Dh7udfvtPG4gELagIWd7381AO0bAEy7nn2SQQqTR4gxmKaAGIs7n79saD75ccGZNz/
+        /r0AVJo8QJzFNIrjCad+3IE5ABvuefH58/CyGIShXKxgwLLTgCUumgBiLB6wAoSG2enXAFQSJ38GoFeD
+        6Jgm1SIxgCZBTQwgrenDwAAA/G0HWwQmn3cAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="categoriesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

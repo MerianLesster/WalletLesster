@@ -112,7 +112,6 @@ namespace WalletLesster.Views
 
         private void rbIncome_CheckedChanged(object sender, EventArgs e)
         {
-
             changeCategoryList();
         }
 
@@ -129,6 +128,16 @@ namespace WalletLesster.Views
             cmbCategory.DataSource = blogs.ToList();
             cmbCategory.DisplayMember = "Name";
             cmbCategory.ValueMember = "Id";
+        }
+
+        private void btnUpdateTransaction_MouseLeave(object sender, EventArgs e)
+        {
+            btnUpdateTransaction.BackgroundImage = Properties.Resources.green_btn;
+        }
+
+        private void btnUpdateTransaction_MouseHover(object sender, EventArgs e)
+        {
+            btnUpdateTransaction.BackgroundImage = Properties.Resources.blue_btn;
         }
     }
 }

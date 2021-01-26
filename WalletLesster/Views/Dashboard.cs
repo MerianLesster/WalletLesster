@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,8 +25,6 @@ namespace WalletLesster.Views
         Transaction transactionModel = new Transaction();
         WalletLessterTempData tempData = new WalletLessterTempData();
         List<Transaction> transactionArr = new List<Transaction>();
-        double totalExpense = 0;
-        double totalIncome = 0;
         static int userId = 1;
         public Dashboard()
         {
@@ -42,10 +41,16 @@ namespace WalletLesster.Views
                 lblWelcome.Text = String.Format("Welcome {0}!", tempData.User[0].FullName);
                 userId = tempData.User[0].Id;
             }
+            ShowInitialActiveTab(true);
             ShowTotalIncomeExpense();
+
 
         }
         private Form activeForm = null;
+        public void setLblWelcomeText(string username)
+        {
+            this.lblWelcome.Text = String.Format("Welcome {0}!", username);
+        }
         public void openChildFormInPanel(Form childForm)
         {
             if (activeForm != null)
@@ -77,6 +82,7 @@ namespace WalletLesster.Views
 
         private void ActivateButton(object senderBtn)
         {
+            ShowInitialActiveTab(false);
             if (senderBtn != null)
             {
                 DisableButton();
@@ -141,6 +147,7 @@ namespace WalletLesster.Views
                 activeForm.Close();
             }
             ActivateButton(sender);
+            ShowTotalIncomeExpense();
         }
 
         private void ShowManageMerchant(object sender, EventArgs e)
@@ -163,19 +170,22 @@ namespace WalletLesster.Views
 
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void ShowPredictStatus(object sender, EventArgs e)
         {
             openChildFormInPanel(new PredictStatus());
             ActivateButton(sender);
         }
 
+        private String CurrencyFormatter(double amount)
+        {
+            var currencyFormatValue = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+            currencyFormatValue.NumberGroupSeparator = ",";
+            return amount.ToString("#,0.00", currencyFormatValue); // "1 234 897.11"
+        }
         private void ShowTotalIncomeExpense()
         {
+            double totalExpense = 0;
+            double totalIncome = 0;
             using (WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1())
             {
                 var blogs = from b in db.Transactions where b.UserId.Equals(userId) select b;
@@ -191,8 +201,8 @@ namespace WalletLesster.Views
                         totalExpense += transactionArr[i].Amount;
                     }
                 }
-                lblIncome.Text = totalIncome.ToString();
-                lblExpence.Text = totalExpense.ToString();
+                lblIncome.Text = CurrencyFormatter(totalIncome);
+                lblExpence.Text = CurrencyFormatter(totalExpense);
 
                 if ((totalIncome - totalExpense) > 0)
                 {
@@ -204,6 +214,33 @@ namespace WalletLesster.Views
 
                 }
             }
+        }
+        private void ShowInitialActiveTab(bool status)
+        {
+            if (status == true)
+            {
+                btnDashboard.BackColor = Color.FromArgb(37, 36, 81);
+                btnDashboard.ForeColor = Color.Cyan;
+                btnDashboard.TextAlign = ContentAlignment.MiddleCenter;
+                btnDashboard.IconColor = Color.Cyan;
+                btnDashboard.TextImageRelation = TextImageRelation.TextBeforeImage;
+                btnDashboard.ImageAlign = ContentAlignment.MiddleRight;
+                //Left border button
+                leftBorderBtn.BackColor = Color.Cyan;
+                leftBorderBtn.Location = new Point(0, btnDashboard.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
+            }
+            else
+            {
+                btnDashboard.BackColor = Color.FromArgb(14, 32, 81);
+                btnDashboard.ForeColor = Color.White;
+                btnDashboard.TextAlign = ContentAlignment.MiddleLeft;
+                btnDashboard.IconColor = Color.White;
+                btnDashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnDashboard.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+
         }
     }
 }

@@ -312,6 +312,35 @@
         2Q==
 </value>
   </data>
+  <data name="btnAddAnother.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAj9JREFUSEtj
+        GDSg58x/kf7j3xUowZNOfJOBGkc86D/1c8GEUz//U4L7T/58ADWOeDBqMTl46FpcuPn9/4QVL8HsgLlP
+        8GKYOqpYnLL61X//OY/BbIveO3gxTB1VLCYXU2xx6IKn/827b4PZkmWX8GKYOqpY3HLw6//6fZ/B7Ipd
+        H/FimDqqWDyauIjFdElcjpPv/2/c//V/78nP/+sOnP9ftmff//I9h1+6z3EXghpJHCAlcVXv/vS/78SX
+        /5lb5/13W+T/33mBOzL+47TQfanDfC8JqNH4ASlB3Xvi4//QVQXoFqLjp45zPdShxuMGpFicuKEbxZJV
+        V9b8f/H55f/LL6+giAPxVeOZxqxQK7ADYi1uPXL/v/NCDxQLdt7Z9R8EQJYji4Ow03yPBKgV2AGxFuft
+        WAU20GdJwP+uIz1gDPIpCHz88REuFrc2EWb5eqgVmMBp6df1QWu+Xonc8O0mIey9rPM9yMDoNXFgy3AB
+        kOVQi69ArcEETsu+XgBa/p8Y7LxoCthAEiw+C7UGEwANXI9uAU68eDPYQLeFXmDLQfjQg8Ngy15/fQMX
+        A0UFSJ3LAvd5UGswgfOyb0VYLcGKXwANRM27+BKX6wIPZ6g1mMB91UchYHA/wW4RFrx4BYrhvUf7wZaD
+        shWyOBCvgVqBGzgv/CTsuPSrMbHYaVHSfKDB/9AsgmOXBZ47ref68UKNpy5wXeRpD7RkOxB/h1r4F4hP
+        OS1wT2xoaGCCKqMtsFnqLeiw34EFyh1sgIEBACwSCbjf73Q6AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSaveTransaction.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAe5JREFUSEvt
+        ls1Kw1AQhYuKO1f+vICiiO4URVfd9idNsiiKb6EVQXDR9/CPgqsuklQfQMRXUNddKNKC6MaN1sYzZdq0
+        N5PQRGlB/OBAIDPnNDfTm5v4J4x8OT+advT1jGVua46+S8o6+lbWNtboHpf9HghahvkpVIfcANWylnms
+        XWpL3BYf7UqbglkJpl9KSJgaGds4Ny1zkm2ika7kVmHypJj2L8t8xA9YYbv+oOXSbONNNIymV7ymRbYN
+        B0s0g4aqYvATVVPl/DTbB8PvVDLoqHBz4B7eHrVE11JNjyzzjO1lMo6+icKmr1FR7b3utqFrqUZRk2aG
+        Y/zgP3khNPkUI5ieusQxvWADGO93oGIF28ZL8jo5xnEevMxSg08xg13a9TjOA9vfjlRMw0Pm3Wo0Gxzr
+        tq7V+0EDR1stx3ngz16Qimlyo0I9khfe8x7HeeCJ96Xi3wymh+M4j0EsNX3JOM4Dy7AhFgsi8zZ0LdVI
+        EoeLvqe4GfbZ6yhWsKM/F4vFEY7rhT5nYpOiOMHwPuEYP7lKbgFFn2qTqqjB2Jg+0pY5zzEytKFLzd2i
+        4aHJJQUOUrdwMmH7YPDUEyi8Ew3iCF7kyfbhDOUg0Aa/cg6ND4pR38Iw3adsY5btojGUw143Az/eqgz8
+        QP+HSCS+AbgZJ6LYIwLOAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERET

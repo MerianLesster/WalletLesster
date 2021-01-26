@@ -54,7 +54,7 @@ namespace WalletLesster.Views
             this.panelTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTip.Controls.Add(this.lblTip);
             this.panelTip.Controls.Add(this.pictureBox5);
-            this.panelTip.Location = new System.Drawing.Point(12, 81);
+            this.panelTip.Location = new System.Drawing.Point(20, 73);
             this.panelTip.Name = "panelTip";
             this.panelTip.Size = new System.Drawing.Size(1045, 66);
             this.panelTip.TabIndex = 30;
@@ -85,7 +85,7 @@ namespace WalletLesster.Views
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Poppins", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Cyan;
-            this.lblTitle.Location = new System.Drawing.Point(12, 22);
+            this.lblTitle.Location = new System.Drawing.Point(12, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(301, 67);
             this.lblTitle.TabIndex = 31;
@@ -127,9 +127,10 @@ namespace WalletLesster.Views
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.panel1.Controls.Add(this.dpPredictDate);
             this.panel1.Controls.Add(this.btnPredictStatus);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dpPredictDate);
             this.panel1.Location = new System.Drawing.Point(65, 179);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 100);
@@ -138,31 +139,36 @@ namespace WalletLesster.Views
             // btnPredictStatus
             // 
             this.btnPredictStatus.BackColor = System.Drawing.Color.Transparent;
-            this.btnPredictStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPredictStatus.BackgroundImage")));
-            this.btnPredictStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPredictStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPredictStatus.BackgroundImage = global::WalletLesster.Properties.Resources.green_btn;
+            this.btnPredictStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPredictStatus.FlatAppearance.BorderSize = 0;
+            this.btnPredictStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPredictStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPredictStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPredictStatus.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPredictStatus.ForeColor = System.Drawing.Color.Black;
+            this.btnPredictStatus.ForeColor = System.Drawing.Color.White;
             this.btnPredictStatus.Image = ((System.Drawing.Image)(resources.GetObject("btnPredictStatus.Image")));
-            this.btnPredictStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPredictStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPredictStatus.Location = new System.Drawing.Point(647, 21);
             this.btnPredictStatus.Name = "btnPredictStatus";
-            this.btnPredictStatus.Padding = new System.Windows.Forms.Padding(5);
+            this.btnPredictStatus.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
             this.btnPredictStatus.Size = new System.Drawing.Size(261, 61);
             this.btnPredictStatus.TabIndex = 52;
             this.btnPredictStatus.Text = "Predict Status";
-            this.btnPredictStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPredictStatus.UseVisualStyleBackColor = false;
             this.btnPredictStatus.Click += new System.EventHandler(this.btnPredictStatus_Click);
+            this.btnPredictStatus.MouseLeave += new System.EventHandler(this.btnPredictStatus_MouseLeave);
+            this.btnPredictStatus.MouseHover += new System.EventHandler(this.btnPredictStatus_MouseHover);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(46, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 25);
+            this.label1.Size = new System.Drawing.Size(53, 30);
             this.label1.TabIndex = 53;
             this.label1.Text = "Date";
             // 
@@ -176,10 +182,10 @@ namespace WalletLesster.Views
             this.dpPredictDate.CalendarTrailingForeColor = System.Drawing.Color.Plum;
             this.dpPredictDate.Checked = false;
             this.dpPredictDate.CustomFormat = "";
-            this.dpPredictDate.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpPredictDate.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpPredictDate.Location = new System.Drawing.Point(51, 49);
             this.dpPredictDate.Name = "dpPredictDate";
-            this.dpPredictDate.Size = new System.Drawing.Size(325, 27);
+            this.dpPredictDate.Size = new System.Drawing.Size(380, 32);
             this.dpPredictDate.TabIndex = 54;
             // 
             // PredictStatus
@@ -194,6 +200,7 @@ namespace WalletLesster.Views
             this.Controls.Add(this.pnlPredictionResult);
             this.Controls.Add(this.panelTip);
             this.Controls.Add(this.lblTitle);
+            this.DoubleBuffered = true;
             this.Name = "PredictStatus";
             this.Text = "PredictStatus";
             this.panelTip.ResumeLayout(false);

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WalletLesster.Models;
@@ -38,12 +39,23 @@ namespace WalletLesster.Views
                 txtMerchantNumber.Text = Number;
             }
         }
-
+        public bool IsCorrectMobileNumber(String strNumber)
+        {
+            Regex mobilePattern = new Regex(@"^(\+\d{1,3}[- ]?)?\d{10}$");
+            return !mobilePattern.IsMatch(strNumber);
+        }
         private async void AddUpdateMerchantAction(object sender, EventArgs e)
         {
-            if (txtMerchantName.Text.Equals("") || txtMerchantNumber.Text.Equals(""))
+            if (txtMerchantName.Text.Equals(""))
             {
                 lblTip.Text = "Please fill the Category name";
+                lblTip.ForeColor = Color.White;
+                panelTip.BackColor = Color.Red;
+                return;
+            }
+            if (IsCorrectMobileNumber(txtMerchantNumber.Text))
+            {
+                lblTip.Text = "Please enter a valid mobile number";
                 lblTip.ForeColor = Color.White;
                 panelTip.BackColor = Color.Red;
                 return;
@@ -118,14 +130,26 @@ namespace WalletLesster.Views
 
         private void AddUpdateMerchant_Activated(object sender, EventArgs e)
         {
-            lblTitle.Text = String.Format("{0} Merchant", FormType);
-            btnAddUpdateMerchant.Text = String.Format("{0} Merchant", FormType);
+            string fromName = String.Format("{0} Merchant", FormType);
+            lblTitle.Text = fromName;
+            btnAddUpdateMerchant.Text = fromName;
+            this.Text = fromName;
         }
 
         private void AddUpdateMerchant_FormClosed(object sender, FormClosedEventArgs e)
         {
             ManageMerchant manageMerchant = new ManageMerchant();
             manageMerchant.RefreshDataGridView();
+        }
+
+        private void btnAddUpdateMerchant_MouseHover(object sender, EventArgs e)
+        {
+            btnAddUpdateMerchant.BackgroundImage = Properties.Resources.blue_btn;
+        }
+
+        private void btnAddUpdateMerchant_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddUpdateMerchant.BackgroundImage = Properties.Resources.green_btn;
         }
     }
 }

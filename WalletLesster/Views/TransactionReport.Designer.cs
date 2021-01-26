@@ -36,10 +36,10 @@ namespace WalletLesster.Views
             this.walletLessterDBTransactionDataSet = new WalletLesster.WalletLessterDBTransactionDataSet();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDateFilter = new System.Windows.Forms.Button();
             this.rbExpense = new System.Windows.Forms.RadioButton();
             this.rbIncome = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.btnTypeFilter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
@@ -89,10 +89,10 @@ namespace WalletLesster.Views
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btnDateFilter);
             this.panel1.Controls.Add(this.rbExpense);
             this.panel1.Controls.Add(this.rbIncome);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.btnLoad);
             this.panel1.Controls.Add(this.btnTypeFilter);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnReset);
@@ -104,6 +104,31 @@ namespace WalletLesster.Views
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1076, 115);
             this.panel1.TabIndex = 8;
+            // 
+            // btnDateFilter
+            // 
+            this.btnDateFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDateFilter.BackColor = System.Drawing.Color.Transparent;
+            this.btnDateFilter.BackgroundImage = global::WalletLesster.Properties.Resources.blue_btn;
+            this.btnDateFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDateFilter.FlatAppearance.BorderSize = 0;
+            this.btnDateFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDateFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDateFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDateFilter.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDateFilter.ForeColor = System.Drawing.Color.White;
+            this.btnDateFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnDateFilter.Image")));
+            this.btnDateFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDateFilter.Location = new System.Drawing.Point(554, 36);
+            this.btnDateFilter.Name = "btnDateFilter";
+            this.btnDateFilter.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
+            this.btnDateFilter.Size = new System.Drawing.Size(173, 43);
+            this.btnDateFilter.TabIndex = 61;
+            this.btnDateFilter.Text = "Filter by Date";
+            this.btnDateFilter.UseVisualStyleBackColor = false;
+            this.btnDateFilter.Click += new System.EventHandler(this.btnDateFilter_Click);
+            this.btnDateFilter.MouseLeave += new System.EventHandler(this.btnDateFilter_MouseLeave);
+            this.btnDateFilter.MouseHover += new System.EventHandler(this.btnDateFilter_MouseHover);
             // 
             // rbExpense
             // 
@@ -146,27 +171,30 @@ namespace WalletLesster.Views
             this.label5.TabIndex = 58;
             this.label5.Text = "Type of transaction";
             // 
-            // btnLoad
-            // 
-            this.btnLoad.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.Location = new System.Drawing.Point(672, 37);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(116, 43);
-            this.btnLoad.TabIndex = 1;
-            this.btnLoad.Text = "Filter by Date";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
             // btnTypeFilter
             // 
+            this.btnTypeFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTypeFilter.BackColor = System.Drawing.Color.Transparent;
+            this.btnTypeFilter.BackgroundImage = global::WalletLesster.Properties.Resources.pink_btn;
+            this.btnTypeFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTypeFilter.FlatAppearance.BorderSize = 0;
+            this.btnTypeFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnTypeFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnTypeFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTypeFilter.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTypeFilter.Location = new System.Drawing.Point(812, 37);
+            this.btnTypeFilter.ForeColor = System.Drawing.Color.White;
+            this.btnTypeFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnTypeFilter.Image")));
+            this.btnTypeFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTypeFilter.Location = new System.Drawing.Point(741, 37);
             this.btnTypeFilter.Name = "btnTypeFilter";
-            this.btnTypeFilter.Size = new System.Drawing.Size(116, 43);
+            this.btnTypeFilter.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
+            this.btnTypeFilter.Size = new System.Drawing.Size(174, 43);
             this.btnTypeFilter.TabIndex = 7;
             this.btnTypeFilter.Text = "Filter by Type";
-            this.btnTypeFilter.UseVisualStyleBackColor = true;
+            this.btnTypeFilter.UseVisualStyleBackColor = false;
             this.btnTypeFilter.Click += new System.EventHandler(this.btnTypeFilter_Click);
+            this.btnTypeFilter.MouseLeave += new System.EventHandler(this.btnTypeFilter_MouseLeave);
+            this.btnTypeFilter.MouseHover += new System.EventHandler(this.btnTypeFilter_MouseHover);
             // 
             // label1
             // 
@@ -182,14 +210,28 @@ namespace WalletLesster.Views
             // 
             // btnReset
             // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.BackgroundImage = global::WalletLesster.Properties.Resources.orange_btn;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(948, 37);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReset.Location = new System.Drawing.Point(929, 37);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(116, 43);
+            this.btnReset.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
+            this.btnReset.Size = new System.Drawing.Size(135, 43);
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnReset.MouseLeave += new System.EventHandler(this.btnReset_MouseLeave);
+            this.btnReset.MouseHover += new System.EventHandler(this.btnReset_MouseHover);
             // 
             // dtFromDate
             // 
@@ -236,11 +278,11 @@ namespace WalletLesster.Views
             // 
             // TransactionReport
             // 
-            this.AcceptButton = this.btnLoad;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 858);
             this.Controls.Add(this.splitContainer1);
+            this.DoubleBuffered = true;
             this.Name = "TransactionReport";
             this.Text = "TransactionReport";
             this.Load += new System.EventHandler(this.TransactionReport_Load);
@@ -258,7 +300,6 @@ namespace WalletLesster.Views
 
         #endregion
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.DateTimePicker dtToDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtFromDate;
@@ -272,5 +313,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.RadioButton rbExpense;
         private System.Windows.Forms.RadioButton rbIncome;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDateFilter;
     }
 }

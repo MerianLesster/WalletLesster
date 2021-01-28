@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,6 @@ namespace WalletLesster.Views
     {
         Transaction transactionData = new Transaction();
         List<Transaction> transactionArr = new List<Transaction>();
-        List<Transaction> expenseTransactionArr = new List<Transaction>();
         WalletLessterTempData tempData = new WalletLessterTempData();
         static int userId = 1;
 
@@ -34,10 +34,12 @@ namespace WalletLesster.Views
 
         private void btnPredictStatus_Click(object sender, EventArgs e)
         {
+            List<Transaction> expenseTransactionArr = new List<Transaction>();
+
             double oneDayExpense = 0;
             double totalExpense = 0;
             int totalDays = 0;
-            double inR = 0;
+            double inflationRate = 0;
             double noOfDaysFromPredictionDate = 0;
             double avgPredictedExp = 0;
             bool finalStatus;
@@ -68,22 +70,30 @@ namespace WalletLesster.Views
                 }
                 totalDays = Convert.ToInt32((Convert.ToDateTime(orderedExpenseArr[0].Date) - Convert.ToDateTime(orderedExpenseArr[orderedExpenseArr.Count - 1].Date)).TotalDays);
                 oneDayExpense = totalExpense / totalDays;
-                inR = (orderedExpenseArr[orderedExpenseArr.Count - 2].Amount - orderedExpenseArr[orderedExpenseArr.Count - 1].Amount) / totalExpense * 100;
+                inflationRate = (orderedExpenseArr[orderedExpenseArr.Count - 2].Amount - orderedExpenseArr[orderedExpenseArr.Count - 1].Amount) / totalExpense * 100;
                 noOfDaysFromPredictionDate = (Convert.ToDateTime(dpPredictDate.Value) - Convert.ToDateTime(orderedExpenseArr[orderedExpenseArr.Count - 1].Date)).TotalDays;
-                avgPredictedExp = noOfDaysFromPredictionDate * inR * oneDayExpense;
+                avgPredictedExp = noOfDaysFromPredictionDate * inflationRate * oneDayExpense;
                 finalStatus = orderedExpenseArr[orderedExpenseArr.Count - 1].Amount > avgPredictedExp;
                 pnlPredictionResult.Visible = true;
+                lblPredictedAmount.Text = CurrencyFormatter(avgPredictedExp);
                 if (finalStatus == true)
                 {
-                    lblStatus.Text = "Status is Good";
+                    lblStatus.Text = "Good";
                     pictureBoxStatus.Image = Properties.Resources.Happy;
                 }
                 else
                 {
-                    lblStatus.Text = "Status is BAD";
+                    lblStatus.Text = "BAD";
                     pictureBoxStatus.Image = Properties.Resources.Sad;
                 }
             }
+        }
+
+        private String CurrencyFormatter(double amount)
+        {
+            var currencyFormatValue = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+            currencyFormatValue.NumberGroupSeparator = ",";
+            return amount.ToString("#,0.00", currencyFormatValue); // "1 234 897.11"
         }
 
         private void btnPredictStatus_MouseLeave(object sender, EventArgs e)

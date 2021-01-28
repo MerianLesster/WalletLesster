@@ -16,7 +16,7 @@ namespace WalletLesster.Views
     {
         WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1();
         WalletLessterTempData tempData = new WalletLessterTempData();
-
+        ManageTransactions instanceTrans;
         int userId = 0;
         public int Id { get; set; }
         public string Type { get; set; }
@@ -30,7 +30,6 @@ namespace WalletLesster.Views
         public UpdateTransaction()
         {
             InitializeComponent();
-            loader.Visible = false;
             tempData.ReadXml(@"D:\WL_LoggedInUserTempData.xml");
             userId = tempData.User[0].Id;
         }
@@ -60,11 +59,13 @@ namespace WalletLesster.Views
                 }
             }
         }
-
+        public void getParentInstance(ManageTransactions obj)
+        {
+            instanceTrans = obj;
+        }
         private async void UpdateTransactionData(object sender, EventArgs e)
         {
-            loader.Visible = true;
-            btnUpdateTransaction.Location = new Point(847, 11);
+            btnUpdateTransaction.Image = Properties.Resources.loader;
             try
             {
                 var trasactionData = db.Transactions.Where(trasaction => trasaction.Id == Id).FirstOrDefault();
@@ -90,12 +91,14 @@ namespace WalletLesster.Views
                 trasactionData.MerchantId = Convert.ToInt32(cmbMerchant.SelectedValue.ToString());
                 db.Entry(trasactionData).State = EntityState.Modified;
                 await db.SaveChangesAsync();
+                instanceTrans.RefreshDataGridView();
                 MessageBox.Show("Transaction Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
 
             }
             catch (Exception ex)
             {
+                btnUpdateTransaction.Image = null;
                 MessageBox.Show(Convert.ToString(ex), "Error while Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

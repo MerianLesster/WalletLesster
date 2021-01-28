@@ -40,14 +40,12 @@ namespace WalletLesster.Views
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAddUpdateCategory = new System.Windows.Forms.Button();
-            this.loader = new System.Windows.Forms.PictureBox();
             this.panelTip = new System.Windows.Forms.Panel();
             this.lblTip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelTransactions.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loader)).BeginInit();
             this.panelTip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -146,7 +144,6 @@ namespace WalletLesster.Views
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.panel3.Controls.Add(this.btnAddUpdateCategory);
-            this.panel3.Controls.Add(this.loader);
             this.panel3.Location = new System.Drawing.Point(-4, 339);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(781, 90);
@@ -161,31 +158,20 @@ namespace WalletLesster.Views
             this.btnAddUpdateCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAddUpdateCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAddUpdateCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUpdateCategory.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUpdateCategory.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUpdateCategory.ForeColor = System.Drawing.Color.White;
             this.btnAddUpdateCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUpdateCategory.Image")));
             this.btnAddUpdateCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddUpdateCategory.Location = new System.Drawing.Point(414, 19);
+            this.btnAddUpdateCategory.Location = new System.Drawing.Point(505, 23);
             this.btnAddUpdateCategory.Name = "btnAddUpdateCategory";
             this.btnAddUpdateCategory.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
-            this.btnAddUpdateCategory.Size = new System.Drawing.Size(261, 61);
+            this.btnAddUpdateCategory.Size = new System.Drawing.Size(244, 44);
             this.btnAddUpdateCategory.TabIndex = 1;
             this.btnAddUpdateCategory.Text = "Update Category";
             this.btnAddUpdateCategory.UseVisualStyleBackColor = false;
             this.btnAddUpdateCategory.Click += new System.EventHandler(this.AddUpdateCategoryAction);
             this.btnAddUpdateCategory.MouseLeave += new System.EventHandler(this.btnAddUpdateCategory_MouseLeave);
             this.btnAddUpdateCategory.MouseHover += new System.EventHandler(this.btnAddUpdateCategory_MouseHover);
-            // 
-            // loader
-            // 
-            this.loader.BackColor = System.Drawing.Color.Transparent;
-            this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
-            this.loader.Location = new System.Drawing.Point(556, 2);
-            this.loader.Name = "loader";
-            this.loader.Size = new System.Drawing.Size(191, 95);
-            this.loader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loader.TabIndex = 2;
-            this.loader.TabStop = false;
             // 
             // panelTip
             // 
@@ -237,13 +223,10 @@ namespace WalletLesster.Views
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUpdateCategory";
             this.Activated += new System.EventHandler(this.AddUpdateCategory_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddUpdateCategory_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUpdateCategory_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panelTransactions.ResumeLayout(false);
             this.panelTransactions.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             this.panelTip.ResumeLayout(false);
             this.panelTip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -263,7 +246,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Button btnAddUpdateCategory;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox loader;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelTip;
         private System.Windows.Forms.Label lblTip;

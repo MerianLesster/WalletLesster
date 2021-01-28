@@ -39,14 +39,12 @@ namespace WalletLesster.Views
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAddUpdateMerchant = new System.Windows.Forms.Button();
-            this.loader = new System.Windows.Forms.PictureBox();
             this.panelTip = new System.Windows.Forms.Panel();
             this.lblTip = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelTransactions.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loader)).BeginInit();
             this.panelTip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,7 +127,6 @@ namespace WalletLesster.Views
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.panel3.Controls.Add(this.btnAddUpdateMerchant);
-            this.panel3.Controls.Add(this.loader);
             this.panel3.Location = new System.Drawing.Point(-5, 347);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(781, 90);
@@ -144,32 +141,20 @@ namespace WalletLesster.Views
             this.btnAddUpdateMerchant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAddUpdateMerchant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAddUpdateMerchant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUpdateMerchant.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUpdateMerchant.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUpdateMerchant.ForeColor = System.Drawing.Color.White;
             this.btnAddUpdateMerchant.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUpdateMerchant.Image")));
             this.btnAddUpdateMerchant.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddUpdateMerchant.Location = new System.Drawing.Point(410, 8);
+            this.btnAddUpdateMerchant.Location = new System.Drawing.Point(503, 20);
             this.btnAddUpdateMerchant.Name = "btnAddUpdateMerchant";
             this.btnAddUpdateMerchant.Padding = new System.Windows.Forms.Padding(5, 5, 15, 5);
-            this.btnAddUpdateMerchant.Size = new System.Drawing.Size(261, 61);
+            this.btnAddUpdateMerchant.Size = new System.Drawing.Size(244, 44);
             this.btnAddUpdateMerchant.TabIndex = 1;
             this.btnAddUpdateMerchant.Text = "Update Merchant";
             this.btnAddUpdateMerchant.UseVisualStyleBackColor = false;
             this.btnAddUpdateMerchant.Click += new System.EventHandler(this.AddUpdateMerchantAction);
             this.btnAddUpdateMerchant.MouseLeave += new System.EventHandler(this.btnAddUpdateMerchant_MouseLeave);
             this.btnAddUpdateMerchant.MouseHover += new System.EventHandler(this.btnAddUpdateMerchant_MouseHover);
-            // 
-            // loader
-            // 
-            this.loader.BackColor = System.Drawing.Color.Transparent;
-            this.loader.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loader.BackgroundImage")));
-            this.loader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loader.Location = new System.Drawing.Point(663, 8);
-            this.loader.Name = "loader";
-            this.loader.Size = new System.Drawing.Size(118, 61);
-            this.loader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loader.TabIndex = 2;
-            this.loader.TabStop = false;
             // 
             // panelTip
             // 
@@ -221,12 +206,10 @@ namespace WalletLesster.Views
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageMerchant";
             this.Activated += new System.EventHandler(this.AddUpdateMerchant_Activated);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUpdateMerchant_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panelTransactions.ResumeLayout(false);
             this.panelTransactions.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             this.panelTip.ResumeLayout(false);
             this.panelTip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -244,7 +227,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAddUpdateMerchant;
-        private System.Windows.Forms.PictureBox loader;
         private System.Windows.Forms.Panel panelTip;
         private System.Windows.Forms.Label lblTip;
         private System.Windows.Forms.PictureBox pictureBox1;

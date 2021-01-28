@@ -17,6 +17,8 @@ namespace WalletLesster.Views
     {
         WalletLessterTempData tempData = new WalletLessterTempData();
         WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1();
+        ManageCategory instanceCategory;
+
         int userId = 0;
         public string FormType { get; set; }
         public int Id { get; set; }
@@ -27,8 +29,6 @@ namespace WalletLesster.Views
             InitializeComponent();
             tempData.ReadXml(@"D:\WL_LoggedInUserTempData.xml");
             userId = tempData.User[0].Id;
-
-
         }
         public void prefilData()
         {
@@ -58,6 +58,10 @@ namespace WalletLesster.Views
             return value;
         }
 
+        public void getParentInstance(ManageCategory obj)
+        {
+            instanceCategory = obj;
+        }
         private async void AddUpdateCategoryAction(object sender, EventArgs e)
         {
 
@@ -73,6 +77,7 @@ namespace WalletLesster.Views
             panelTip.BackColor = Color.White;
             List<Transaction> transactionArr = new List<Transaction>();
 
+            btnAddUpdateCategory.Image = Properties.Resources.loader;
             tempData.Category.Clear();
             tempData.Category.AddCategoryRow(GetTransactionType(), txtCategoryName.Text);
             // Store first
@@ -92,12 +97,14 @@ namespace WalletLesster.Views
                         category.UserId = userId;
                         db.Categories.Add(category);
                         await db.SaveChangesAsync();
+                        instanceCategory.RefreshDataGridView();
                         MessageBox.Show("Category Created Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
                 catch (Exception ex)
                 {
+                    btnAddUpdateCategory.Image = null;
                     MessageBox.Show(Convert.ToString(ex), "Error while Adding", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -125,12 +132,14 @@ namespace WalletLesster.Views
                             db.Entry(transactionArr[i]).State = EntityState.Modified;
                         }
                         await db.SaveChangesAsync();
+                        instanceCategory.RefreshDataGridView();
                         MessageBox.Show("Category Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
                 catch (Exception ex)
                 {
+                    btnAddUpdateCategory.Image = null;
                     MessageBox.Show(Convert.ToString(ex), "Error while Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -140,18 +149,6 @@ namespace WalletLesster.Views
         {
             lblTitle.Text = String.Format("{0} Category", FormType);
             btnAddUpdateCategory.Text = String.Format("{0} Category", FormType);
-        }
-
-        private void AddUpdateCategory_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ManageCategory manageMerchant = new ManageCategory();
-            manageMerchant.RefreshDataGridView();
-        }
-
-        private void AddUpdateCategory_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ManageCategory manageMerchant = new ManageCategory();
-            manageMerchant.RefreshDataGridView();
         }
 
         private void btnAddUpdateCategory_MouseHover(object sender, EventArgs e)

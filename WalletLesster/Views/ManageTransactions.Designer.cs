@@ -51,20 +51,33 @@ namespace WalletLesster.Views
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.transactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.walletLessterDBTransactionDataSet = new WalletLesster.WalletLessterDBTransactionDataSet();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.transactionsTableAdapter = new WalletLesster.WalletLessterDBTransactionDataSetTableAdapters.TransactionsTableAdapter();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClearFilter = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbMerchant = new System.Windows.Forms.ComboBox();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbxRecurrence = new System.Windows.Forms.CheckBox();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.cmbTransType = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnCSV = new System.Windows.Forms.Button();
             this.panelTip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walletLessterDBTransactionDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTip
             // 
+            this.panelTip.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelTip.BackColor = System.Drawing.Color.White;
             this.panelTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTip.Controls.Add(this.lblTip);
@@ -104,15 +117,15 @@ namespace WalletLesster.Views
             this.btnAddTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAddTransaction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAddTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTransaction.Font = new System.Drawing.Font("Poppins SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTransaction.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.btnAddTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTransaction.Image")));
             this.btnAddTransaction.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddTransaction.Location = new System.Drawing.Point(52, 329);
+            this.btnAddTransaction.Location = new System.Drawing.Point(776, 240);
             this.btnAddTransaction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddTransaction.Name = "btnAddTransaction";
-            this.btnAddTransaction.Padding = new System.Windows.Forms.Padding(5, 5, 10, 5);
-            this.btnAddTransaction.Size = new System.Drawing.Size(284, 61);
+            this.btnAddTransaction.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.btnAddTransaction.Size = new System.Drawing.Size(242, 46);
             this.btnAddTransaction.TabIndex = 14;
             this.btnAddTransaction.Text = "Add Transaction";
             this.btnAddTransaction.UseVisualStyleBackColor = false;
@@ -147,7 +160,7 @@ namespace WalletLesster.Views
             this.Delete});
             this.dgvTransaction.DataSource = this.transactionsBindingSource;
             this.dgvTransaction.GridColor = System.Drawing.Color.Aqua;
-            this.dgvTransaction.Location = new System.Drawing.Point(52, 449);
+            this.dgvTransaction.Location = new System.Drawing.Point(52, 456);
             this.dgvTransaction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTransaction.Name = "dgvTransaction";
             this.dgvTransaction.ReadOnly = true;
@@ -291,17 +304,6 @@ namespace WalletLesster.Views
             this.walletLessterDBTransactionDataSet.DataSetName = "WalletLessterDBTransactionDataSet";
             this.walletLessterDBTransactionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Location = new System.Drawing.Point(342, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 58);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -318,16 +320,211 @@ namespace WalletLesster.Views
             // 
             this.transactionsTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox6
+            // pictureBox1
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(547, 168);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(431, 283);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 13;
-            this.pictureBox6.TabStop = false;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(51, 126);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(922, 206);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClearFilter
+            // 
+            this.btnClearFilter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnClearFilter.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearFilter.BackgroundImage = global::WalletLesster.Properties.Resources.purple_btn;
+            this.btnClearFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClearFilter.FlatAppearance.BorderSize = 0;
+            this.btnClearFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClearFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClearFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearFilter.Font = new System.Drawing.Font("Poppins Medium", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearFilter.ForeColor = System.Drawing.Color.White;
+            this.btnClearFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnClearFilter.Image")));
+            this.btnClearFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClearFilter.Location = new System.Drawing.Point(814, 23);
+            this.btnClearFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClearFilter.Name = "btnClearFilter";
+            this.btnClearFilter.Size = new System.Drawing.Size(149, 33);
+            this.btnClearFilter.TabIndex = 68;
+            this.btnClearFilter.Text = "Clear Filter";
+            this.btnClearFilter.UseVisualStyleBackColor = false;
+            this.btnClearFilter.Click += new System.EventHandler(this.ClearFilter);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.cmbMerchant);
+            this.panel1.Controls.Add(this.btnClearFilter);
+            this.panel1.Controls.Add(this.btnFilter);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.cbxRecurrence);
+            this.panel1.Controls.Add(this.cmbCategory);
+            this.panel1.Controls.Add(this.cmbTransType);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(52, 357);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(976, 86);
+            this.panel1.TabIndex = 69;
+            // 
+            // cmbMerchant
+            // 
+            this.cmbMerchant.BackColor = System.Drawing.Color.White;
+            this.cmbMerchant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMerchant.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMerchant.FormattingEnabled = true;
+            this.cmbMerchant.Items.AddRange(new object[] {
+            "Select Merchant"});
+            this.cmbMerchant.Location = new System.Drawing.Point(192, 39);
+            this.cmbMerchant.Name = "cmbMerchant";
+            this.cmbMerchant.Size = new System.Drawing.Size(165, 31);
+            this.cmbMerchant.TabIndex = 78;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnFilter.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.BackgroundImage = global::WalletLesster.Properties.Resources.purple_btn;
+            this.btnFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFilter.FlatAppearance.BorderSize = 0;
+            this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Poppins Medium", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.Color.White;
+            this.btnFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnFilter.Image")));
+            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilter.Location = new System.Drawing.Point(683, 23);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(125, 33);
+            this.btnFilter.TabIndex = 70;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.FilterTransactions);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(189, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.TabIndex = 77;
+            this.label3.Text = "Merchant";
+            // 
+            // cbxRecurrence
+            // 
+            this.cbxRecurrence.AutoSize = true;
+            this.cbxRecurrence.BackColor = System.Drawing.Color.Transparent;
+            this.cbxRecurrence.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cbxRecurrence.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxRecurrence.ForeColor = System.Drawing.Color.White;
+            this.cbxRecurrence.Location = new System.Drawing.Point(559, 10);
+            this.cbxRecurrence.Name = "cbxRecurrence";
+            this.cbxRecurrence.Size = new System.Drawing.Size(96, 46);
+            this.cbxRecurrence.TabIndex = 74;
+            this.cbxRecurrence.Text = "Recurrence";
+            this.cbxRecurrence.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cbxRecurrence.UseVisualStyleBackColor = false;
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.BackColor = System.Drawing.Color.White;
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.Font = new System.Drawing.Font("Poppins", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "Select Category"});
+            this.cmbCategory.Location = new System.Drawing.Point(382, 39);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(165, 31);
+            this.cmbCategory.TabIndex = 73;
+            // 
+            // cmbTransType
+            // 
+            this.cmbTransType.BackColor = System.Drawing.Color.White;
+            this.cmbTransType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTransType.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTransType.FormattingEnabled = true;
+            this.cmbTransType.Items.AddRange(new object[] {
+            "Income",
+            "Expense"});
+            this.cmbTransType.Location = new System.Drawing.Point(12, 39);
+            this.cmbTransType.Name = "cmbTransType";
+            this.cmbTransType.Size = new System.Drawing.Size(155, 31);
+            this.cmbTransType.TabIndex = 72;
+            this.cmbTransType.SelectedIndexChanged += new System.EventHandler(this.cmbTransType_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(381, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 25);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "Category";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 25);
+            this.label1.TabIndex = 68;
+            this.label1.Text = "Type";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Cyan;
+            this.label4.Location = new System.Drawing.Point(51, 330);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 30);
+            this.label4.TabIndex = 70;
+            this.label4.Text = "Filters";
+            // 
+            // btnCSV
+            // 
+            this.btnCSV.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCSV.BackColor = System.Drawing.Color.Transparent;
+            this.btnCSV.BackgroundImage = global::WalletLesster.Properties.Resources.orange_btn;
+            this.btnCSV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCSV.FlatAppearance.BorderSize = 0;
+            this.btnCSV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCSV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCSV.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCSV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
+            this.btnCSV.Image = ((System.Drawing.Image)(resources.GetObject("btnCSV.Image")));
+            this.btnCSV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCSV.Location = new System.Drawing.Point(776, 294);
+            this.btnCSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCSV.Name = "btnCSV";
+            this.btnCSV.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.btnCSV.Size = new System.Drawing.Size(242, 46);
+            this.btnCSV.TabIndex = 71;
+            this.btnCSV.Text = "Export to CSV";
+            this.btnCSV.UseVisualStyleBackColor = false;
+            this.btnCSV.Click += new System.EventHandler(this.ExportToCSV);
             // 
             // ManageTransactions
             // 
@@ -336,12 +533,14 @@ namespace WalletLesster.Views
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1076, 858);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.panelTip);
+            this.Controls.Add(this.btnCSV);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvTransaction);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panelTip);
             this.Controls.Add(this.btnAddTransaction);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblTitle);
             this.DoubleBuffered = true;
             this.Name = "ManageTransactions";
             this.Text = "ManageTransactions";
@@ -353,7 +552,9 @@ namespace WalletLesster.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.walletLessterDBTransactionDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,7 +567,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btnAddTransaction;
         private System.Windows.Forms.DataGridView dgvTransaction;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblTitle;
         private WalletLessterDBTransactionDataSet walletLessterDBTransactionDataSet;
         private System.Windows.Forms.BindingSource transactionsBindingSource;
@@ -384,6 +584,18 @@ namespace WalletLesster.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn MerchantId;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClearFilter;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox cbxRecurrence;
+        private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.ComboBox cmbTransType;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.ComboBox cmbMerchant;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCSV;
     }
 }

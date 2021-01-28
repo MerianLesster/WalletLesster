@@ -405,6 +405,7 @@
     <None Include="Resources\pink_btn.png" />
     <None Include="Resources\purple_btn.png" />
     <None Include="Resources\yellow_btn.png" />
+    <None Include="Resources\loader.gif" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

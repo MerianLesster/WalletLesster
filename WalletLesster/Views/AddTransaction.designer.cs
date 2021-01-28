@@ -68,12 +68,17 @@ namespace WalletLesster.Views
             // lblTip
             // 
             this.lblTip.AutoSize = true;
-            this.lblTip.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTip.Location = new System.Drawing.Point(81, 17);
+            this.lblTip.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTip.Location = new System.Drawing.Point(71, -3);
+            this.lblTip.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTip.MaximumSize = new System.Drawing.Size(1080, 76);
+            this.lblTip.MinimumSize = new System.Drawing.Size(1080, 76);
             this.lblTip.Name = "lblTip";
-            this.lblTip.Size = new System.Drawing.Size(71, 35);
+            this.lblTip.Size = new System.Drawing.Size(1080, 76);
             this.lblTip.TabIndex = 1;
-            this.lblTip.Text = "Tips....";
+            this.lblTip.Text = "* You can add any number of transactions by clicking add another button.\r\n* You s" +
+    "hould have minimum of one record inorder to save the transaction.";
+            this.lblTip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 

@@ -18,7 +18,7 @@ namespace WalletLesster.Views
         WalletLessterTempData tempData = new WalletLessterTempData();
         List<TransactionCustomCtrl> transactionArr = new List<TransactionCustomCtrl>();
         WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1();
-
+        ManageTransactions instanceTrans;
         bool showErrorMsg = false;
         public AddTransaction()
         {
@@ -36,6 +36,11 @@ namespace WalletLesster.Views
             }*/
         }
 
+        public void getParentInstance(ManageTransactions obj)
+        {
+            instanceTrans = obj;
+        }
+
         private async void btnSaveTransaction_Click(object sender, EventArgs e)
         {
             try
@@ -46,12 +51,13 @@ namespace WalletLesster.Views
                 }
                 if (showErrorMsg)
                 {
-                    lblTip.Text = "Please Enter All the Fileds";
+                    lblTip.Text = "Please add minimum of one category for both income and expense from 'Manage Category' page and one merchant from 'Manage Merchant' page inorder to add a Transaction.";
                     lblTip.ForeColor = Color.White;
                     panelTip.BackColor = Color.Red;
                 }
                 else
                 {
+                    btnSaveTransaction.Image = Properties.Resources.loader;
                     tempData.Transaction.Clear();
                     for (int i = 0; i < transactionArr.Count; i++)
                     {
@@ -93,15 +99,13 @@ namespace WalletLesster.Views
                         }
                     }
                     await db.SaveChangesAsync();
-                    ManageTransactions manageTransactions = new ManageTransactions();
-                    manageTransactions.RefreshDataGridView();
-                    lblTip.Text = "Tip...";
+                    instanceTrans.RefreshDataGridView();
+                    lblTip.Text = "* You can add any number of transactions by clicking the 'Add another' button.";
                     lblTip.ForeColor = Color.Black;
                     panelTip.BackColor = Color.White;
                     MessageBox.Show("Transactions added successfully", "Success");
                     this.Hide();
                 }
-                //MessageBox.Show("Do you want to add more transactions?", "Information", MessageBoxButtons.YesNo);
             }
             catch (Exception ex)
             {
@@ -112,7 +116,7 @@ namespace WalletLesster.Views
 
         private void RemoveSite_Click(Object sender, ContentArgs e)
         {
-            lblTip.Text = "Tip...";
+            lblTip.Text = "* You should have minimum of one record inorder to save the transaction. Please click on the 'Add another' button";
             lblTip.ForeColor = Color.Black;
             panelTip.BackColor = Color.White;
             TransactionCustomCtrl updateList;
@@ -133,6 +137,9 @@ namespace WalletLesster.Views
 
         private void AddAnotherTransaction(object sender, EventArgs e)
         {
+            lblTip.Text = "* You should have minimum of one record inorder to save the transaction.";
+            lblTip.ForeColor = Color.Black;
+            panelTip.BackColor = Color.White;
             TransactionCustomCtrl transContent = new TransactionCustomCtrl();
             TransactionCustomCtrl previous;
 

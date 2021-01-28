@@ -203,16 +203,7 @@ namespace WalletLesster.Views
                 }
                 lblIncome.Text = CurrencyFormatter(totalIncome);
                 lblExpence.Text = CurrencyFormatter(totalExpense);
-
-                if ((totalIncome - totalExpense) > 0)
-                {
-                    lblStatus.Text = "Good";
-                }
-                else
-                {
-                    lblStatus.Text = "Bad";
-
-                }
+                lblBalance.Text = CurrencyFormatter(totalIncome - totalExpense);
             }
         }
         private void ShowInitialActiveTab(bool status)

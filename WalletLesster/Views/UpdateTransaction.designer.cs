@@ -36,7 +36,6 @@ namespace WalletLesster.Views
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnUpdateTransaction = new System.Windows.Forms.Button();
-            this.loader = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTransactions = new System.Windows.Forms.Panel();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -56,7 +55,6 @@ namespace WalletLesster.Views
             this.panelTip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loader)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).BeginInit();
@@ -109,7 +107,6 @@ namespace WalletLesster.Views
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(81)))));
             this.panel3.Controls.Add(this.btnUpdateTransaction);
-            this.panel3.Controls.Add(this.loader);
             this.panel3.Location = new System.Drawing.Point(0, 344);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1208, 90);
@@ -138,17 +135,6 @@ namespace WalletLesster.Views
             this.btnUpdateTransaction.Click += new System.EventHandler(this.UpdateTransactionData);
             this.btnUpdateTransaction.MouseLeave += new System.EventHandler(this.btnUpdateTransaction_MouseLeave);
             this.btnUpdateTransaction.MouseHover += new System.EventHandler(this.btnUpdateTransaction_MouseHover);
-            // 
-            // loader
-            // 
-            this.loader.BackColor = System.Drawing.Color.Transparent;
-            this.loader.Image = ((System.Drawing.Image)(resources.GetObject("loader.Image")));
-            this.loader.Location = new System.Drawing.Point(1052, -6);
-            this.loader.Name = "loader";
-            this.loader.Size = new System.Drawing.Size(191, 95);
-            this.loader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loader.TabIndex = 2;
-            this.loader.TabStop = false;
             // 
             // panel1
             // 
@@ -388,7 +374,6 @@ namespace WalletLesster.Views
             this.panelTip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.loader)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelTransactions.ResumeLayout(false);
             this.panelTransactions.PerformLayout();
@@ -405,7 +390,6 @@ namespace WalletLesster.Views
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnUpdateTransaction;
-        private System.Windows.Forms.PictureBox loader;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelTransactions;
         private System.Windows.Forms.TextBox txtDescription;

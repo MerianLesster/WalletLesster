@@ -18,6 +18,7 @@ namespace WalletLesster.Views
     {
         WalletLessterTempData tempData = new WalletLessterTempData();
         WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1();
+        ManageMerchant instanceMerchant;
         int userId = 0;
         public string FormType { get; set; }
         public int Id { get; set; }
@@ -44,6 +45,10 @@ namespace WalletLesster.Views
             Regex mobilePattern = new Regex(@"^(\+\d{1,3}[- ]?)?\d{10}$");
             return !mobilePattern.IsMatch(strNumber);
         }
+        public void getParentInstance(ManageMerchant obj)
+        {
+            instanceMerchant = obj;
+        }
         private async void AddUpdateMerchantAction(object sender, EventArgs e)
         {
             if (txtMerchantName.Text.Equals(""))
@@ -64,7 +69,7 @@ namespace WalletLesster.Views
             lblTip.ForeColor = Color.Black;
             panelTip.BackColor = Color.White;
             List<Transaction> transactionArr = new List<Transaction>();
-
+            btnAddUpdateMerchant.Image = Properties.Resources.loader;
             tempData.Merchant.Clear();
             tempData.Merchant.AddMerchantRow(txtMerchantName.Text, txtMerchantNumber.Text);
             // Store first
@@ -84,12 +89,14 @@ namespace WalletLesster.Views
                         merchant.UserId = userId;
                         db.Merchants.Add(merchant);
                         await db.SaveChangesAsync();
+                        instanceMerchant.RefreshDataGridView();
                         MessageBox.Show("Merchant Created Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
                 catch (Exception ex)
                 {
+                    btnAddUpdateMerchant.Image = null;
                     MessageBox.Show(Convert.ToString(ex), "Error while Adding", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -117,12 +124,14 @@ namespace WalletLesster.Views
                             db.Entry(transactionArr[i]).State = EntityState.Modified;
                         }
                         await db.SaveChangesAsync();
+                        instanceMerchant.RefreshDataGridView();
                         MessageBox.Show("Merchant Updated Successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                 }
                 catch (Exception ex)
                 {
+                    btnAddUpdateMerchant.Image = null;
                     MessageBox.Show(Convert.ToString(ex), "Error while Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -134,12 +143,6 @@ namespace WalletLesster.Views
             lblTitle.Text = fromName;
             btnAddUpdateMerchant.Text = fromName;
             this.Text = fromName;
-        }
-
-        private void AddUpdateMerchant_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ManageMerchant manageMerchant = new ManageMerchant();
-            manageMerchant.RefreshDataGridView();
         }
 
         private void btnAddUpdateMerchant_MouseHover(object sender, EventArgs e)

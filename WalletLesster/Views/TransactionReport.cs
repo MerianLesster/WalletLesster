@@ -17,7 +17,6 @@ namespace WalletLesster.Views
     public partial class TransactionReport : Form
     {
         string ConnectionString = "";
-        string transactionType = "Income";
         WalletLessterTempData tempData = new WalletLessterTempData();
         static int userId = 1;
         public TransactionReport()
@@ -31,6 +30,7 @@ namespace WalletLesster.Views
             ConnectionString = "Data Source=LAPTOP-OEO6CLPO;Initial Catalog=WalletLessterDatabase;Integrated Security=True";
             reportViewer1.SetDisplayMode(DisplayMode.Normal);
             reportViewer1.ZoomMode = ZoomMode.PageWidth;
+            cmbTransType.Text = "Income & Expense";
         }
 
         private void TransactionReport_Load(object sender, EventArgs e)
@@ -38,12 +38,25 @@ namespace WalletLesster.Views
             btnReset_Click(sender, e);
         }
 
-        private void btnDateFilter_Click(object sender, EventArgs e)
+        private void btnFilter_Click(object sender, EventArgs e)
         {
+            string userQuery, dateQuery, typeQuery;
+            SqlCommand cmd;
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("select distinct * from [WalletLessterDatabase].[dbo].[Transactions] where UserId = '" + userId + "' and Date between '" + this.dtFromDate.Value.Date.ToShortDateString() + "' and'" + this.dtToDate.Value.Date.ToShortDateString() + "'", conn);
-                cmd.CommandType = CommandType.Text;
+                userQuery = "select distinct * from [WalletLessterDatabase].[dbo].[Transactions] where UserId = '" + userId + "'";
+                dateQuery = " and Date between '" + this.dtFromDate.Value.Date.ToShortDateString() + "' and'" + this.dtToDate.Value.Date.ToShortDateString() + "'";
+                if (!this.cmbTransType.Text.Equals("Income & Expense"))
+                {
+                    typeQuery = " and Type = '" + cmbTransType.Text + "'";
+                    cmd = new SqlCommand(userQuery + dateQuery + typeQuery, conn);
+                    cmd.CommandType = CommandType.Text;
+                }
+                else
+                {
+                    cmd = new SqlCommand(userQuery + dateQuery, conn);
+                    cmd.CommandType = CommandType.Text;
+                }
                 conn.Open();
                 DataTable dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
@@ -58,27 +71,9 @@ namespace WalletLesster.Views
             updateDateRange();
         }
 
-        private void Normal()
-        {
-            /*
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [WalletLessterDatabase].[dbo].[Transactions]", conn);
-            cmd.CommandType = CommandType.Text;
-            conn.Open();
-            DataTable dt = new DataTable();
-            dt.Load(cmd.ExecuteReader());
-
-            ReportDataSource reportDataSource = new ReportDataSource("WL_TransactionDataSet", dt);
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(reportDataSource);
-            reportViewer1.LocalReport.Refresh();
-            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
-            reportViewer1.ZoomMode = ZoomMode.PageWidth;
-            reportViewer1.RefreshReport();
-            conn.Close();*/
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
+            cmbTransType.Text = "Income & Expense";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand("SELECT * FROM [WalletLessterDatabase].[dbo].[Transactions] where UserId = '" + userId + "'", conn);
@@ -94,47 +89,23 @@ namespace WalletLesster.Views
                 reportViewer1.RefreshReport();
                 conn.Close();
             }
-            updateDateRange();
-        }
-
-        private void btnTypeFilter_Click(object sender, EventArgs e)
-        {
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            ReportParameter[] reportParameters = new ReportParameter[]
             {
-                SqlCommand cmd = new SqlCommand("select distinct * from [WalletLessterDatabase].[dbo].[Transactions] where UserId = '" + userId + "' and Type = '" + this.transactionType + "'", conn);
-                cmd.CommandType = CommandType.Text;
-                conn.Open();
-                DataTable dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
-
-                ReportDataSource reportDataSource = new ReportDataSource("WL_TransactionDataSet", dt);
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(reportDataSource);
-                reportViewer1.LocalReport.Refresh();
-                reportViewer1.RefreshReport();
-                conn.Close();
-            }
-            updateDateRange();
-        }
-
-        private void rbIncome_CheckedChanged(object sender, EventArgs e)
-        {
-            string value;
-            bool isChecked = rbIncome.Checked;
-            if (isChecked)
-                value = rbIncome.Text;
-            else
-                value = rbExpense.Text;
-            transactionType = value;
+                new ReportParameter("fromDate", ""),
+                new ReportParameter("toDate", ""),
+                new ReportParameter("transactionType", cmbTransType.Text),
+            };
+            reportViewer1.LocalReport.SetParameters(reportParameters);
+            reportViewer1.RefreshReport();
         }
 
         private void updateDateRange()
         {
             ReportParameter[] reportParameters = new ReportParameter[]
             {
-                new ReportParameter("fromDate", dtFromDate.Value.Date.ToShortDateString()),
+                new ReportParameter("fromDate", "From: " + dtFromDate.Value.Date.ToShortDateString() + "    To: "),
                 new ReportParameter("toDate", dtToDate.Value.Date.ToShortDateString()),
-                new ReportParameter("transactionType", transactionType),
+                new ReportParameter("transactionType", cmbTransType.Text),
             };
             reportViewer1.LocalReport.SetParameters(reportParameters);
             reportViewer1.RefreshReport();
@@ -142,23 +113,12 @@ namespace WalletLesster.Views
 
         private void btnDateFilter_MouseHover(object sender, EventArgs e)
         {
-            btnDateFilter.BackgroundImage = Properties.Resources.green_btn;
+            btnFilter.BackgroundImage = Properties.Resources.green_btn;
         }
 
         private void btnDateFilter_MouseLeave(object sender, EventArgs e)
         {
-            btnDateFilter.BackgroundImage = Properties.Resources.blue_btn;
-        }
-
-        private void btnTypeFilter_MouseHover(object sender, EventArgs e)
-        {
-            btnTypeFilter.BackgroundImage = Properties.Resources.purple_btn;
-        }
-
-        private void btnTypeFilter_MouseLeave(object sender, EventArgs e)
-        {
-            btnTypeFilter.BackgroundImage = Properties.Resources.pink_btn;
-
+            btnFilter.BackgroundImage = Properties.Resources.blue_btn;
         }
 
         private void btnReset_MouseLeave(object sender, EventArgs e)

@@ -40,6 +40,7 @@ namespace WalletLesster.Views
         {
             AddUpdateCategory addUpdateCategory = new AddUpdateCategory();
             addUpdateCategory.FormType = "Add";
+            addUpdateCategory.getParentInstance(this);
             addUpdateCategory.ShowDialog();
         }
 
@@ -51,6 +52,11 @@ namespace WalletLesster.Views
                 var blogs = from b in db.Categories where b.UserId.Equals(userId) select b;
                 dgvCategory.DataSource = blogs.ToList();
             }
+            txtName.Text = "";
+            cmbTransType.Text = "Income";
+            lblTip.Text = "Tip";
+            lblTip.ForeColor = Color.Black;
+            panelTip.BackColor = Color.White;
         }
 
         private async void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -89,15 +95,11 @@ namespace WalletLesster.Views
                     addUpdateCategory.Type = categoryModel.Type;
                     addUpdateCategory.Name = categoryModel.Name;
                     addUpdateCategory.FormType = "Update";
+                    addUpdateCategory.getParentInstance(this);
                     addUpdateCategory.prefilData();
                     addUpdateCategory.ShowDialog();
                 }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RefreshDataGridView();
         }
 
         private void dgvCategory_DataSourceChanged(object sender, EventArgs e)
@@ -117,6 +119,41 @@ namespace WalletLesster.Views
         private void btnAddCategoty_MouseHover(object sender, EventArgs e)
         {
             btnAddCategoty.BackgroundImage = Properties.Resources.orange_btn;
+        }
+
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            RefreshDataGridView();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            dgvCategory.AutoGenerateColumns = false;
+            using (WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1())
+            {
+                var categories = from b in db.Categories where b.UserId.Equals(userId) select b;
+                if (txtName.Text.Equals(""))
+                {
+                    categories = from b in db.Categories where b.UserId.Equals(userId) && b.Type.Equals(cmbTransType.Text) select b;
+                }
+                else
+                {
+                    categories = from b in db.Categories where b.UserId.Equals(userId) && b.Name.Contains(txtName.Text) && b.Type.Equals(cmbTransType.Text) select b;
+                }
+                dgvCategory.DataSource = categories.ToList();
+                if (categories.ToList().Count == 0)
+                {
+                    lblTip.Text = "No records found";
+                    lblTip.ForeColor = Color.White;
+                    panelTip.BackColor = Color.Red;
+                }
+                else
+                {
+                    lblTip.Text = "Tip";
+                    lblTip.ForeColor = Color.Black;
+                    panelTip.BackColor = Color.White;
+                }
+            }
         }
     }
 }

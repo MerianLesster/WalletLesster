@@ -43,6 +43,7 @@ namespace WalletLesster.Views
         {
             AddUpdateMerchant addUpdateMerchant = new AddUpdateMerchant();
             addUpdateMerchant.FormType = "Add";
+            addUpdateMerchant.getParentInstance(this);
             addUpdateMerchant.ShowDialog();
         }
 
@@ -54,6 +55,11 @@ namespace WalletLesster.Views
                 var blogs = from b in db.Merchants where b.UserId.Equals(userId) select b;
                 dgvMerchant.DataSource = blogs.ToList();
             }
+            txtNumber.Text = "";
+            txtName.Text = "";
+            lblTip.Text = "Tip";
+            lblTip.ForeColor = Color.Black;
+            panelTip.BackColor = Color.White;
         }
 
         private async void dgvMerchant_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,15 +98,11 @@ namespace WalletLesster.Views
                     addUpdateMerchant.Name = merchantModel.Name;
                     addUpdateMerchant.Number = merchantModel.Number;
                     addUpdateMerchant.FormType = "Update";
+                    addUpdateMerchant.getParentInstance(this);
                     addUpdateMerchant.prefilData();
                     addUpdateMerchant.ShowDialog();
                 }
             }
-        }
-
-        private void refresh_Click(object sender, EventArgs e)
-        {
-            RefreshDataGridView();
         }
 
         private void btnAddMerchant_MouseHover(object sender, EventArgs e)
@@ -111,6 +113,45 @@ namespace WalletLesster.Views
         private void btnAddMerchant_MouseLeave(object sender, EventArgs e)
         {
             btnAddMerchant.BackgroundImage = Properties.Resources.yellow_btn;
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            dgvMerchant.AutoGenerateColumns = false;
+            using (WalletLessterDataModelContainer1 db = new WalletLessterDataModelContainer1())
+            {
+                var merchants = from b in db.Merchants where b.UserId.Equals(userId) select b;
+                if (!txtName.Text.Equals("") && txtNumber.Text.Equals(""))
+                {
+                    merchants = from b in db.Merchants where b.UserId.Equals(userId) && b.Name.Contains(txtName.Text) select b;
+                }
+                else if (!txtNumber.Text.Equals("") && txtName.Text.Equals(""))
+                {
+                    merchants = from b in db.Merchants where b.UserId.Equals(userId) && b.Number.Contains(txtNumber.Text) select b;
+                }
+                else
+                {
+                    merchants = from b in db.Merchants where b.UserId.Equals(userId) && (b.Name.Contains(txtName.Text) && b.Number.Contains(txtNumber.Text)) select b;
+                }
+                dgvMerchant.DataSource = merchants.ToList();
+                if (merchants.ToList().Count == 0)
+                {
+                    lblTip.Text = "No records found";
+                    lblTip.ForeColor = Color.White;
+                    panelTip.BackColor = Color.Red;
+                }
+                else
+                {
+                    lblTip.Text = "Tip";
+                    lblTip.ForeColor = Color.Black;
+                    panelTip.BackColor = Color.White;
+                }
+            }
+        }
+
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            RefreshDataGridView();
         }
     }
 }
